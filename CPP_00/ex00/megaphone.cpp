@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:39:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/07 11:06:57 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/08 09:53:47 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char **av)
     
     if(ac < 2)
     {
-        std::cout << "\n";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
         return (0);
     }
     while(av[i])
