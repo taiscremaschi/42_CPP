@@ -12,7 +12,7 @@ i = i + 1;
 
 char 8 -128 a 127
 bool 8 true ou false
-int 32 -2.147.483.647 a 2.147.483.647
+int 32 -2.147.483.647 a 2.147.483.648
 float 32 7 dígitos significativos
 double 64 15 dígitos significativo
 
@@ -28,7 +28,7 @@ y = *p
 
 se x = 73
 y = 73
-p = 73
+p = 73e
 
 int x = 1
 ip = &x

@@ -5,24 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/07 11:12:54 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/03/19 14:44:36 by tbolzan-         ###   ########.fr        #
+#    Created: 2024/03/07 12:06:59 by tbolzan-          #+#    #+#              #
+#    Updated: 2024/03/19 14:44:00 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= megaphone
+NAME	= phonebook
 
-CXX	= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CPP		= c++
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -f
-SRCS	= Megaphone.cpp
+SRCS	= PhoneBook.cpp main.cpp Contact.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
+
+%.o: %.cpp
+	$(CPP) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CPP) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
