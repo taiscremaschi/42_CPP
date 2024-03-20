@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype> 
 
 
 #define RESET   "\033[0m"
@@ -60,6 +61,19 @@ void Phone_Book::add_contact(const Contact &new_contact)
         flag = 1;
 }
 
+bool is_number(std::string &str)
+{
+    int i = 0;
+    if(!str[i])
+        return false;
+    while(str[i])
+    {
+        if(!isdigit(str[i]))
+            return false;
+        i++;
+    }
+    return true;
+}
 void adc_infos(Phone_Book &phone_book) 
 {
     std::string first_name, last_name, contact_nbr, nickname, darkest_secret;
@@ -69,10 +83,14 @@ void adc_infos(Phone_Book &phone_book)
 
     std::cout << MAGENTA << "Enter the last name: " << RESET;
     std::getline(std::cin, last_name);
-
-    std::cout << MAGENTA << "Enter the contact number: " << RESET;
-    std::getline(std::cin, contact_nbr);
-
+    while(true)
+    {
+        std::cout << MAGENTA << "Enter the contact number: " << RESET;
+        std::getline(std::cin, contact_nbr);
+        if(is_number(contact_nbr) == true)
+            break ;
+        std::cout << RED << "Please, insert just numbers\n" << RESET;
+    }
     std::cout << MAGENTA << "Enter the nickname: " << RESET;
     std::getline(std::cin, nickname);
 
