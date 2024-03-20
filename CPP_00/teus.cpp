@@ -8,7 +8,7 @@ private:
 
 public:
     Animal() {
-        _nome = "maria eduarda";
+        _nome = "tataa";
         _idade = 8;
         
     }
