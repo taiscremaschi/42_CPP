@@ -2,15 +2,17 @@
 
 
 class Contact {
-long long int contact {};
+std::string contact_nbr {};
+std::string first_name {};
+std::string last_name {};
+std::string nickname {};
+
 
 }
 
 class Phone_Book {
 
-std::string name {};
-
-
-
+int index {};
+Contact contacts[8];
 
 }
