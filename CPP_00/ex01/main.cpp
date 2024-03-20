@@ -106,7 +106,8 @@ int main()
             std::cout <<  RED << "invalid command, try ADD, SEARCH or EXIT please!" << RESET;
     }
     
-    // se for search eu so procuro e retorno o que achar sem o dark secret
+    // se for search eu so procuro e retorno o que achar sem o dark secret e o numeor
+    
         
     return 0;
 }
