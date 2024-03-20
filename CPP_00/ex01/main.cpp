@@ -1,6 +1,16 @@
 #include <iostream>
 #include <string>
 
+
+#define RESET   "\033[0m"
+#define RED     "\033[31m"      
+#define GREEN   "\033[32m"      
+#define YELLOW  "\033[33m"      
+#define BLUE    "\033[34m"      
+#define MAGENTA "\033[35m"      
+#define CYAN    "\033[36m"      
+#define WHITE   "\033[37m"  
+
 class Contact {
 private:
     std::string _contact_nbr;
@@ -33,13 +43,13 @@ void Phone_Book::add_contact(const Contact &new_contact)
     {
         contacts[index] = new_contact;
         index++;
-        std::cout << "YES!! Contact added successfully!\n";
+        std::cout << CYAN << "YES!! Contact added successfully!\n" << RESET;
     }
     else if( flag == 1 ) {
         index = 0;
         contacts[index] = new_contact;
         index++;
-        std::cout << "YES!! Contact added successfully!\n";
+        std::cout << CYAN << "YES!! Contact added successfully!\n" << RESET;
     }
     else
         flag = 1;
@@ -49,19 +59,19 @@ void adc_infos(Phone_Book &phone_book)
 {
     std::string first_name, last_name, contact_nbr, nickname, darkest_secret;
 
-    std::cout << "Enter the first name: ";
+    std::cout << MAGENTA << "Enter the first name: " << RESET;
     std::getline(std::cin, first_name);
 
-    std::cout << "Enter the last name: ";
+    std::cout << MAGENTA << "Enter the last name: " << RESET;
     std::getline(std::cin, last_name);
 
-    std::cout << "Enter the contact number: ";
+    std::cout << MAGENTA << "Enter the contact number: " << RESET;
     std::getline(std::cin, contact_nbr);
 
-    std::cout << "Enter the nickname: ";
+    std::cout << MAGENTA << "Enter the nickname: " << RESET;
     std::getline(std::cin, nickname);
 
-    std::cout << "Enter the darkest secret: ";
+    std::cout << RED << "Enter the darkest secret: " << RESET;
     std::getline(std::cin, darkest_secret);
 
     Contact new_contact(contact_nbr, first_name, last_name, nickname, darkest_secret);
@@ -75,7 +85,8 @@ int main()
     {
 
         std::string input;
-        std::cout << "Enter command ADD or SEARCH OR EXIT: ";
+        std::cout << CYAN << "WELCOME TO THIS FANTASTIC TRIP!\n" << RESET;
+        std::cout << BLUE << "Enter command ADD, SEARCH or EXIT: " << RESET;
         std::getline(std::cin, input);
         if(input == "ADD")
         {
@@ -88,13 +99,11 @@ int main()
         }
         if(input == "EXIT")
         {
-            std::cout << "Bye!! See you next time! :) ";
+            std::cout << CYAN << "Bye!! See you next time! :) " << RESET;
             break ;
         }
         else 
-            std::cout << "invalid command";
-
-
+            std::cout <<  RED << "invalid command, try ADD, SEARCH or EXIT please!" << RESET;
     }
     
     // se for search eu so procuro e retorno o que achar sem o dark secret
