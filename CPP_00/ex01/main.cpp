@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cctype> 
+#include <limits.h>
 
 
 #define RESET   "\033[0m"
@@ -104,20 +105,23 @@ void adc_infos(Phone_Book &phone_book)
 int main()
 {
     Phone_Book phone_book;
+
+    std::cout << CYAN << "WELCOME TO THIS FANTASTIC TRIP!\n" << RESET;
     while(1)
     {
-
         std::string input;
-        std::cout << CYAN << "WELCOME TO THIS FANTASTIC TRIP!\n" << RESET;
         std::cout << BLUE << "Enter command ADD, SEARCH or EXIT: " << RESET;
         std::getline(std::cin, input);
+
         if(input == "ADD")
         {
            adc_infos(phone_book);
+           continue ;
         }
         if(input == "SEARCH")
         {
             std::cout << "procurando";
+            continue ;
 
         }
         if(input == "EXIT")
@@ -125,8 +129,10 @@ int main()
             std::cout << CYAN << "Bye!! See you next time! :)\n " << RESET;
             break ;
         }
-        else 
-            std::cout <<  RED << "invalid command, try ADD, SEARCH or EXIT please!" << RESET;
+        else
+        {
+            std::cout <<  RED << "invalid command, try again!\n" << RESET;
+        }
     }
     
     // se for search eu so procuro e retorno o que achar sem o dark secret e o numeor
