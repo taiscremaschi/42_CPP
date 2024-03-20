@@ -5,11 +5,9 @@
 #define RESET   "\033[0m"
 #define RED     "\033[31m"      
 #define GREEN   "\033[32m"      
-#define YELLOW  "\033[33m"      
 #define BLUE    "\033[34m"      
 #define MAGENTA "\033[35m"      
 #define CYAN    "\033[36m"      
-#define WHITE   "\033[37m"  
 
 class Contact {
 private:
@@ -21,7 +19,14 @@ private:
 public:
     Contact() {};
     Contact(std::string contact_nbr, std::string first_name, std::string last_name,
-        std::string nickname, std::string darkest_secret);
+        std::string nickname, std::string darkest_secret)
+        {
+            _contact_nbr = contact_nbr;
+            _first_name = first_name;
+            _last_name = last_name;
+            _nickname = nickname;
+            _darkest_secret = darkest_secret;
+        }
     ~Contact() {};
 };
 
@@ -99,7 +104,7 @@ int main()
         }
         if(input == "EXIT")
         {
-            std::cout << CYAN << "Bye!! See you next time! :) " << RESET;
+            std::cout << CYAN << "Bye!! See you next time! :)\n " << RESET;
             break ;
         }
         else 
@@ -107,7 +112,7 @@ int main()
     }
     
     // se for search eu so procuro e retorno o que achar sem o dark secret e o numeor
-    
+
         
     return 0;
 }
