@@ -13,7 +13,6 @@ public:
     Contact(std::string contact_nbr, std::string first_name, std::string last_name,
         std::string nickname, std::string darkest_secret);
     ~Contact() {};
-
 };
 
 class Phone_Book {
@@ -28,15 +27,22 @@ public:
 
 void Phone_Book::add_contact(const Contact &new_contact) 
 {
+    static int flag;
+
     if (index < 7) 
     {
-        contacts[index++] = new_contact;
+        contacts[index] = new_contact;
+        index++;
         std::cout << "YES!! Contact added successfully!\n";
-    } 
-    else 
-         contacts[0] = new_contact;
-    std::cout << "YES!! Contact added successfully!\n";
-
+    }
+    else if( flag == 1 ) {
+        index = 0;
+        contacts[index] = new_contact;
+        index++;
+        std::cout << "YES!! Contact added successfully!\n";
+    }
+    else
+        flag = 1;
 }
 
 void adc_contacts(Phone_Book &phone_book) 
