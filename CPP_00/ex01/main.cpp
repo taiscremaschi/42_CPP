@@ -9,7 +9,7 @@ private:
     std::string _nickname;
     std::string _darkest_secret;
 public:
-    Contact();
+    Contact() {};
     Contact(std::string contact_nbr, std::string first_name, std::string last_name,
         std::string nickname, std::string darkest_secret);
     ~Contact() {};
@@ -18,7 +18,7 @@ public:
 class Phone_Book {
 private:
     int index;
-    Contact contacts[7];
+    Contact contacts[8];
 public:
     Phone_Book() : index(0) {}
     void add_contact(const Contact &new_contact);
@@ -45,7 +45,7 @@ void Phone_Book::add_contact(const Contact &new_contact)
         flag = 1;
 }
 
-void adc_contacts(Phone_Book &phone_book) 
+void adc_infos(Phone_Book &phone_book) 
 {
     std::string first_name, last_name, contact_nbr, nickname, darkest_secret;
 
@@ -79,7 +79,7 @@ int main()
         std::getline(std::cin, input);
         if(input == "ADD")
         {
-           adc_contacts(phone_book);
+           adc_infos(phone_book);
         }
         if(input == "SEARCH")
         {
@@ -97,9 +97,7 @@ int main()
 
     }
     
-        // se for add, abro a classe phone_book e comeco a escrever em cada lugar 
-        // se for search eu so procuro e retorno o que achar sem o dark secret
+    // se for search eu so procuro e retorno o que achar sem o dark secret
         
     return 0;
-
 }
