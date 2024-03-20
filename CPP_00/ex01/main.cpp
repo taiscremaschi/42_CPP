@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class Contact {
 std::string contact_nbr;
@@ -15,20 +16,30 @@ Contact contacts[8];
 
 };
 
-int main(int ac, char **av)
+int main()
 {
     while(1)
-    { 
-        //quero entrar no meu programa e checar meu input, se for add search ou exit
-        //ou entao quero entrar no programa como o minishell (acho que essa ideia eh mais bonita) mas só sei usar 
-        //avv e ac entao nao sei como faria isso. 
-        
+    {
+
+        std::string input;
+        std::cout << "Enter the name: ";
+        std::getline(std::cin, input);
+        if(input == "ADD")
+        {
+
+        }
+        if(input == "SEARCH")
+        {
+
+        }
+        if(input == "EXIT")
+            break ;
+        std::cout << "Hello " << input << "!\n";
+    }
+    
         // se for add, abro a classe phone_book e comeco a escrever em cada lugar 
         // se for search eu so procuro e retorno o que achar sem o dark secret
         
-        //if(av[1])
-
-    }
-
+    return 0;
 
 }
