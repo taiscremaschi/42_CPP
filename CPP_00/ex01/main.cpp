@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 17:06:11 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:17:26 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void search_contact (PhoneBook &phone_book)
         
 }
 
-void search(PhoneBook phone_book)
+bool search(PhoneBook phone_book)
 {
     std::string input;
 
@@ -121,7 +121,8 @@ void search(PhoneBook phone_book)
     while(1)
     {
         std::cout << CYAN << "Choose the index you need or to return press '.': " << RESET;
-        std::getline(std::cin, input);
+        if(!get_input(input))
+            return false;
         if(input == ".")
         {
             break ;
@@ -133,7 +134,7 @@ void search(PhoneBook phone_book)
         else 
             std::cout <<  RED << "invalid index, try again!\n" << RESET;
     }
-
+    return true;
 }
 
 int main()
@@ -153,7 +154,10 @@ int main()
                 break ;
         }
         else if(input == "SEARCH")
-            search(phone_book);
+        {
+            if(!search(phone_book))
+                break ;
+        }
         else if(input == "EXIT")
             break ;
         else
