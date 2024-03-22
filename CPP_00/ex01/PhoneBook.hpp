@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:36 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:10:37 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 11:22:30 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,16 @@
 #define MAGENTA "\033[35m"      
 #define CYAN    "\033[36m"      
 
-class Phone_Book {
+class PhoneBook {
+
 private:
     Contact contacts[8];
     int _index;
+
 public:
-    Phone_Book() : _index(0) {}
+    
+    PhoneBook();
+
     void add_contact(const Contact &new_contact);
     int get_index();
     Contact getContact(int i);
