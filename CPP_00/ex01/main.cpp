@@ -1,83 +1,6 @@
-#include <iostream>
-#include <string>
-#include <cctype> 
-#include <limits.h>
-#include <iomanip> 
+#include "PhoneBook.hpp"
 
-#define RESET   "\033[0m"
-#define RED     "\033[31m"      
-#define GREEN   "\033[32m"      
-#define BLUE    "\033[34m"      
-#define MAGENTA "\033[35m"      
-#define CYAN    "\033[36m"      
 
-class Contact {
-private:
-    std::string _contact_nbr;
-    std::string _first_name;
-    std::string _last_name;
-    std::string _nickname;
-    std::string _darkest_secret;
-public:
-    Contact() {};
-    Contact(std::string contact_nbr, std::string first_name, std::string last_name,
-        std::string nickname, std::string darkest_secret)
-        {
-            _contact_nbr = contact_nbr;
-            _first_name = first_name;
-            _last_name = last_name;
-            _nickname = nickname;
-            _darkest_secret = darkest_secret;
-        }
-    std::string getFistName();
-    std::string getLastName();
-    std::string getNickname();
-
-    ~Contact() {};
-};
-
-class Phone_Book {
-private:
-    Contact contacts[8];
-    int _index;
-public:
-    Phone_Book() : _index(0) {}
-    void add_contact(const Contact &new_contact);
-    int get_index();
-    Contact getContact(int i);
-};
-
-int     Phone_Book::get_index()
-{
-    return(_index);
-}
-
-void Phone_Book::add_contact(const Contact &new_contact) 
-{
-
-    contacts[_index % 8] = new_contact;
-    _index++;
-    std::cout << CYAN << "YES!! Contact added successfully!\n" << RESET;
-}
-
-Contact Phone_Book::getContact(int i)
-{
-    return (contacts[i]);
-}
-
-bool is_not_number(std::string &str)
-{
-    int i = 0;
-    if(!str[i])
-        return false;
-    while(str[i])
-    {
-        if(!isdigit(str[i]))
-            return false;
-        i++;
-    }
-    return true;
-}
 void adc_infos(Phone_Book &phone_book) 
 {
     std::string first_name, last_name, contact_nbr, nickname, darkest_secret;
@@ -105,10 +28,11 @@ void adc_infos(Phone_Book &phone_book)
     phone_book.add_contact(new_contact);
 }
 
-void trunc(Contact &contact, int size)
-{
 
-}
+// void trunc(Contact &contact, int size)
+// {
+
+// }
 
 void search_contact (Contact &contacts, Phone_Book &phone_book)
 {
@@ -134,16 +58,6 @@ void choise_contact(Phone_Book &phone_book)
 
 }
 
-int ft_atoi(std::string s)
-{
-    int result = 0;
-    if(s[1])
-        return -1;
-    if(s[0] > '8')
-        return -1;
-   result =  result + s[0] - '0';
-    return result;
-}
 
 
 int main()
