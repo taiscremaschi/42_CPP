@@ -6,13 +6,13 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:42 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:21:39 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:38:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 
-bool is_not_number(std::string &str)
+bool isNotNumber(std::string &str)
 {
     int i = 0;
     if(!str[i])
@@ -26,7 +26,7 @@ bool is_not_number(std::string &str)
     return true;
 }
 
-int ft_atoi(std::string s)
+int convertIndex(std::string s)
 {
     int result = 0;
     if(s[1])
@@ -35,4 +35,14 @@ int ft_atoi(std::string s)
         return -1;
    result =  result + s[0] - '0';
     return result;
+}
+
+std::string trunc(std::string data)
+{
+    if(data.size() > 10)
+    {
+        data = data.substr(0, 9);
+        data.push_back('.');
+    }
+    return data;
 }

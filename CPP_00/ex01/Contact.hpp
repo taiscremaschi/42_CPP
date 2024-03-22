@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:08 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 15:05:50 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:34:44 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,24 @@ class Contact {
 
 private:
 
-    std::string _contact_nbr;
-    std::string _first_name;
-    std::string _last_name;
+    std::string _contactNbr;
+    std::string _firstName;
+    std::string _lastName;
     std::string _nickname;
-    std::string _darkest_secret;
+    std::string _darkestSecret;
 
 public:
 
     Contact();
-    Contact(std::string contact_nbr, std::string first_name, std::string last_name,
-        std::string nickname, std::string darkest_secret);
+    Contact(std::string contactNbr, std::string firstName, std::string lastName,
+        std::string nickname, std::string darkestSecret);
     
     std::string getNbr();
     std::string getFirstName();
     std::string getLastName();
     std::string getNickname();
     std::string getSecret();
-    void print_contact();
+    void printContact();
 
     ~Contact();
 };

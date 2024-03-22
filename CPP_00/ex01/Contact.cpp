@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:01 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 15:08:00 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:34:58 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,29 @@ Contact::Contact() {};
 
 Contact::~Contact() {};
 
-Contact::Contact(std::string contact_nbr, std::string first_name, std::string last_name,
-    std::string nickname, std::string darkest_secret)
+Contact::Contact(std::string contactNbr, std::string firstName, std::string lastName,
+    std::string nickname, std::string darkestSecret)
 {
-    _contact_nbr = contact_nbr;
-    _first_name = first_name;
-    _last_name = last_name;
+    _contactNbr = contactNbr;
+    _firstName = firstName;
+    _lastName = lastName;
     _nickname = nickname;
-    _darkest_secret = darkest_secret;
+    _darkestSecret = darkestSecret;
 }
 
 std::string Contact::getNbr()
 {
-    return(_contact_nbr);
+    return(_contactNbr);
     
 }
 std::string Contact::getFirstName()
 {
-    return(_first_name);
+    return(_firstName);
     
 }
 std::string Contact::getLastName()
 {
-    return(_last_name);
+    return(_lastName);
 }
 
 std::string Contact::getNickname()
@@ -49,11 +49,11 @@ std::string Contact::getNickname()
 
 std::string Contact::getSecret()
 {
-    return(_darkest_secret);
+    return(_darkestSecret);
 }
 
 
-void Contact::print_contact()
+void Contact::printContact()
 {
     std::cout << MAGENTA << "Number: " << getNbr() << RESET << std::endl;
     std::cout << MAGENTA << "First Name: " << getFirstName() << RESET << std::endl;

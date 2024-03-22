@@ -6,14 +6,14 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 17:17:26 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:37:31 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <stdio.h>
 
-bool get_input(std::string &input)
+bool getInput(std::string &input)
 {
     if(!std::getline(std::cin, input))
     {
@@ -28,7 +28,7 @@ bool get_input(std::string &input)
     
 }
 
-bool check_input(std::string &input)
+bool checkInput(std::string &input)
 {
     int i = 0;
     
@@ -47,89 +47,58 @@ bool handleInfos(std::string msg, std::string &input, std::string color)
     while (true)
     {
         std::cout << color << msg << RESET;
-        if (!get_input(input))
+        if (!getInput(input))
             return false;
-        if (check_input(input))
+        if (checkInput(input))
             break;
     }
     return true;
 }
 
-bool adc_infos(PhoneBook &phone_book) 
+bool addInfos(PhoneBook &phonebook) 
 {
-    std::string first_name, last_name, contact_nbr, nickname, darkest_secret;
+    std::string firstName, lastName, contactNbr, nickname, darkestSecret;
 
-    if (!handleInfos("Enter the first name: ", first_name, MAGENTA))
+    if (!handleInfos("Enter the first name: ", firstName, MAGENTA))
         return false;
 
-    if (!handleInfos("Enter the last name: ", last_name, MAGENTA))
+    if (!handleInfos("Enter the last name: ", lastName, MAGENTA))
         return false;
         
     while(true){
         std::cout << MAGENTA << "Enter the contact number: " << RESET;
-        if (!get_input(contact_nbr))
+        if (!getInput(contactNbr))
             return false;
-        if(is_not_number(contact_nbr) == true)
+        if(isNotNumber(contactNbr) == true)
             break ;
         std::cout << RED << "Please, insert just numbers\n" << RESET;
     }
     if (!handleInfos("Enter the nickname: ", nickname, MAGENTA))
         return false;
-    if (!handleInfos("Enter the darkest secret: ", darkest_secret, RED))
+    if (!handleInfos("Enter the darkest secret: ", darkestSecret, RED))
         return false;
-    Contact new_contact(contact_nbr, first_name, last_name, nickname, darkest_secret);
-    phone_book.add_contact(new_contact);
+    Contact newContact(contactNbr, firstName, lastName, nickname, darkestSecret);
+    phonebook.addContact(newContact);
     return true;
 }
 
-
-std::string trunc(std::string data)
-{
-    if(data.size() > 10)
-    {
-        data = data.substr(0, 9);
-        data.push_back('.');
-    }
-    return data;
-}
-
-void search_contact (PhoneBook &phone_book)
-{
-    int i = 0; 
-    int size = phone_book.get_size();
-    
-    std::cout << std::setw(10) << std::right << "Index" << " | "
-          << std::setw(10) << std::right << "First Name" << " | "
-          << std::setw(10) << std::right << "Last Name" << " | "
-          << std::setw(10) << std::right << "Nickname" << std::endl;
-    while(i < size)
-    {
-        std::cout << std::setw(10) << std::right << i << " | ";
-        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getFirstName()) << " | ";
-        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getLastName()) << " | ";
-        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getNickname()) << std::endl;
-        i++;
-    }
-        
-}
-
-bool search(PhoneBook phone_book)
+bool search(PhoneBook phonebook)
 {
     std::string input;
 
-    search_contact(phone_book);
+    phonebook.listContacts();
     while(1)
     {
         std::cout << CYAN << "Choose the index you need or to return press '.': " << RESET;
-        if(!get_input(input))
+        if(!getInput(input))
             return false;
         if(input == ".")
         {
             break ;
         }
-        if(ft_atoi(input) < phone_book.get_size() && ft_atoi(input) > -1)
+        if(convertIndex(input) < phonebook.getSize() && convertIndex(input) > -1)
         {
-            phone_book.getContact(ft_atoi(input)).print_contact();
+            phonebook.getContact(convertIndex(input)).printContact();
         }
         else 
             std::cout <<  RED << "invalid index, try again!\n" << RESET;
@@ -139,23 +108,23 @@ bool search(PhoneBook phone_book)
 
 int main()
 {
-    PhoneBook phone_book;
+    PhoneBook phonebook;
 
     std::cout << CYAN << "WELCOME TO THIS FANTASTIC TRIP!\n" << RESET;
     while(1)
     {
         std::string input;
         std::cout << BLUE << "Enter command ADD, SEARCH or EXIT: " << RESET;
-        if(!get_input(input))
+        if(!getInput(input))
             break ;
         if(input == "ADD")
         {
-           if (!adc_infos(phone_book))
+           if (!addInfos(phonebook))
                 break ;
         }
         else if(input == "SEARCH")
         {
-            if(!search(phone_book))
+            if(!search(phonebook))
                 break ;
         }
         else if(input == "EXIT")

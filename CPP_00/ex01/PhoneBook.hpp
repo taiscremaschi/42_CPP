@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:36 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 15:05:55 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 17:31:48 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ public:
     PhoneBook();
     ~PhoneBook();
     
-    void add_contact(const Contact &new_contact);
-    int get_size();
+    void addContact(const Contact &new_contact);
+    int getSize();
+    void listContacts();
     Contact getContact(int i);
 };
 
 
-bool is_not_number(std::string &str);
-int ft_atoi(std::string s);
-
+bool isNotNumber(std::string &str);
+int convertIndex(std::string s);
+std::string trunc(std::string data);
 
 #endif
