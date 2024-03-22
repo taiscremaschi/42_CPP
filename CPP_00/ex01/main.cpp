@@ -6,11 +6,12 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:25:02 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:08:42 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include <stdio.h>
 
 void adc_infos(PhoneBook &phone_book) 
 {
@@ -40,29 +41,36 @@ void adc_infos(PhoneBook &phone_book)
 }
 
 
-// void trunc(Contact &contact, int size)
-// {
-
-// }
+std::string trunc(std::string data)
+{
+    if(data.size() > 10)
+    {
+        data = data.substr(0, 9);
+        data.push_back('.');
+    }
+    return data;
+}
 
 void search_contact (Contact &contacts, PhoneBook &phone_book)
 {
-    (void) contacts;
-    (void) phone_book;
-    //int i = 0; 
-    //int index = phone_book.get_index();
+     (void) contacts;
+    // (void) phone_book;
+    int i = 0; 
+    int index = phone_book.get_index();
     
+    printf("\n%d\n", index);
     std::cout << std::setw(10) << std::right << "Index" << " | "
           << std::setw(10) << std::right << "First Name" << " | "
           << std::setw(10) << std::right << "Last Name" << " | "
           << std::setw(10) << std::right << "Nickname" << std::endl;
-    // while(i <= index)
-    // {
-    //     std::cout << std::setw(10) << std::right << i << " | ";
-    //     std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).first_name(), 10) << " | ";
-    //     std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).last_name(), 10) << " | ";
-    //     std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).nickname(), 10) << std::endl;
-    // }
+    while(i < index)
+    {
+        std::cout << std::setw(10) << std::right << i << " | ";
+        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getFistName()) << " | ";
+        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getLastName()) << " | ";
+        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getNickname()) << std::endl;
+        i++;
+    }
         
 }
 void choise_contact(PhoneBook &phone_book)
