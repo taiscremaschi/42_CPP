@@ -6,14 +6,24 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:08 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:30:21 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:05:50 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+#include <iostream>
 #include <string>
+#include <cctype> 
+#include <iomanip> 
+
+#define RESET   "\033[0m"
+#define RED     "\033[31m"      
+#define GREEN   "\033[32m"      
+#define BLUE    "\033[34m"      
+#define MAGENTA "\033[35m"      
+#define CYAN    "\033[36m"      
 
 class Contact {
 
@@ -32,10 +42,11 @@ public:
         std::string nickname, std::string darkest_secret);
     
     std::string getNbr();
-    std::string getFistName();
+    std::string getFirstName();
     std::string getLastName();
     std::string getNickname();
     std::string getSecret();
+    void print_contact();
 
     ~Contact();
 };

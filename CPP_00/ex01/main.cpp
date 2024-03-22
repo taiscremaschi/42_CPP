@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:08:42 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:14:28 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,40 +51,54 @@ std::string trunc(std::string data)
     return data;
 }
 
-void search_contact (Contact &contacts, PhoneBook &phone_book)
+void search_contact (PhoneBook &phone_book)
 {
-     (void) contacts;
-    // (void) phone_book;
     int i = 0; 
-    int index = phone_book.get_index();
+    int size = phone_book.get_size();
     
-    printf("\n%d\n", index);
     std::cout << std::setw(10) << std::right << "Index" << " | "
           << std::setw(10) << std::right << "First Name" << " | "
           << std::setw(10) << std::right << "Last Name" << " | "
           << std::setw(10) << std::right << "Nickname" << std::endl;
-    while(i < index)
+    while(i < size)
     {
         std::cout << std::setw(10) << std::right << i << " | ";
-        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getFistName()) << " | ";
+        std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getFirstName()) << " | ";
         std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getLastName()) << " | ";
         std::cout << std::setw(10) << std::right << trunc(phone_book.getContact(i).getNickname()) << std::endl;
         i++;
     }
         
 }
-void choise_contact(PhoneBook &phone_book)
+
+
+void search(PhoneBook phone_book)
 {
-    (void)phone_book;
+    std::string input;
+
+    search_contact(phone_book);
+    while(1)
+    {
+        std::cout << CYAN << "Choose the index you need or to return press '.': " << RESET;
+        std::getline(std::cin, input);
+        if(input == ".")
+        {
+            break ;
+        }
+        if(ft_atoi(input) < phone_book.get_size() && ft_atoi(input) > -1)
+        {
+            phone_book.getContact(ft_atoi(input)).print_contact();
+        }
+        else 
+            std::cout <<  RED << "invalid index, try again!\n" << RESET;
+    }
 
 }
-
 
 
 int main()
 {
     PhoneBook phone_book;
-    Contact contacts;
 
     std::cout << CYAN << "WELCOME TO THIS FANTASTIC TRIP!\n" << RESET;
     while(1)
@@ -99,23 +113,7 @@ int main()
         }
         else if(input == "SEARCH")
         {
-            while(1)
-            {
-                search_contact(contacts, phone_book);
-                std::cout << CYAN << "Choose the index you need or to return press '.': " << RESET;
-                std::getline(std::cin, input);
-                if(input == ".")
-                {
-                    break ;
-                }
-                if(ft_atoi(input) <= phone_book.get_index() && ft_atoi(input) > -1)
-                {
-                    choise_contact(phone_book);
-                    continue ;
-                }
-                else 
-                    std::cout <<  RED << "invalid index, try again!\n" << RESET;
-            }
+            search(phone_book);
         }
         else if(input == "EXIT")
         {

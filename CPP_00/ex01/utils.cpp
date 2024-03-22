@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:42 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:10:44 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:21:39 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int ft_atoi(std::string s)
     int result = 0;
     if(s[1])
         return -1;
-    if(s[0] > '8')
+    if(s[0] >= '8')
         return -1;
    result =  result + s[0] - '0';
     return result;

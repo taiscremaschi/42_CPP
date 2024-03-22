@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:31 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:22:14 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 14:36:45 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 PhoneBook::PhoneBook() : _index(0) {}
 
-int     PhoneBook::get_index()
+PhoneBook::~PhoneBook() 
 {
-    return(_index);
+    
+}
+
+int     PhoneBook::get_size()
+{        
+    return(_index > 7 ? 7 : _index);
 }
 
 void PhoneBook::add_contact(const Contact &new_contact) 

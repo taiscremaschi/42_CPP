@@ -6,26 +6,14 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:36 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:22:30 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:05:55 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONE_BOOK_HPP
 # define PHONE_BOOK_HPP
 
-#include <iostream>
-#include <string>
-#include <cctype> 
-#include <limits.h>
-#include <iomanip> 
 #include "Contact.hpp"
-
-#define RESET   "\033[0m"
-#define RED     "\033[31m"      
-#define GREEN   "\033[32m"      
-#define BLUE    "\033[34m"      
-#define MAGENTA "\033[35m"      
-#define CYAN    "\033[36m"      
 
 class PhoneBook {
 
@@ -36,9 +24,10 @@ private:
 public:
     
     PhoneBook();
-
+    ~PhoneBook();
+    
     void add_contact(const Contact &new_contact);
-    int get_index();
+    int get_size();
     Contact getContact(int i);
 };
 

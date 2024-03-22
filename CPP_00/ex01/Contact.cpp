@@ -6,13 +6,15 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:01 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 11:35:33 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:08:00 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact() {};
+
+Contact::~Contact() {};
 
 Contact::Contact(std::string contact_nbr, std::string first_name, std::string last_name,
     std::string nickname, std::string darkest_secret)
@@ -29,7 +31,7 @@ std::string Contact::getNbr()
     return(_contact_nbr);
     
 }
-std::string Contact::getFistName()
+std::string Contact::getFirstName()
 {
     return(_first_name);
     
@@ -50,4 +52,12 @@ std::string Contact::getSecret()
     return(_darkest_secret);
 }
 
-Contact::~Contact() {};
+
+void Contact::print_contact()
+{
+    std::cout << MAGENTA << "Number: " << getNbr() << RESET << std::endl;
+    std::cout << MAGENTA << "First Name: " << getFirstName() << RESET << std::endl;
+    std::cout << MAGENTA << "Last Name: " << getLastName() << RESET << std::endl;
+    std::cout << MAGENTA << "Nickname: " << getNickname() << RESET << std::endl;
+    std::cout <<  RED << "Darkest Secret: " << getSecret() << RESET << std::endl; 
+}
