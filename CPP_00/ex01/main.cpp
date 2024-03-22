@@ -6,12 +6,27 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 16:11:24 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:45:30 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <stdio.h>
+
+bool get_input(std::string &input)
+{
+    if(!std::getline(std::cin, input))
+    {
+        if(std::cin.eof())
+        {   
+            std::cin.clear();
+            std::cout << RED << "\nInput invalid \n" << RESET;
+        }
+        return false;
+    }
+    return true;
+    
+}
 
 bool check_input(std::string &input)
 {
@@ -27,43 +42,64 @@ bool check_input(std::string &input)
     return false;   
 }
 
-void adc_infos(PhoneBook &phone_book) 
+bool adc_infos(PhoneBook &phone_book) 
 {
     std::string first_name, last_name, contact_nbr, nickname, darkest_secret;
 
     while(true){
         std::cout << MAGENTA << "Enter the first name: " << RESET;
-        std::getline(std::cin, first_name);
+        if (!get_input(first_name))
+            return false;
+        
         if(check_input(first_name))
             break;
     }
     while(true){
         std::cout << MAGENTA << "Enter the last name: " << RESET;
-        std::getline(std::cin, last_name);
+        if (!get_input(last_name))
+            return false;
+       // std::getline(std::cin, last_name))
+       
         if(check_input(last_name))
             break;
     }
     while(true){
         std::cout << MAGENTA << "Enter the contact number: " << RESET;
-        std::getline(std::cin, contact_nbr);
+        if (!get_input(contact_nbr))
+        {
+          return false;
+        }
+        //std::getline(std::cin, contact_nbr))
+        
         if(is_not_number(contact_nbr) == true)
-            break ;
+           break ;
         std::cout << RED << "Please, insert just numbers\n" << RESET;
     }
     while(true){
         std::cout << MAGENTA << "Enter the nickname: " << RESET;
-        std::getline(std::cin, nickname);
+        if (!get_input(nickname))
+        {
+          return false;
+        }
+       // std::getline(std::cin, nickname))
+       
         if(check_input(nickname))
             break;
     }
     while(true){
         std::cout << RED << "Enter the darkest secret: " << RESET;
-        std::getline(std::cin, darkest_secret);
+        if (!get_input(darkest_secret))
+        {
+          return false;
+        }
+        //std::getline(std::cin, darkest_secret))
+        
         if(check_input(darkest_secret))
             break;
     }
     Contact new_contact(contact_nbr, first_name, last_name, nickname, darkest_secret);
     phone_book.add_contact(new_contact);
+    return true;
 }
 
 
@@ -129,10 +165,15 @@ int main()
     {
         std::string input;
         std::cout << BLUE << "Enter command ADD, SEARCH or EXIT: " << RESET;
-        std::getline(std::cin, input);
+        if(!get_input(input))
+            break ;
 
         if(input == "ADD")
-           adc_infos(phone_book);
+        {
+           if (!adc_infos(phone_book))
+                break ;
+            
+        }
         else if(input == "SEARCH")
             search(phone_book);
         else if(input == "EXIT")
