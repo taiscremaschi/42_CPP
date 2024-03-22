@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:10:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/22 15:50:17 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:11:24 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,3 @@ int main()
     std::cout << CYAN << "Bye!! See you next time! :)\n " << RESET;    
     return 0;
 }
-//ctrl d 
-//
-// espaços vazios n pode acei   
