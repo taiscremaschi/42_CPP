@@ -1,5 +1,16 @@
-#include "PhoneBook.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/22 11:10:17 by tbolzan-          #+#    #+#             */
+/*   Updated: 2024/03/22 11:10:21 by tbolzan-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "PhoneBook.hpp"
 
 void adc_infos(Phone_Book &phone_book) 
 {
@@ -107,8 +118,5 @@ int main()
         }
     }
     
-    // se for search eu so procuro e retorno o que achar sem o dark secret e o numeor
-
-        
     return 0;
 }
