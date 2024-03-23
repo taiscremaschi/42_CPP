@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 19:28:20 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/23 19:35:03 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/23 19:36:06 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-return 0;
+    return 0;
 }
