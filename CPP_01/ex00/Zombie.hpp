@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/23 14:05:28 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/23 14:10:58 by tbolzan-         ###   ########.fr       */
+/*   Created: 2024/03/23 14:03:42 by tbolzan-          #+#    #+#             */
+/*   Updated: 2024/03/23 14:09:31 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_H
+#define ZOMBIE_H
 
-int main()
-{
-    Zombie *zombie = newZombie("tataHeap");
-    zombie->announce();
-    delete zombie;
-    randomChump("tataStack");
-    randomChump("tata");
-}
+#include <iostream>
+#include <string>
+
+class Zombie{
+private:
+    std::string _name;
+public:
+    Zombie();
+    ~Zombie();
+    Zombie(std::string name);
+    std::string getName();
+    void announce();
+
+};
+
+Zombie *newZombie( std::string name);
+void randomChump(std::string name);
+
+#endif
