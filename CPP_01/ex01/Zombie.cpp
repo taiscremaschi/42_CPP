@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 14:05:00 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/23 14:19:00 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/23 18:42:13 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ Zombie::Zombie(std::string name){
 
 std::string Zombie::getName(){
     return _name;
+}
+
+void Zombie::setName(std::string name){
+    _name = name;
 }
 
 void Zombie::announce(){

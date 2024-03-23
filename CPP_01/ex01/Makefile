@@ -6,13 +6,13 @@
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 14:16:10 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/03/23 14:16:58 by tbolzan-         ###   ########.fr        #
+#    Updated: 2024/03/23 18:50:39 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= zombie
 CXX	= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 RM		= rm -f
 SRCS	= Zombie.cpp main.cpp
 
