@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 19:41:33 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 11:35:43 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/25 11:46:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,6 @@ class HumanA{
         void attack();  
 };
 
-HumanA::HumanA(std::string name, Weapon &weapon): _weaponA(weapon), _nameA(name) {}
-
-HumanA::~HumanA(){
-    
-}
-
-void HumanA::attack()
-{
-    std::cout << _nameA << " attacks with their " <<  _weaponA.getType() << std::endl;
-}
 
 
 
