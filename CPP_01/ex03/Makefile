@@ -6,11 +6,11 @@
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 19:28:18 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/03/23 19:43:28 by tbolzan-         ###   ########.fr        #
+#    Updated: 2024/03/25 09:31:53 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= violence
+NAME	= Weapon
 CXX	= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 RM		= rm -f
