@@ -6,13 +6,13 @@
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 12:19:02 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/03/25 12:19:37 by tbolzan-         ###   ########.fr        #
+#    Updated: 2024/03/25 16:39:24 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= replace
 CXX	= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM		= rm -f
 SRCS	= main.cpp replace.cpp 
 
