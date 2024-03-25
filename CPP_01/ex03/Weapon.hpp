@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 19:41:50 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 09:41:50 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/25 10:00:57 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Weapon{
     std::string _type;
   public:
     Weapon();
+    Weapon(std::string type);
     ~Weapon();
     const std::string &getType();
     void  setType(const std::string);

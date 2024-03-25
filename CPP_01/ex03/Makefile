@@ -6,15 +6,15 @@
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 19:28:18 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/03/25 09:31:53 by tbolzan-         ###   ########.fr        #
+#    Updated: 2024/03/25 10:36:31 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Weapon
+NAME	= weapon
 CXX	= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 RM		= rm -f
-SRCS	= main.cpp, HumanA.cpp HumanB.cpp Weapon.cpp
+SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
