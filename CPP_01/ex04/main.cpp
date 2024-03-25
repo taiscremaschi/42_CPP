@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 12:19:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 17:06:07 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/25 17:35:02 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <iostream>
 #include <fstream>
 
-
-std::string  replaceStr(std::string buff, Replace data)
+std::string  replaceStr(std::string buff, std::string s1, std::string s2)
 {
     int i = 0;
     int j = 0;
@@ -26,14 +25,14 @@ std::string  replaceStr(std::string buff, Replace data)
     while(i < (int)buff.size())
     {
         j = 0;
-        if(buff[i] == data.getS1()[j])
+        if(buff[i] == s1[j])
         {
             temp = i;
-            while(buff[i] == data.getS1()[j])
+            while(buff[i] == s1[j])
             {
                 i++;
                 j++;
-                if(data.getS1()[j] == '\0')
+                if(s1[j] == '\0')
                 {
                     flag = true;
                     break;
@@ -41,7 +40,7 @@ std::string  replaceStr(std::string buff, Replace data)
             }
             if(flag == true)
             {
-                result += data.getS2(); 
+                result += s2; 
                 flag = false;           
             }
             else
@@ -62,34 +61,29 @@ std::string  replaceStr(std::string buff, Replace data)
 
 int main(int ac, char **av)
 {
-    Replace replace;
     std::string buff;
-    std::string filenameReplace;
+    std::string filename = av[1];
+    std::string s1 = av[2];
+    std::string s2 = av[3];
+    std::string filenameReplace = filename + ".replace";
+
     if(ac != 4)
     {
         std::cerr << "wrong parameter numbers" << std::endl;
         return (1);
     }
-
-    replace.setFile(av[1]);
-    replace.setS1(av[2]);
-    replace.setS2(av[3]);
-
-    std::ifstream file(replace.getFile().c_str());
+    std::ifstream file(filename.c_str());
     if(!file)
     {
         std::cerr << "error in file" << std::endl;
         return 1;
     }
-    filenameReplace = replace.getFile() + ".replace";
     std::ofstream output(filenameReplace.c_str());
     while(std::getline(file, buff))
     {
-       std::string result = replaceStr(buff, replace);
+       std::string result = replaceStr(buff, s1, s2);
         std::cout << result << std::endl;
-        //output.write(buff, sizeBuffer);
+        output.write(result.c_str(), result.size());
     }
-    
     return 0;
-    
 }
