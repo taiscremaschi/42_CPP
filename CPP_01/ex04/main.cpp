@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 12:19:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 16:57:28 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/25 17:06:07 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,18 @@ std::string  replaceStr(std::string buff, Replace data)
     while(i < (int)buff.size())
     {
         j = 0;
-        std::cout << "passou\n" << buff[i] << std::endl;
         if(buff[i] == data.getS1()[j])
         {
             temp = i;
             while(buff[i] == data.getS1()[j])
             {
-                if(data.getS1()[j + 1] == '\0')
-                    flag = true;
                 i++;
                 j++;
+                if(data.getS1()[j] == '\0')
+                {
+                    flag = true;
+                    break;
+                }
             }
             if(flag == true)
             {
