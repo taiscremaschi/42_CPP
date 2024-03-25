@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 12:19:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 17:35:02 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/25 17:52:31 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,16 @@ int main(int ac, char **av)
         return 1;
     }
     std::ofstream output(filenameReplace.c_str());
+    bool first = true;
+    std::string result;
     while(std::getline(file, buff))
     {
-       std::string result = replaceStr(buff, s1, s2);
-        std::cout << result << std::endl;
+        if (first == false)
+            result = "\n";
+        result += replaceStr(buff, s1, s2);
         output.write(result.c_str(), result.size());
+        first = false;
     }
+
     return 0;
 }
