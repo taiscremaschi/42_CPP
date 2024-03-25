@@ -6,9 +6,13 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 19:28:20 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/23 19:36:06 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/25 09:56:23 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Weapon.hpp"
+#include "HumanB.hpp"
+#include "HumanA.hpp"
 
 int main()
 {
