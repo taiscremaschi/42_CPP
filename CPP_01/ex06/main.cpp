@@ -6,21 +6,21 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:57:23 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 18:51:10 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/26 08:54:41 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main()
+int main(int ac, char **av)
 {
     Harl say;
-    
-    say.complain("DEBUG");
-    say.complain("INFO");
-    say.complain("WARNING");
-    say.complain("ERROR");
-    say.complain("HI");
-    
+    if(ac != 2)
+    {
+        std::cout << "error, insert just one parameter please" << std::endl;
+        return 1;
+    }
+    say.complain(av[1]);
+
     return 0;
 }
