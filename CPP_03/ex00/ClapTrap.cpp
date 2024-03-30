@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/30 19:05:59 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/30 19:26:09 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ ClapTrap &ClapTrap::operator=(ClapTrap &other){
     return *this;
 }
 
-
 void ClapTrap::setName(std::string name)
 {
      _name = name;    
@@ -65,7 +64,7 @@ void ClapTrap::attack(const std::string &target){
     }
     else 
     {
-        std::cout << "ClapTrap " << _name  << " attacks " << target << ", causing " << _attackDamage  << " points of damage!" << std::endl;
+        std::cout << MAGENTA << "ClapTrap " << _name  << " attacks " << target << " , causing " << _attackDamage  << " points of damage!" << std::endl;
         _energyPoints -= 1;
     }
     
@@ -74,14 +73,16 @@ void ClapTrap::attack(const std::string &target){
 void ClapTrap::takeDamage(unsigned int amount){
     
     if(_hitPoints == 0)
-        std::cout << RED << _name << "is already dead" << RESET << std::endl;
+        std::cout << RED << _name << " is already dead" << RESET << std::endl;
     else {
-        std::cout << "ClapTrap " << _name  << "receives damage " << amount << std::endl;
+        std::cout << GREEN << "ClapTrap " << _name  << " receives damage " << amount << std::endl;
         if(_hitPoints < amount)
         {
-            std::cout << RED << _name << "died" << RESET << std::endl;
+            std::cout << RED << _name << " died" << RESET << std::endl;
+            _hitPoints = 0;
         }
-        _hitPoints -= amount;    
+        else 
+            _hitPoints -= amount;    
     }
 }
 
@@ -93,7 +94,7 @@ void ClapTrap::beRepaired(unsigned int amount){
     }
     else 
     {
-        std::cout << "ClapTrap " << _name  << "repair " << amount << std::endl;
+        std::cout << MAGENTA << "ClapTrap " << _name  << " repair " << amount << std::endl;
         _energyPoints -= 1;
         _hitPoints += amount;
     }
