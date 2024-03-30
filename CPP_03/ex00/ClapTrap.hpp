@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/30 13:02:52 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/30 17:52:00 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,42 +26,22 @@
 
 class ClapTrap {
 private:
-std::string _name;
-unsigned int         _hitPoints;
-unsigned int         _energyPoints;
-unsigned int         _attackDamage;
+    std::string _name;
+    unsigned int         _hitPoints;
+    unsigned int         _energyPoints;
+    unsigned int         _attackDamage;
 
 public:
-ClapTrap(const std::string name);
-~ClapTrap();
-void setName(std::string name);
-std::string getName();
-void attack(const std::string &target);
-void takeDamage(unsigned int amount);
-void beRepaired(unsigned int amount);
+    ClapTrap(const std::string name);
+    ~ClapTrap();
+    ClapTrap(const ClapTrap& other);
+    void setName(std::string name);
+    std::string getName();
+    void attack(const std::string &target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 
 };
-
-ClapTrap::ClapTrap(const std::string name){
-    std:: cout << RED << "this is constructed" << RESET << std::endl;
-    _hitPoints = 10;
-    _energyPoints = 10;
-    _attackDamage = 0;
-    _name = name;  
-};
-
-ClapTrap::~ClapTrap() {
-    std:: cout << RED << "this is desconstructed" << RESET << std::endl;
-};
-
-void ClapTrap::setName(std::string name)
-{
-     _name = name;    
-}
-std::string ClapTrap::getName(){
-    return _name;
-}
-
 
 
 
