@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/30 17:52:00 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/30 18:51:28 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ private:
     unsigned int         _attackDamage;
 
 public:
-    ClapTrap(const std::string name);
-    ~ClapTrap();
-    ClapTrap(const ClapTrap& other);
+    ClapTrap(); // constructor
+    ClapTrap(const std::string name); //constructor with parameter
+    ClapTrap(const ClapTrap &other); //copy constructor
+    ~ClapTrap(); // destructor
+    ClapTrap &operator=(ClapTrap &other); // assignment operator
     void setName(std::string name);
     std::string getName();
     void attack(const std::string &target);
@@ -42,6 +44,7 @@ public:
     void beRepaired(unsigned int amount);
 
 };
+
 
 
 

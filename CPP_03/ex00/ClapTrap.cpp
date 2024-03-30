@@ -6,23 +6,27 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/30 17:56:02 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/03/30 19:05:59 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() {
+    std:: cout << GREEN << "this is constructed default" << RESET << std::endl;
+}
+
 ClapTrap::ClapTrap(const std::string name){
-    std:: cout << RED << "this is constructed" << RESET << std::endl;
+    std:: cout << GREEN << "this is constructed with parameter" << RESET << std::endl;
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
     _name = name;  
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other)
+ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std:: cout << RED << "this is copy" << RESET << std::endl;
+    std:: cout << BLUE << "this is constructed copy" << RESET << std::endl;
     _name = other._name;
     _attackDamage = other._attackDamage;
     _energyPoints = other._energyPoints;
@@ -32,6 +36,19 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 ClapTrap::~ClapTrap() {
     std:: cout << RED << "this is desconstructed" << RESET << std::endl;
 }
+
+ClapTrap &ClapTrap::operator=(ClapTrap &other){
+    
+    std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
+    if(this == &other)
+        return *this;
+    this->_name = other._name;
+    this->_attackDamage = other._attackDamage;
+    this->_energyPoints = other._energyPoints;
+    this->_hitPoints = other._hitPoints;
+    return *this;
+}
+
 
 void ClapTrap::setName(std::string name)
 {
