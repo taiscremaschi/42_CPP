@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/30 19:26:09 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 10:50:15 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 ClapTrap::ClapTrap() {
     std:: cout << GREEN << "this is constructed default" << RESET << std::endl;
+    _hitPoints = 10;
+    _energyPoints = 10;
+    _attackDamage = 0;
+    _name = "no name";  
 }
 
 ClapTrap::ClapTrap(const std::string name){

@@ -6,7 +6,16 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:47:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 09:47:57 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 10:48:27 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
+
+int main()
+{
+    ScavTrap tata;
+    
+}
 

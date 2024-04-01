@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:48:10 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 10:37:59 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 10:48:51 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,6 @@ public:
     
 };
 
-ScavTrap::ScavTrap() : ClapTrap() 
-{
-    std:: cout << BLUE << "this is default  constructor of Scav" << RESET << std::endl;
-}
-
-ScavTrap::ScavTrap(const std::string name) : ClapTrap(name){
-    
-}
 
 
 
