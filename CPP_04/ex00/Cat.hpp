@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:03:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:14:05 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:38:08 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
     Cat(const Cat &other); 
     ~Cat(); 
     Cat &operator=(Cat &other);   
+    void makeSound() const;
 };
 
 

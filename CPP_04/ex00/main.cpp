@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:11:55 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:33:20 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,7 @@ int main()
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     meta->makeSound();
+    delete meta;
+    delete j;
+    delete i;
 }

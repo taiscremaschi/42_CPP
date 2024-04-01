@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:33:43 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 14:41:28 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:38:24 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,17 @@ Animal::~Animal() {
 
 Animal &Animal::operator=(Animal &other){
     
-    std:: cout << BLUE << "this is assigment operator of animal" << RESET << std::endl;
+    std:: cout << GREEN << "this is assigment operator of animal" << RESET << std::endl;
     if(this == &other)
         return *this;
     this->_type = other._type;
     return *this;
+}
+
+std::string Animal::getType() const {
+    return _type;    
+}
+
+void Animal::makeSound() const {
+    std:: cout << GREEN << "no sound partner" << RESET << std::endl;
 }

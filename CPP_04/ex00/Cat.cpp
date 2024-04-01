@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:23:27 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:38:50 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,8 @@ Cat &Cat::operator=(Cat &other){
     if(this != &other)
         Animal::operator=(other);
     return *this;
+}
+
+void Cat::makeSound() const {
+    std:: cout << BLUE << "meoooww" << RESET << std::endl;
 }

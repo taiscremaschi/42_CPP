@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:03 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:24:26 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:38:17 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
     Dog(const Dog &other); 
     ~Dog(); 
     Dog &operator=(Dog &other);   
+    void makeSound() const;
+
 };
 
 
