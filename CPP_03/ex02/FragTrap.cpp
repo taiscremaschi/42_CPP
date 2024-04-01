@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 12:39:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:59:18 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:16:35 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap() : ClapTrap() 
 {
-    std:: cout << BLUE << "this is default  constructor of Frag" << RESET << std::endl;
+    std:: cout << CYAN << "this is default  constructor of Frag" << RESET << std::endl;
     setHitPoints(100);
     setEnergyPoints(100);
     setAttackDamage(30);
@@ -22,7 +22,7 @@ FragTrap::FragTrap() : ClapTrap()
 }
 
 FragTrap::FragTrap(const std::string name) : ClapTrap(name){
-    std:: cout << BLUE << "this is constructed with parameter Frag" << RESET << std::endl;
+    std:: cout << CYAN << "this is constructed with parameter Frag" << RESET << std::endl;
     setHitPoints(100);
     setEnergyPoints(100);
     setAttackDamage(30);
@@ -30,7 +30,7 @@ FragTrap::FragTrap(const std::string name) : ClapTrap(name){
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
-    std:: cout << GREEN << "this is constructed copy Frag" << RESET << std::endl; 
+    std:: cout << BLUE << "this is constructed copy Frag" << RESET << std::endl; 
 }
 
 FragTrap::~FragTrap() {
@@ -43,17 +43,6 @@ FragTrap &FragTrap::operator=(FragTrap &other) {
     return *this;
 }
 
-void FragTrap::attack(const std::string &target){
-    unsigned int n = getEnergyPoints();
-    if (getEnergyPoints() <= 0 || getHitPoints() <= 0)
-    {
-        std::cout << RED << "FragTrap dont have points to attack" << RESET << std::endl;
-    }
-    else 
-    {
-        std::cout << MAGENTA << "FragTrap " << getName()  << " attacks " << target << " , causing " << getAttackDamage()  << " points of damage!" << std::endl;
-        
-        n -= 1;
-        setEnergyPoints(n);
-    }
+void FragTrap::highFivesGuys(){
+    std::cout << MAGENTA << "FragTrap " << getName() << " requests high five!!" << RESET << std::endl;
 }

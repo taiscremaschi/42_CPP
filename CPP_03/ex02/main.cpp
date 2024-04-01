@@ -6,15 +6,31 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:47:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:39:40 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:15:56 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
+    FragTrap no_name;
+    FragTrap tata("tata");
+    
+    tata.attack("tatazinha");
+    tata.takeDamage(20);
+    tata.beRepaired(20);
+    tata.highFivesGuys();
+    tata.takeDamage(100);
+    tata.takeDamage(20);
+    tata.attack("tatazinha");
+
+    no_name.attack("tata");
+    no_name.takeDamage(200);
+    no_name.beRepaired(5);
+    
     
 }
 

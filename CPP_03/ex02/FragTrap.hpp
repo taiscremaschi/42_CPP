@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 12:39:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:55:53 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:02:43 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ public:
     FragTrap(const FragTrap &other); 
     ~FragTrap(); 
     FragTrap &operator=(FragTrap &other); 
-    void attack(const std::string &target);
     void highFivesGuys(void);
 };
 
