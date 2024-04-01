@@ -6,13 +6,13 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:48:10 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:15:33 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:50:47 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 

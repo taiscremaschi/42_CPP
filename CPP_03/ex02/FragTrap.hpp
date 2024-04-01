@@ -6,7 +6,11 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 12:39:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:39:57 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:49:43 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
+
+#endif
