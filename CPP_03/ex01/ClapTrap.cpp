@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 10:50:15 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 11:11:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,6 @@ ClapTrap &ClapTrap::operator=(ClapTrap &other){
     return *this;
 }
 
-void ClapTrap::setName(std::string name)
-{
-     _name = name;    
-}
-std::string ClapTrap::getName(){
-    return _name;
-}
-
 void ClapTrap::attack(const std::string &target){
     if (_energyPoints <= 0 || _hitPoints <= 0)
     {
@@ -103,5 +95,42 @@ void ClapTrap::beRepaired(unsigned int amount){
         _hitPoints += amount;
     }
     
+}
+
+void ClapTrap::setName(std::string name)
+{
+     _name = name;    
+}
+std::string ClapTrap::getName(){
+    return _name;
+}
+
+
+void ClapTrap::setHitPoints(unsigned int n)
+{
+     _hitPoints = n;    
+}
+
+unsigned int ClapTrap::getHitPoints(){
+    return _hitPoints;
+}
+
+void ClapTrap::setEnergyPoints(unsigned int n)
+{
+     _energyPoints = n;    
+}
+
+unsigned int ClapTrap::getEnergyPoints(){
+    return _energyPoints;
+}
+
+
+void ClapTrap::setAttackDamage(unsigned int n)
+{
+     _attackDamage = n;    
+}
+
+unsigned int ClapTrap::getAttackDamage(){
+    return _attackDamage;
 }
 
