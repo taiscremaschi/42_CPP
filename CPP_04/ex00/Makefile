@@ -6,7 +6,7 @@
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 14:32:16 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/04/01 15:32:48 by tbolzan-         ###   ########.fr        #
+#    Updated: 2024/04/01 16:07:14 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= animal
 CXX	= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM		= rm -f
-SRCS	= main.cpp  Dog.cpp Animal.cpp Cat.cpp
+SRCS	= main.cpp  Dog.cpp Animal.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
