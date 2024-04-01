@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:33:47 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 14:41:11 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:09:11 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ private:
     std::string          _type;
 public:
     Animal(); 
-    Animal(const std::string name);  
+    Animal(const std::string type);  
     Animal(const Animal &other); 
     ~Animal(); 
     Animal &operator=(Animal &other);   
