@@ -6,26 +6,22 @@
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/07 12:06:59 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/03/22 16:44:58 by tbolzan-         ###   ########.fr        #
+#    Updated: 2024/04/02 12:00:07 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= phonebook
-
-CPP		= c++
-FLAGS	= -Wall -Wextra -Werror -std=c++98  -fsanitize=address -g
+CXX	= c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM		= rm -f
 SRCS	= PhoneBook.cpp main.cpp Contact.cpp utils.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-%.o: %.cpp
-	$(CPP) $(FLAGS) -c $< -o $@
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
