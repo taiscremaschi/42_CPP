@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 12:19:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 17:52:31 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:33:32 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,16 @@ std::string  replaceStr(std::string buff, std::string s1, std::string s2)
 int main(int ac, char **av)
 {
     std::string buff;
-    std::string filename = av[1];
-    std::string s1 = av[2];
-    std::string s2 = av[3];
-    std::string filenameReplace = filename + ".replace";
-
     if(ac != 4)
     {
         std::cerr << "wrong parameter numbers" << std::endl;
         return (1);
     }
+    std::string filename = av[1];
+    std::string s1 = av[2];
+    std::string s2 = av[3];
+    std::string filenameReplace = filename + ".replace";
+
     std::ifstream file(filename.c_str());
     if(!file)
     {
