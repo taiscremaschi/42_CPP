@@ -6,12 +6,12 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 18:05:07 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 18:20:59 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:48:32 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_H
-#define HARL_H
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
 #include <string>
