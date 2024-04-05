@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:33:43 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:16:14 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:00:16 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Animal::Animal(const Animal &other)
     std:: cout << GREEN << "this is constructed copy animal" << RESET << std::endl;
     _type = other._type;
 }
+
 
 Animal::~Animal() {
     std:: cout << GREEN << "this is desconstructor of animal" << RESET << std::endl;

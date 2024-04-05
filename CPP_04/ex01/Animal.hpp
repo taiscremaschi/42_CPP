@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:33:47 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 12:45:41 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:00:26 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ private:
 public:
     Animal(); 
     Animal(const std::string type);  
-    Animal(const Animal &other); 
+    Animal(const Animal &other);     
     virtual ~Animal(); 
+
     Animal &operator=(const Animal &other);   
     std::string getType() const;
     virtual void makeSound() const;

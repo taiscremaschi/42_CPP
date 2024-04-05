@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:48:13 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:54:40 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat() : Animal("Cat") {
 
 Cat::Cat(const Cat &other) : Animal(other) {
     std:: cout << BLUE << "this is constructed copy Cat" << RESET << std::endl;
-    _Brain = new Brain();
+    _Brain = new Brain(*other._Brain);
 
     
  }
@@ -38,3 +38,6 @@ void Cat::makeSound() const {
     std:: cout << BLUE << "meoooww" << RESET << std::endl;
 }
 
+Brain	*Cat::getBrain(void) const {
+	return (_Brain);
+}

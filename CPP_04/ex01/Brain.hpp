@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:17:47 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:04:27 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:13:39 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ public:
     ~Brain();
     Brain(const Brain& other);
     Brain &operator=(const Brain& other);
+    std::string *getIdeas();
+    void	setIdeas(std::string s);
+
 };
 
 #endif
