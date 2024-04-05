@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:54:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:59:28 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:15:37 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
     WrongAnimal(const std::string type);  
     WrongAnimal(const WrongAnimal &other); 
     virtual ~WrongAnimal(); 
-    WrongAnimal &operator=(WrongAnimal &other);   
+    WrongAnimal &operator=(const WrongAnimal &other);   
     std::string getType() const;
     virtual void makeSound() const;
 };

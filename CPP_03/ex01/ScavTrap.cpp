@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:48:04 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:19:41 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:19:01 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ScavTrap::~ScavTrap() {
     std:: cout << RED << "this is desconstructor scav" << RESET << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(ScavTrap &other) {
+ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
     if(this != &other)
         ClapTrap::operator=(other);
     return *this;

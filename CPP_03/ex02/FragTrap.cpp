@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 12:39:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 13:16:35 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:19:53 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ FragTrap::~FragTrap() {
     std:: cout << RED << "this is desconstructor Frag" << RESET << std::endl;
 }
 
-FragTrap &FragTrap::operator=(FragTrap &other) {
+FragTrap &FragTrap::operator=(const FragTrap &other) {
     if(this != &other)
         ClapTrap::operator=(other);
     return *this;

@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 10:38:33 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:18:27 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ClapTrap::~ClapTrap() {
     std:: cout << RED << "this is desconstructed" << RESET << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(ClapTrap &other){
+ClapTrap &ClapTrap::operator=(const ClapTrap &other){
     
     std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
     if(this == &other)

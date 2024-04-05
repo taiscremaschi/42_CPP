@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:54:44 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:56:31 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:15:54 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
     WrongCat(); 
     WrongCat(const WrongCat &other); 
     ~WrongCat(); 
-    WrongCat &operator=(WrongCat &other);   
+    WrongCat &operator=(const WrongCat &other);   
     void makeSound() const;
 };
 

@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:38:20 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:14:57 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Dog::~Dog(){
     
 }
 
-Dog &Dog::operator=(Dog &other){
+Dog &Dog::operator=(const Dog &other){
     if(this != &other)
         Animal::operator=(other);
     return *this;

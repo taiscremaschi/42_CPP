@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:49:29 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:19:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
     ClapTrap(const std::string name); //constructor with parameter
     ClapTrap(const ClapTrap &other); //copy constructor
     ~ClapTrap(); // destructor
-    ClapTrap &operator=(ClapTrap &other); // assignment operator
+    ClapTrap &operator=(const ClapTrap &other); // assignment operator
     /////// functions /////////
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);

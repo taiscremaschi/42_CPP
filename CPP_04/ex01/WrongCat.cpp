@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:54:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 15:58:01 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:17:34 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongCat::~WrongCat(){
     
 }
 
-WrongCat &WrongCat::operator=(WrongCat &other){
+WrongCat &WrongCat::operator=(const WrongCat &other){
     if(this != &other)
         WrongAnimal::operator=(other);
     return *this;

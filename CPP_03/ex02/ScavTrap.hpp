@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:48:10 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:52:08 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:20:18 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
     ScavTrap(const std::string name); 
     ScavTrap(const ScavTrap &other); 
     ~ScavTrap(); 
-    ScavTrap &operator=(ScavTrap &other); 
+    ScavTrap &operator=(const ScavTrap &other); 
     void guardGate();
     void attack(const std::string &target);
 };
