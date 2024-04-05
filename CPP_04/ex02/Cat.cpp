@@ -6,18 +6,18 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 17:32:09 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:30:58 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat(){
     std:: cout << BLUE << "this is the constructor of Cat" << RESET << std::endl;
     _Brain = new Brain();
 }
 
-Cat::Cat(const Cat &other) : Animal(other) {
+Cat::Cat(const Cat &other) {
     std:: cout << BLUE << "this is constructed copy Cat" << RESET << std::endl;
     _Brain = new Brain(*other._Brain);
 
@@ -27,10 +27,9 @@ Cat::~Cat(){
     std:: cout << BLUE << "this is desconstructor of cat" << RESET << std::endl;
     delete _Brain;
 }
-
 Cat &Cat::operator=(const Cat &other){
-    if(this != &other)
-        Animal::operator=(other);
+     if(this == &other)
+        return *this;
     *(this->_Brain) = *(other._Brain);
     return *this;
 }
