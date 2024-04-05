@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 14:35:44 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:19:17 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Dog::~Dog(){
 }
 
 Dog &Dog::operator=(const Dog &other){
-    std::cout << "chegou no operator" << RESET << std::endl;
     if(this != &other)
         Animal::operator=(other);
     return *this;
@@ -36,4 +35,8 @@ Dog &Dog::operator=(const Dog &other){
 
 void Dog::makeSound() const {
     std:: cout << MAGENTA << "au au au" << RESET << std::endl;
+}
+
+Brain	*Dog::getBrain(void) const {
+	return (_Brain);
 }
