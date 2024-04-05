@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:17:42 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:07:51 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:02:56 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ Brain::Brain(){
 
 Brain::Brain(const Brain &other) {
     std:: cout << MAGENTA << "this is constructed copy Brain" << RESET << std::endl;
-    
+    for(int i = 0; i < 100 ; i++) {
+        _ideas[i] =  other._ideas[i];
+    }
  }
 Brain::~Brain(){
     std:: cout << MAGENTA << "this is desconstructor of Brain" << RESET << std::endl;
@@ -26,7 +28,10 @@ Brain::~Brain(){
 }
 
 Brain &Brain::operator=(const Brain &other){
-    if(this != &other)
-        other;
+    if(this == &other)
+            return *this;
+    for(int i = 0; i < 100 ; i++) {
+        this->_ideas[i] = other._ideas[i];
+    }
     return *this;
 }

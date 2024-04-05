@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:03:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:16:49 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:36:42 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 #define CAT_H
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal{
 private:
+    Brain *_Brain;
 
 public:
     Cat(); 
@@ -25,6 +27,7 @@ public:
     ~Cat(); 
     Cat &operator=(const Cat &other);   
     void makeSound() const;
+
 };
 
 

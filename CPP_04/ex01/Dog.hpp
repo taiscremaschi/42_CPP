@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:03 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:17:02 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:48:31 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 #ifndef DOG_H
 #define DOG_H
 #include "Animal.hpp"
+#include "Brain.hpp"
+
 
 class Dog : public Animal{
 private:
+    Brain *_Brain;
 
 public:
     Dog(); 

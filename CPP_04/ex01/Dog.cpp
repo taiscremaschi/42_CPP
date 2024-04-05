@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:16:57 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/05 11:51:53 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 Dog::Dog() : Animal("Dog") {
     std:: cout << MAGENTA << "this is the constructor of Dog" << RESET << std::endl;
+    _Brain = new Brain();
 }
 
 Dog::Dog(const Dog &other) : Animal(other) {
     std:: cout << MAGENTA << "this is constructed copy Dog" << RESET << std::endl;
+    _Brain = new Brain();
     
  }
 Dog::~Dog(){
     std:: cout << MAGENTA << "this is desconstructor of Dog" << RESET << std::endl;
-    
+    delete _Brain;
 }
 
 Dog &Dog::operator=(const Dog &other){
