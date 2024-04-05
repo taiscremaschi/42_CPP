@@ -6,12 +6,12 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 11:09:04 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:49:07 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <string>
 #include <iostream>

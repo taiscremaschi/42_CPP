@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:47:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 12:36:11 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:38:38 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main()
     tata.attack("tatazinha");
     tata.takeDamage(20);
     tata.beRepaired(20);
+    tata.guardGate();
     tata.takeDamage(100);
     tata.takeDamage(20);
     tata.attack("tatazinha");

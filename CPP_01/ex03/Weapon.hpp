@@ -6,12 +6,12 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 19:41:50 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 11:13:49 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:46:23 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_H
-#define WEAPON_H
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include <string>
 #include <iostream>

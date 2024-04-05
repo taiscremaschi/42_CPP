@@ -6,9 +6,12 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 19:41:33 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 11:46:46 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:48:04 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
 #include <string>
 #include <iostream>
@@ -24,7 +27,5 @@ class HumanA{
         void attack();  
 };
 
-
-
-
+#endif
 

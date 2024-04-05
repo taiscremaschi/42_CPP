@@ -6,9 +6,12 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 19:41:40 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/25 11:47:35 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:47:55 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
 
 #include <string>
 #include <iostream>
@@ -27,3 +30,4 @@ class HumanB{
 };
 
 
+#endif
