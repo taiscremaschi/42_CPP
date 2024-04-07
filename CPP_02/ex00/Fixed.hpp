@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/07 21:40:41 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/07 21:58:32 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ class Fixed {
         Fixed(const Fixed &other); //copy constructor
         ~Fixed(); // destructor
         Fixed &operator=(const Fixed &other); // assignment operator
-        
+        int getRawBits() const;
+        void setRawBits(int const nbr);
 
 };
 
