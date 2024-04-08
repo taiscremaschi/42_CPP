@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 13:39:11 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:10:59 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,11 @@ class Fixed {
         Fixed operator-(const Fixed &other)const;
         Fixed operator/(const Fixed &other)const;
         Fixed operator*(const Fixed &other)const;
-
+        Fixed &operator++();
+        Fixed operator++(int);
+        Fixed &operator--();
+        Fixed operator--(int);
+        
          
 
 };
