@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:54:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 17:55:52 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:18:56 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ class ICharacter
         virtual void unequip(int idx) = 0;
         virtual void use(int idx, ICharacter& target) = 0;
 };
-
 
 #endif

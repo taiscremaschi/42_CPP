@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 17:52:36 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 15:43:28 by tbolzan-         ###   ########.fr       */
+/*   Created: 2024/04/08 15:43:48 by tbolzan-          #+#    #+#             */
+/*   Updated: 2024/04/08 16:46:41 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "library.hpp"
+#include "Ice.hpp"
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -18,26 +19,24 @@
 
 /////////////////////////////////////////////////////////////////////////////////
 
-AMateria::AMateria(){
-    std:: cout << GREEN << "this is constructed default" << RESET << std::endl;
+Ice::Ice() : AMateria("ice") {
+    std:: cout << GREEN << "this is constructed default of Ice" << RESET << std::endl;
     
 }
 
-AMateria::AMateria(const AMateria &other)
+Ice::Ice(const Ice &other) :  AMateria("Ice")
 {
     std:: cout << BLUE << "this is constructed copy" << RESET << std::endl;
-    _type = other._type;
 }
 
-AMateria::~AMateria() {
+Ice::~Ice() {
     std:: cout << RED << "this is desconstructed" << RESET << std::endl;
 }
 
-AMateria &AMateria::operator=(const AMateria &other){
+Ice &Ice::operator=(const Ice &other){
     
     std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
     if(this !=  &other)
-        _type = other._type;
     return *this;
 }
 
@@ -47,16 +46,12 @@ AMateria &AMateria::operator=(const AMateria &other){
 
 /////////////////////////////////////////////////////////////////////////////////
 
+AMateria* Ice::clone() const {
+        return new Ice(*this); 
+    }
 
-AMateria::AMateria(std::string const &type){
-    _type = type;
+void Ice::use(ICharacter& target){
+    
+    std::cout << "* shoots an ice bolt at " << &target << " *" << std::endl;
+    
 }
-
-std::string const &AMateria::getType() const{
-    return _type;
-}
-
-void AMateria::use(ICharacter& target){
-
-    std:: cout << RED << "The function needs to be implemented in the derived class." << RESET << std::endl;
-} 
