@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/07 21:58:32 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:24:43 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,21 @@ class Fixed {
         const static int _fract = 8;
     public:
         Fixed(); // constructor
+        Fixed(int const nbr); // constructor with parameter int
+        Fixed(const float nbr); // constructor with parameter float
         Fixed(const Fixed &other); //copy constructor
         ~Fixed(); // destructor
         Fixed &operator=(const Fixed &other); // assignment operator
+        float toFloat() const;
+        int toInt() const;
         int getRawBits() const;
         void setRawBits(int const nbr);
 
+
 };
+
+std::ostream &operator<<(std::ostream& os, const Fixed &fixed);
+
+
 
 #endif
