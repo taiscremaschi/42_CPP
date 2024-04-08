@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 11:57:56 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:27:37 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,12 @@ class Fixed {
         int toInt() const;
         int getRawBits() const;
         void setRawBits(int const nbr);
-
+        bool operator>(const Fixed &other) const; 
+        bool operator<(const Fixed &other) const;  
+        bool operator>=(const Fixed &other) const;  
+        bool operator<=(const Fixed &other) const;  
+        bool operator==(const Fixed &other) const;  
+        bool operator!=(const Fixed &other) const; 
 
 };
 
