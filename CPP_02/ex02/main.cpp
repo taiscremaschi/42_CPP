@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:54 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 14:12:47 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:05:27 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int main()
 
     std::cout << b << std::endl;
 
-   // std::cout << Fixed::max( a, b ) << std::endl;
+   std::cout << Fixed::max( a, b ) << std::endl;
     return 0;
 }
