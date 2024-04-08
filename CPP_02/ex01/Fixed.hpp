@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 11:24:43 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:57:56 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
  
 #include <iostream>
+#include <cmath>
 
 
 #define RESET   "\033[0m"

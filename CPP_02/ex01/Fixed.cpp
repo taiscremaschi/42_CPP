@@ -6,13 +6,11 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 11:47:28 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 12:11:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
-
 
 Fixed::Fixed(): _nbr(0) {
     
@@ -27,7 +25,6 @@ Fixed::Fixed(const int nbr) {
 }
 
 Fixed::Fixed(const float floatNbr) {
-    //_nbr =  static_cast<int>(floatNbr * (1 << _fract));
     _nbr = static_cast<int>(roundf(floatNbr * (1 << _fract)));
     std:: cout << GREEN << "this is constructor with paramenter float " << RESET << std::endl;
 }

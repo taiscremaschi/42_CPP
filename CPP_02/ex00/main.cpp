@@ -6,11 +6,10 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:54 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/07 21:44:53 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 10:07:35 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
 
 int main()
