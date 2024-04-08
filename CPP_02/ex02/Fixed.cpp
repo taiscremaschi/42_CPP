@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 14:32:17 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:45:11 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,51 +129,46 @@ bool Fixed::operator!=(const Fixed& other) const {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 Fixed Fixed::operator+(const Fixed &other) const{
-    return Fixed(_nbr + other._nbr);
+    return Fixed(toFloat() + other.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed &other) const{
-    return Fixed(_nbr - other._nbr); 
+    return Fixed(toFloat() - other.toFloat()); 
 }
 
 Fixed Fixed::operator/(const Fixed &other) const{
-    return Fixed((_nbr << _fract) / other._nbr);; 
+    return Fixed(toFloat() / other.toFloat());; 
 }
 
-// Fixed Fixed::operator*(const Fixed &other) const{
-//     return Fixed((_nbr * other._nbr) >> _fract); 
-// }
-
-Fixed Fixed::operator*(const Fixed &other) const {
-    float result = static_cast<float>(_nbr) / (1 << _fract) * static_cast<float>(other._nbr) / (1 << _fract);
-    return Fixed(result);
+Fixed Fixed::operator*(const Fixed &other) const{
+    return Fixed(toFloat() * other.toFloat());; 
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////  gets and sets  /////////////////////////////////////////////////
+/////////////////////////////  increment/decrement   /////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 Fixed &Fixed::operator++() { 
-        _nbr += (1 << _fract);
+        ++_nbr;
         return *this;
 }
 
 Fixed Fixed::operator++(int) { 
         Fixed temp = *this;
-        ++(*this);
+        _nbr++;
         return temp;
 }
 
 Fixed &Fixed::operator--() { 
-        _nbr -= (1 << _fract);
+        _nbr --;
         return *this;
 }
 
 Fixed Fixed::operator--(int) { 
         Fixed temp = *this;
-        --(*this);
+        _nbr--;
         return temp;
 }
 
@@ -189,3 +184,5 @@ std::ostream& operator<<(std::ostream& os, const Fixed &fixed){
     return os;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
