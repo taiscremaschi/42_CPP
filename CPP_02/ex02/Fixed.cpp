@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 13:30:21 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:45:02 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ std::ostream& operator<<(std::ostream& os, const Fixed &fixed){
     return os;
 }
 
-
 bool Fixed::operator>(const Fixed& other) const {
         return _nbr > other._nbr;
 }
@@ -97,4 +96,20 @@ bool Fixed::operator==(const Fixed& other) const {
 
 bool Fixed::operator!=(const Fixed& other) const {
         return _nbr != other._nbr;
+}
+
+Fixed Fixed::operator+(const Fixed &other) const{
+    return (_nbr + other._nbr);
+}
+
+Fixed Fixed::operator-(const Fixed &other) const{
+    return (_nbr - other._nbr); 
+}
+
+Fixed Fixed::operator/(const Fixed &other) const{
+    return (_nbr / other._nbr); 
+}
+
+Fixed Fixed::operator*(const Fixed &other) const{
+    return (_nbr * other._nbr); 
 }
