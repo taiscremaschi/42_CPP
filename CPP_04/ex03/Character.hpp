@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 10:16:11 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:29:16 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Character : public ICharacter
         Character();
         Character(std::string name);
         ~Character();
-        Character(const Character &other); // falta
-        Character &operator=(const Character &other); // falta   
+        Character(const Character &other); 
+        Character &operator=(const Character &other);   
         std::string const &getName() const;
         void equip(AMateria *m);
         void unequip(int idx);

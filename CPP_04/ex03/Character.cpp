@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 10:23:49 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:35:05 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,13 @@ Character::Character(const Character &other)
 {
     std:: cout << BLUE << "this is constructed copy of Character" << RESET << std::endl;
 
-    for(int i = 0; i < 4; i++) {
-        _inventary[i] = other._inventary[i];
-     }
+    for (int i = 0; i < 4; i++) 
+    {
+        if (other._inventary[i] != NULL) 
+            _inventary[i] = other._inventary[i]->clone();
+        else
+            _inventary[i] = NULL;
+    }
 }
 
 Character::~Character() {
