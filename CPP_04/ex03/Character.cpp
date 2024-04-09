@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 10:35:05 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:44:08 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,13 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx) 
 {
     if (idx >= 0 && idx < 4) 
-    {
         _inventary[idx] = NULL;
+}
+
+void Character::use(int idx, ICharacter& target){
+    if(idx < 0 || idx > 3 || _inventary[idx] == NULL ){
+        std::cout << "error: invalid index" << std::endl;
+        return;
     }
+    _inventary[idx]->use(target);    
 }
