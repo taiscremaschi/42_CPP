@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 10:50:57 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:26:09 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:00:59 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ AMateria* MateriaSource::createMateria(std::string const &type){
     for (int i = 0; i < 4; i++)
     {
         if (_inventary[i]->getType() == type)
-            return _inventary[i]->clone();
+            return _inventary[i];
     }
     return NULL;    
 }

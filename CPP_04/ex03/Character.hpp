@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 11:50:03 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:54:43 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Character : public ICharacter
     protected:
         std::string _name;
         AMateria *_inventary[4];
+        AMateria *_adress[10];
+        int _ii;
         
     public:
         Character();
