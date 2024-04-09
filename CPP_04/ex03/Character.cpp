@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 10:12:25 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 10:23:49 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,9 @@ Character::Character(std::string name) {
 Character::Character(const Character &other)
 {
     std:: cout << BLUE << "this is constructed copy of Character" << RESET << std::endl;
+
     for(int i = 0; i < 4; i++) {
-       delete _inventary[i];
-     }
-    for(int i = 0; i < 4; i++) {
-        other._inventary[i] = NULL;
+        _inventary[i] = other._inventary[i];
      }
 }
 
@@ -60,7 +58,11 @@ Character &Character::operator=(const Character &other){
     if(this !=  &other)
     {    
         for(int i = 0; i < 4; i++) {
-            _inventary[i] = NULL;
+           delete _inventary[i];
+        }
+        _name = other._name;
+        for(int i = 0; i < 4; i++) {
+            _inventary[i] = other._inventary[i]->clone();
         }
     }
     return *this;
