@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:18:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 16:45:08 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:04:13 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Ice : public AMateria {
         ~Ice();
         Ice(const Ice &other); 
         Ice &operator=(const Ice &other);   
-        virtual void use(ICharacter& target);
-        virtual AMateria* clone() const;
+        void use(ICharacter& target);
+        AMateria* clone() const;
 };
 
 #endif 

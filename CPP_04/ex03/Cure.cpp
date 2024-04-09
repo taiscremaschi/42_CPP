@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:43:37 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 16:43:48 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:53:22 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ Cure::Cure() : AMateria("cure") {
     
 }
 
-Cure::Cure(const Cure &other) :  AMateria("cure")
+Cure::Cure(const Cure &other) :  AMateria(other)
 {
-    std:: cout << BLUE << "this is constructed copy" << RESET << std::endl;
+    std:: cout << BLUE << "this is constructed copy of cure" << RESET << std::endl;
 }
 
 Cure::~Cure() {

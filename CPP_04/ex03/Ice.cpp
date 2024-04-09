@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:43:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 16:46:41 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:53:35 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ Ice::Ice() : AMateria("ice") {
     
 }
 
-Ice::Ice(const Ice &other) :  AMateria("Ice")
+Ice::Ice(const Ice &other) :  AMateria(other)
 {
-    std:: cout << BLUE << "this is constructed copy" << RESET << std::endl;
+    std:: cout << BLUE << "this is constructed copy of ice" << RESET << std::endl;
 }
 
 Ice::~Ice() {
@@ -48,7 +48,7 @@ Ice &Ice::operator=(const Ice &other){
 
 AMateria* Ice::clone() const {
         return new Ice(*this); 
-    }
+}
 
 void Ice::use(ICharacter& target){
     
