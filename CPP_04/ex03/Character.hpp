@@ -6,14 +6,14 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 10:29:16 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:50:03 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include "library.hpp"
+#include "ICharacter.hpp"
 
 class Character : public ICharacter
 {

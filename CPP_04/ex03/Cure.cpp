@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:43:37 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 10:38:01 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:06:57 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Cure &Cure::operator=(const Cure &other){
     
     std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
     if(this !=  &other)
+        AMateria::operator=(other);
     return *this;
 }
 
@@ -51,5 +52,5 @@ AMateria* Cure::clone() const {
     }
 
 void Cure::use(ICharacter& target){
-    std::cout << "* heals " << &target << "'s  wounds *" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s  wounds *" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 10:51:00 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 11:14:31 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:26:04 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class MateriaSource : public IMateriaSource {
     protected:
         std::string _name;
-        AMateria *_materia[4];
+        AMateria *_inventary[4];
 
 
     public:

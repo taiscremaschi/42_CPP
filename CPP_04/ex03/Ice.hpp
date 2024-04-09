@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:18:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 17:04:13 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:01:44 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ICE_HPP
 
 #include "library.hpp"
+#include "ICharacter.hpp"
 
 
 

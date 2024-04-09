@@ -6,11 +6,11 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:52:36 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 15:43:28 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:50:59 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "library.hpp"
+#include "AMateria.hpp"
 
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -57,6 +57,6 @@ std::string const &AMateria::getType() const{
 }
 
 void AMateria::use(ICharacter& target){
-
+    (void)target;
     std:: cout << RED << "The function needs to be implemented in the derived class." << RESET << std::endl;
 } 

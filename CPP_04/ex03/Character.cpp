@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 10:44:08 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:26:38 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Character::Character() {
 }
 
 Character::Character(std::string name) {
-    std:: cout << GREEN << "this is constructed default of Character" << RESET << std::endl;
+    std:: cout << GREEN << "this is constructed of Character" << RESET << std::endl;
     _name = name;
         
     for(int i = 0; i < 4; i++) {

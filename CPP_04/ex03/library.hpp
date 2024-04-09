@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:42:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 16:27:23 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:41:15 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 #define LIBRARY__HPP
 
 #include <iostream>
-#include "ICharacter.hpp"
-#include "AMateria.hpp"
-
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"      

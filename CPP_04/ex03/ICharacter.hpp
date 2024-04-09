@@ -6,13 +6,15 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:54:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 16:18:56 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:50:17 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
+
+#include "AMateria.hpp"
 
 class ICharacter
 {
