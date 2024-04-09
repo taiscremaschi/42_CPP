@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:56:03 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:04:38 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,11 @@ Character::~Character() {
     std:: cout << RED << "this is desconstructed character" << RESET << std::endl;
     
     for(int i = 0; i < 4; i++) {
-        std::cout << i << " passou\n";
         if(_inventary[i] != NULL)
             delete _inventary[i];
-        else 
-            std::cout << "entrou no else\n";
     }
     while(x < _ii)
     {
-        std::cout << x << " "<< _adress[x] << " passou\n";
         delete _adress[x];
         x++;
     }
@@ -87,6 +83,7 @@ Character &Character::operator=(const Character &other){
         for(int i = 0; i < 4; i++) {
             _inventary[i] = other._inventary[i]->clone();
         }
+        _ii = other._ii;   
     }
     return *this;
 }
@@ -106,7 +103,6 @@ void Character::equip(AMateria* m)
     for (int i = 0; i < 4; i++) {
         if (_inventary[i] == NULL) 
         {
-            std::cout << "Equipou no indice " << i << std::endl;
             _inventary[i] = m->clone();
             return;
         }

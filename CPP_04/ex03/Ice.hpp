@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:18:06 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:01:44 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:05:30 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 class Ice : public AMateria {
     private:
     
-
     public:
         Ice();
         ~Ice();
