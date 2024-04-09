@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:43:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:08:59 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:24:45 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Ice::Ice(const Ice &other) :  AMateria(other)
 }
 
 Ice::~Ice() {
-    std:: cout << RED << "this is desconstructed" << RESET << std::endl;
+    std:: cout << RED << "this is desconstructed of ice" << RESET << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &other){
     
-    std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
+    std:: cout << BLUE << "this is assigment operator of ice " << RESET << std::endl;
     if(this !=  &other)
         AMateria::operator=(other);
     return *this;

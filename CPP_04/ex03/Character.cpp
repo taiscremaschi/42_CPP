@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 11:26:38 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:26:48 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,20 +49,23 @@ Character::Character(const Character &other)
 }
 
 Character::~Character() {
-    std:: cout << RED << "this is desconstructed" << RESET << std::endl;
+    std:: cout << RED << "this is desconstructed character" << RESET << std::endl;
     
     for(int i = 0; i < 4; i++) {
-       delete _inventary[i];
+        std::cout << i << "passou\n";
+        if(_inventary[i] != NULL)
+            delete _inventary[i];
      }
 }
 
 Character &Character::operator=(const Character &other){
     
-    std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
+    std:: cout << BLUE << "this is assigment operator of Character" << RESET << std::endl;
     if(this !=  &other)
     {    
         for(int i = 0; i < 4; i++) {
-           delete _inventary[i];
+            if(_inventary[i] != NULL)
+                delete _inventary[i];
         }
         _name = other._name;
         for(int i = 0; i < 4; i++) {
@@ -88,9 +91,10 @@ void Character::equip(AMateria* m)
         if (_inventary[i] == NULL) 
         {
             _inventary[i] = m;
-                break;
+                return;
         }
     }
+    std::cout << "error in equip: no slots available" << std::endl;
 }
 
 void Character::unequip(int idx) 

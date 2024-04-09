@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:43:37 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:06:57 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:24:30 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Cure::Cure(const Cure &other) :  AMateria(other)
 }
 
 Cure::~Cure() {
-    std:: cout << RED << "this is desconstructed" << RESET << std::endl;
+    std:: cout << RED << "this is desconstructed of cure" << RESET << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &other){
     
-    std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
+    std:: cout << BLUE << "this is assigment operator of cure" << RESET << std::endl;
     if(this !=  &other)
         AMateria::operator=(other);
     return *this;

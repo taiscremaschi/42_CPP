@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 10:50:57 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 11:34:08 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:26:09 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,21 @@ MateriaSource::MateriaSource(const MateriaSource &other)
 }
 
 MateriaSource::~MateriaSource() {
-    std:: cout << RED << "this is desconstructed" << RESET << std::endl;
+    std:: cout << RED << "this is desconstructed of MateriaSource" << RESET << std::endl;
     for(int i = 0; i < 4; i++) {
-       delete _inventary[i];
-     }
+        if(_inventary[i] != NULL)
+            delete _inventary[i];
+    }
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &other){
     
-    std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
+    std:: cout << BLUE << "this is assigment operator of MateriaSource" << RESET << std::endl;
     if(this !=  &other)
     {    
         for(int i = 0; i < 4; i++) {
-           delete _inventary[i];
+            if(_inventary[i] != NULL)
+                delete _inventary[i];
         }
         for(int i = 0; i < 4; i++) {
             _inventary[i] = other._inventary[i]->clone();
