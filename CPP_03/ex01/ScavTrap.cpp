@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 09:48:04 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:19:01 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:29:21 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void ScavTrap::attack(const std::string &target){
     }
     else 
     {
-        std::cout << MAGENTA << "ScavTrap " << getName()  << " attacks " << target << " , causing " << getAttackDamage()  << " points of damage!" << std::endl;
+        std::cout << MAGENTA << "ScavTrap " << getName()  << " attacks " << target << ", causing " << getAttackDamage()  << " points of damage!" << std::endl;
         
         n -= 1;
         setEnergyPoints(n);
