@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 21:32:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/08 15:05:06 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:13:18 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ Fixed::Fixed(const int nbr) {
 }
 
 Fixed::Fixed(const float floatNbr) {
-    _nbr = static_cast<int>(roundf(floatNbr * (1 << _fract)));
+    _nbr = roundf(floatNbr * (1 << _fract));
     std:: cout << GREEN << "this is constructor with paramenter float " << RESET << std::endl;
 }
 
@@ -67,7 +67,7 @@ Fixed::Fixed(const float floatNbr) {
 
 
 float Fixed::toFloat() const{
-    return (static_cast<float>(_nbr) / (1 << _fract));
+    return ((float)_nbr / (1 << _fract));
 }
 
 int Fixed::toInt() const {
