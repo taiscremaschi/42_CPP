@@ -6,14 +6,14 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:18:43 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:26:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-    std:: cout << GREEN << "this is constructed default" << RESET << std::endl;
+    std:: cout << GREEN << "this is constructed default Clap" << RESET << std::endl;
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const std::string name){
-    std:: cout << GREEN << "this is constructed with parameter" << RESET << std::endl;
+    std:: cout << GREEN << "this is constructed with parameter Clap" << RESET << std::endl;
     _hitPoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(const std::string name){
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std:: cout << BLUE << "this is constructed copy" << RESET << std::endl;
+    std:: cout << BLUE << "this is constructed copy clap" << RESET << std::endl;
     _name = other._name;
     _attackDamage = other._attackDamage;
     _energyPoints = other._energyPoints;
@@ -38,12 +38,12 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 }
 
 ClapTrap::~ClapTrap() {
-    std:: cout << RED << "this is desconstructed" << RESET << std::endl;
+    std:: cout << RED << "this is desconstructed clap" << RESET << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other){
     
-    std:: cout << BLUE << "this is assigment operator" << RESET << std::endl;
+    std:: cout << BLUE << "this is assigment operator clap" << RESET << std::endl;
     if(this == &other)
         return *this;
     this->_name = other._name;
@@ -71,7 +71,7 @@ void ClapTrap::takeDamage(unsigned int amount){
     if(_hitPoints == 0)
         std::cout << RED << _name << " is already dead" << RESET << std::endl;
     else {
-        std::cout << GREEN << "ClapTrap " << _name  << " receives damage " << amount << std::endl;
+        std::cout << GREEN << _name  << " receives damage " << amount << std::endl;
         if(_hitPoints < amount)
         {
             std::cout << RED << _name << " died" << RESET << std::endl;
@@ -90,7 +90,7 @@ void ClapTrap::beRepaired(unsigned int amount){
     }
     else 
     {
-        std::cout << MAGENTA << "ClapTrap " << _name  << " repair " << amount << std::endl;
+        std::cout << MAGENTA  << _name  << " repair " << amount << std::endl;
         _energyPoints -= 1;
         _hitPoints += amount;
     }
