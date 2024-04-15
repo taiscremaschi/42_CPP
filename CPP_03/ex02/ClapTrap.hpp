@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:19:46 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:30:29 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #define CYAN    "\033[36m" 
 
 class ClapTrap {
-private:
+protected:
     std::string          _name;
     unsigned int         _hitPoints;
     unsigned int         _energyPoints;

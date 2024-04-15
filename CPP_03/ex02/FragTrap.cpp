@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 12:39:53 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:19:53 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/15 13:49:10 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,19 @@ FragTrap &FragTrap::operator=(const FragTrap &other) {
 
 void FragTrap::highFivesGuys(){
     std::cout << MAGENTA << "FragTrap " << getName() << " requests high five!!" << RESET << std::endl;
+}
+
+void FragTrap::attack(const std::string &target){
+    unsigned int n = getEnergyPoints();
+    if (getEnergyPoints() <= 0 || getHitPoints() <= 0)
+    {
+        std::cout << RED << "FragTrap dont have points to attack" << RESET << std::endl;
+    }
+    else 
+    {
+        std::cout << MAGENTA << "FragTrap " << getName()  << " attacks " << target << " , causing " << getAttackDamage()  << " points of damage!" << std::endl;
+        
+        n -= 1;
+        setEnergyPoints(n);
+    }
 }
