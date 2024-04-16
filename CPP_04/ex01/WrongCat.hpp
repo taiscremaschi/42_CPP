@@ -6,12 +6,12 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:54:44 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:17:43 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:02:39 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
-#define WRONGCAT_H
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
 

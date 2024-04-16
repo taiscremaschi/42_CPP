@@ -6,13 +6,13 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:03 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:15:07 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:01:39 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef DOG_HPP
+#define DOG_HPP
 #include "Animal.hpp"
 
 class Dog : public Animal{

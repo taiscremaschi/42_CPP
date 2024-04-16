@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:33:47 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:13:30 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:43:50 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 class Animal {
 private:
-    std::string          _type;
+    std::string    _type;
 public:
     Animal(); 
     Animal(const std::string type);  
