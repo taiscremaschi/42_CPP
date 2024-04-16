@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:51:57 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:51:38 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,44 @@
 int main()
 {
 
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    std:: cout << ORANGE << "-----------------\nCREATE OBJECT ANIMAL\n -----------------" << RESET << std::endl;
+    const Animal* undefined = new Animal();
+    std:: cout << ORANGE << "-----------------\nCREATE OBJECT WOLF\n -----------------" << RESET << std::endl;
+    const Animal* Wolf = new Dog();
+    std:: cout << ORANGE << "-----------------\nCREATE OBJECT MINGAU\n -----------------" << RESET << std::endl;
+    const Animal* Mingau = new Cat();
+    std:: cout << ORANGE << "-----------------\nCREATE OBJECT WRONG\n -----------------" << RESET << std::endl;
     const WrongAnimal* wrong = new WrongAnimal();
-    const WrongAnimal* x = new WrongCat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); 
-    j->makeSound();
-    meta->makeSound();
-    std::cout << x->getType() << " " << std::endl;
-    x->makeSound();
-    wrong->makeSound();
+    std:: cout << ORANGE << "-----------------\nCREATE OBJECT NO CAT\n -----------------" << RESET << std::endl;
+    const WrongAnimal* nocat = new WrongCat();
     
-    delete meta;            
-    delete i;
-    delete j;
+    
+    std:: cout << ORANGE << "-----------------\nSOUND CALLED\n -----------------" << RESET << std::endl;
+    undefined->makeSound();
+    
+    std:: cout << ORANGE << "-----------------\nSOUND CALLED\n -----------------" << RESET << std::endl;
+    std::cout << Wolf->getType() << " " << std::endl;
+    Wolf->makeSound();
+
+    std:: cout << ORANGE << "-----------------\nSOUND CALLED\n -----------------" << RESET << std::endl;
+    std::cout << Mingau->getType() << " " << std::endl;
+    Mingau->makeSound();
+
+    std:: cout << ORANGE << "-----------------\nSOUND CALLED\n -----------------" << RESET << std::endl;
+    wrong->makeSound();
+
+    std:: cout << ORANGE << "-----------------\nSOUND CALLED\n -----------------" << RESET << std::endl;
+    std::cout << nocat->getType() << " " << std::endl;
+    nocat->makeSound();
+    
+    std:: cout << ORANGE << "-----------------\nDELETED OBJECT ANIMAL\n -----------------" << RESET << std::endl;
+    delete undefined;            
+    std:: cout << ORANGE << "-----------------\nDELETED OBJECT MINGAU\n -----------------" << RESET << std::endl;
+    delete Mingau;
+    std:: cout << ORANGE << "-----------------\nDELETED OBJECT WOLF\n -----------------" << RESET << std::endl;
+    delete Wolf;
+    std:: cout << ORANGE << "-----------------\nDELETED OBJECT WRONG\n -----------------" << RESET << std::endl;
     delete wrong;
-    delete x;
+    std:: cout << ORANGE << "-----------------\nDELETED OBJECT NO CAT\n -----------------" << RESET << std::endl;
+    delete nocat;
 }

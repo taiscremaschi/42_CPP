@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:33:47 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 11:43:50 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:43:20 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #define BLUE    "\033[34m"      
 #define MAGENTA "\033[35m"      
 #define CYAN    "\033[36m" 
+#define ORANGE    "\033[38;5;208m"
 
 class Animal {
 private:
