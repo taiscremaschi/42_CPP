@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:54:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:17:34 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other) {
     
  }
 WrongCat::~WrongCat(){
-    std:: cout << BLUE << "this is desconstructor of WrongCat" << RESET << std::endl;
+    std:: cout << BLUE << "this is destructor of WrongCat" << RESET << std::endl;
     
 }
 

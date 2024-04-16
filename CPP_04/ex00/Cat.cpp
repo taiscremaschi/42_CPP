@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 12:01:04 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat(const Cat &other) : Animal(other) {
     
  }
 Cat::~Cat(){
-    std:: cout << BLUE << "this is desconstructor of cat" << RESET << std::endl;
+    std:: cout << BLUE << "this is destructor of cat" << RESET << std::endl;
     
 }
 

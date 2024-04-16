@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:54:28 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 11:15:28 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &other)
 }
 
 WrongAnimal::~WrongAnimal() {
-    std:: cout << GREEN << "this is desconstructor of Wrong animal" << RESET << std::endl;
+    std:: cout << GREEN << "this is destructor of Wrong animal" << RESET << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other){

@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 17:30:45 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Dog::Dog(const Dog &other)  {
 }
 
 Dog::~Dog(){
-    std:: cout << MAGENTA << "this is desconstructor of Dog" << RESET << std::endl;
+    std:: cout << MAGENTA << "this is destructor of Dog" << RESET << std::endl;
     delete _Brain;
 }
 Dog &Dog::operator=(const Dog &other){

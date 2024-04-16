@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:17:42 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/05 16:14:25 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Brain::Brain(const Brain &other) {
     }
  }
 Brain::~Brain(){
-    std:: cout << RED << "this is desconstructor of Brain" << RESET << std::endl;
+    std:: cout << RED << "this is destructor of Brain" << RESET << std::endl;
     
 }
 
