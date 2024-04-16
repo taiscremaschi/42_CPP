@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:56 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/15 13:30:29 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:06:48 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ public:
     unsigned int getEnergyPoints();
     void setAttackDamage(unsigned int n);
     unsigned int getAttackDamage();
-
+    
 };
 
 
