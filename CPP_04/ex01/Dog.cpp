@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:59 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 09:11:32 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:22:33 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ Dog::~Dog(){
 }
 
 Dog &Dog::operator=(const Dog &other){
-    if(this != &other)
-        Animal::operator=(other);
-    *(this->_brain) = *(other._brain);
+    std:: cout << BLUE << "this is operator Dog" << RESET << std::endl;
+    if(this == &other)
+        return *this;
+    Animal::operator=(other);
+    this->_brain = new Brain(*other._brain);
     return *this;
 }
 

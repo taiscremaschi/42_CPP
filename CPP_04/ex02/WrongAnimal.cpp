@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:54:28 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:37:13 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,4 @@ std::string WrongAnimal::getType() const {
 void WrongAnimal::makeSound() const {
     std:: cout << GREEN << "bééééééhhhh" << RESET << std::endl;
 }
+

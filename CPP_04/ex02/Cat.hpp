@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:03:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 09:11:32 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:30:15 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
     Cat(); 
     Cat(const Cat &other); 
-    ~Cat(); 
+    virtual ~Cat(); 
     Cat &operator=(const Cat &other);   
     void makeSound() const;
     Brain *getBrain() const;

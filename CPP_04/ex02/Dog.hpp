@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:03 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 09:11:32 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:30:51 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
     Dog(); 
     Dog(const Dog &other); 
-    ~Dog(); 
+    virtual ~Dog(); 
     Dog &operator=(const Dog &other);   
     void makeSound() const;
     Brain *getBrain() const;
