@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 15:48:04 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 11:00:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main()
     std:: cout << ORANGE << "-----------------\nSOUND CALLED NO CAT \n -----------------" << RESET << std::endl;
     std::cout << nocat->getType() << " " << std::endl;
     nocat->makeSound();
-    std:: cout << ORANGE << "-----------------\nSOUND CALLED NO CAT \n -----------------" << RESET << std::endl;
+    std:: cout << ORANGE << "-----------------\nSOUND CALLED MIAU \n -----------------" << RESET << std::endl;
     std::cout << miau->getType() << " " << std::endl;
     miau->makeSound();
     
