@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 12:14:50 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/03/30 19:31:03 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:59:57 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int main()
 {
     ClapTrap tata("tata");
     ClapTrap tatazinha("tatazinha");
-
     tata.attack("tatazinha");
     tata.takeDamage(9);
     tata.beRepaired(2);
