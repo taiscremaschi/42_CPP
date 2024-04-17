@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:11:32 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Cat::Cat(){
     std:: cout << BLUE << "this is the constructor of Cat" << RESET << std::endl;
-    _Brain = new Brain();
+    _brain = new Brain();
 }
 
 Cat::Cat(const Cat &other) {
     std:: cout << BLUE << "this is constructed copy Cat" << RESET << std::endl;
-    _Brain = new Brain(*other._Brain);
+    _brain = new Brain(*other._brain);
 
     
  }
 Cat::~Cat(){
     std:: cout << BLUE << "this is destructor of cat" << RESET << std::endl;
-    delete _Brain;
+    delete _brain;
 }
 Cat &Cat::operator=(const Cat &other){
      if(this == &other)
         return *this;
-    *(this->_Brain) = *(other._Brain);
+    this->_brain = new Brain(*other._brain);
     return *this;
 }
 
@@ -39,5 +39,5 @@ void Cat::makeSound() const {
 }
 
 Brain	*Cat::getBrain(void) const {
-	return (_Brain);
+	return (_brain);
 }

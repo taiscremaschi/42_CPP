@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:03 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 12:02:21 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 09:11:32 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Dog : public Animal{
 private:
-    Brain *_Brain;
+    Brain *_brain;
 
 public:
     Dog(); 
