@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 10:31:04 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 10:37:29 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int main()
         std:: cout << BOLDYELLOW << "-----------------\nDELETED OBJECT MIAU\n -----------------" << RESET << std::endl;
         delete animal[i];
     }
-    std:: cout << BOLDYELLOW << "-----------------\nTESTS OF COPIES!!!!\n -----------------" << RESET << std::endl;
     std:: cout << BOLDYELLOW << "--------------------------------------------------------------" << RESET << std::endl;
+    std:: cout << BOLDYELLOW << "-----------------\nTESTS OF COPIES!!!!\n -----------------" << RESET << std::endl;
     std:: cout << BOLDYELLOW << "--------------------------------------------------------------" << RESET << std::endl;
     
     std:: cout << BOLDYELLOW << "-----------------\nCREATE OBJECT MINGAU\n -----------------" << RESET << std::endl;
@@ -53,12 +53,15 @@ int main()
     std:: cout << BOLDYELLOW << "-----------------\nIDEAS OF MINGAU!!!\n -----------------" << RESET << std::endl;
     mingau.getBrain()->setIdeas("I want fish today!!");
     ideas = mingau.getBrain()->getIdeas();
-    
     for(int i=0; i<2; i++)
-        std::cout << "ideas: " << ideas[i] << std::endl;
+        std::cout << "ideas of mingau: " << ideas[i] << std::endl;
+    
+    std:: cout << BOLDYELLOW << "-----------------\nIDEAS OF MILK!!!\n -----------------" << RESET << std::endl;
     ideas = milk.getBrain()->getIdeas();
     for(int i=0; i<2; i++)
         std::cout << "ideas: " << ideas[i] << std::endl;
-	
+    
+    std:: cout << BOLDYELLOW << "-----------------\nDESTRUCTORS\n -----------------" << RESET << std::endl;
+    	
     return (0);
 }
