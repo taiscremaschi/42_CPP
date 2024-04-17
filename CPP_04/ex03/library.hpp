@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:42:17 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 11:41:15 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:53:23 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 #define BLUE    "\033[34m"      
 #define MAGENTA "\033[35m"      
 #define CYAN    "\033[36m" 
-
+#define BOLDYELLOW    "\033[1m\033[33m"
 
 #endif

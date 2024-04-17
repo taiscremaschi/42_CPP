@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:48 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:54:43 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 11:14:17 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Character : public ICharacter
         std::string const &getName() const;
         void equip(AMateria *m);
         void unequip(int idx);
-        void use(int idx, ICharacter& target); // falta
+        void use(int idx, ICharacter& target);
 };
 
 #endif

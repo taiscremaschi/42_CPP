@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 23:15:06 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:59:37 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,16 @@ std::string const &Character::getName() const{
 
 void Character::equip(AMateria* m) 
 {
+    if (m == 0)
+	{
+		std::cout << "Tried to equip empty materia" << std::endl;
+		return;
+	}
     for (int i = 0; i < 4; i++) {
         if (_inventary[i] == NULL) 
         {
             _inventary[i] = m->clone();
+            std::cout << _name << " equiped " << m->getType() << std::endl;
             return;
         }
     }

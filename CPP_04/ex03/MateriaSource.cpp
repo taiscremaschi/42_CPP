@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 10:50:57 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 13:00:59 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:04:56 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,17 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other){
 
 
 void MateriaSource::learnMateria(AMateria* materia){
-    for (int i = 0; i < 4; i++) {
+    int i = 0;
+    while(i < 4) {
         if (_inventary[i] == NULL) 
         {
             _inventary[i] = materia;
-                break;
+                return;
         }
+        else
+            i++;
     }
-            
+    delete materia;
 }
 
 AMateria* MateriaSource::createMateria(std::string const &type){
