@@ -6,13 +6,13 @@
 #    By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 17:50:10 by tbolzan-          #+#    #+#              #
-#    Updated: 2024/04/18 10:14:00 by tbolzan-         ###   ########.fr        #
+#    Updated: 2024/04/18 13:07:49 by tbolzan-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= materia
 CXX	= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM		= rm -f
 SRCS	= main.cpp AMateria.cpp Character.cpp  Cure.cpp  Ice.cpp MateriaSource.cpp
 

@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:49:55 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/18 13:07:17 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:02:02 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ int	main(void)
 	delete mingau;
  	std:: cout << BOLDYELLOW << "-----------------\n  DELETE TATAZINHA \n -----------------" << RESET << std::endl;	
 	delete jujuba;
+
 	return (0);
 }
+
