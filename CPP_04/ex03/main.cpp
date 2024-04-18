@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:49:55 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 15:04:46 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:07:17 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,75 +17,67 @@
 #include "Cure.hpp"
 
 
-
-// int main()
-
-// {
-//     std:: cout << BOLDYELLOW << "-----------------\nCREATE OBJECT DOG\n -----------------" << RESET << std::endl;
-
-//     IMateriaSource* src = new MateriaSource();
-//     src->learnMateria(new Ice());
-//     src->learnMateria(new Cure());
-//     ICharacter* me = new Character("me");
-//     AMateria* tmp;
-//     tmp = src->createMateria("ice");
-//     me->equip(tmp);
-//     tmp = src->createMateria("cure"); 
-//     me->equip(tmp);
-//     me->equip(tmp);
-//     me->equip(tmp);
-//     me->unequip(3);
-
-//     ICharacter* bob = new Character("bob");
-//     me->use(0, *bob);
-//     me->use(1, *bob);
-//     delete bob;
-//     delete me;
-//     delete src;
-
-	
-// }
-
-
 int	main(void)
 {
-	IMateriaSource	*src1 = new MateriaSource();
-	AMateria		*test = NULL;
-	src1->learnMateria(test);
-	for (int i = 0; i < 6; i++)
-		if (i % 2 == 0)
-			src1->learnMateria(new Ice());
-		else
-			src1->learnMateria(new Cure());
+ 	std:: cout << BOLDYELLOW << "-----------------\nCREATE OBJECT 1 msource\n -----------------" << RESET << std::endl;
+	IMateriaSource	*obj1 = new MateriaSource();
+	
+ 	std:: cout << BOLDYELLOW << "-----------------\nTRIED OBJECT INVALID\n -----------------" << RESET << std::endl;
+	AMateria		*invalid = NULL;
+	obj1->learnMateria(invalid);
+	
+ 	std:: cout << BOLDYELLOW << "-----------------\nCREATE POWERS FOR msource\n -----------------" << RESET << std::endl;
+	for (int i = 0; i < 5; i++)
+		if (i < 2) {
+ 			std:: cout << ORANGE << "-----------------\n create ice \n -----------------" << RESET << std::endl;
+			obj1->learnMateria(new Ice());
+		}
+		else {
+ 			std:: cout << ORANGE << "-----------------\n create cure \n -----------------" << RESET << std::endl;
+			obj1->learnMateria(new Cure());
+		}
+	
+ 	std:: cout << BOLDYELLOW << "-----------------\nCREATE COPY OBJECT msource \n -----------------" << RESET << std::endl;
+	IMateriaSource	*obj2 = new MateriaSource(*(MateriaSource *)obj1);
+	
+ 	std:: cout << BOLDYELLOW << "-----------------\nCREATE  CHARACTER TATA\n -----------------" << RESET << std::endl;
+	ICharacter		*TATA = new Character("TATA");
+	
+ 	std:: cout << BOLDYELLOW << "-----------------\n EQUIPED TATA WITH POWER INVALID\n -----------------" << RESET << std::endl;
+	TATA->equip(obj2->createMateria("flower"));
+ 	std:: cout << BOLDYELLOW << "-----------------\n EQUIPED TATA WITH MATERIAS POWERS\n -----------------" << RESET << std::endl;
+	TATA->equip(obj2->createMateria("ice"));
+	TATA->equip(obj2->createMateria("cure"));
+	TATA->equip(obj2->createMateria("ice"));
+	TATA->equip(obj2->createMateria("cure"));
+	TATA->equip(obj2->createMateria("cure"));
 
-	IMateriaSource	*src2 = new MateriaSource(*(MateriaSource *)src1);
-	ICharacter		*vessel = new Character("Noelle");
-	vessel->equip(src2->createMateria("ice"));
-	vessel->equip(src2->createMateria("cure"));
-	vessel->equip(src2->createMateria("ice"));
-	vessel->equip(src2->createMateria("snowgrave"));
-	vessel->equip(src2->createMateria("cure"));
-
-	ICharacter		*berdly = new Character("Berdly");
-	ICharacter		*noelle = new Character(*(Character *)vessel);
+	
+ 	std:: cout << BOLDYELLOW << "-----------------\nCREATE  CHARACTER MINGAU\n -----------------" << RESET << std::endl;
+	ICharacter		*mingau = new Character("mingau");
+ 	std:: cout << BOLDYELLOW << "-----------------\nCREATE  CHARACTER COPY JUJUBA \n -----------------" << RESET << std::endl;
+	ICharacter		*jujuba = new Character(*(Character *)TATA);
 	std::cout << "Materia slot 0:" << std::endl;
-	noelle->use(0, *berdly);
+	jujuba->use(0, *mingau);
 	std::cout << "Materia slot 1:" << std::endl;
-	noelle->use(1, *berdly);
+	jujuba->use(1, *mingau);
 	std::cout << "Materia slot 2:" << std::endl;
-	noelle->use(2, *berdly);
+	jujuba->use(2, *mingau);
 	std::cout << "Materia slot 3:" << std::endl;
-	noelle->use(3, *berdly);
+	jujuba->use(3, *mingau);
 	std::cout << "Materia slot 4 (non-existent):" << std::endl;
-	noelle->use(4, *berdly);
+	jujuba->use(4, *mingau);
 	std::cout << std::endl;
 
-	delete src1;
-	delete src2;
-	delete vessel;
-	delete berdly;
-    delete test;
-	delete noelle;
-
+ 	std:: cout << BOLDYELLOW << "-----------------\n  DELETE  TATA \n -----------------" << RESET << std::endl;	
+	delete obj1;
+ 	std:: cout << BOLDYELLOW << "-----------------\n  DELETE  JUJUBA  \n -----------------" << RESET << std::endl;	
+	delete obj2;
+ 	std:: cout << BOLDYELLOW << "-----------------\n  DELETE  MINGAU \n -----------------" << RESET << std::endl;	
+	delete TATA;
+ 	std:: cout << BOLDYELLOW << "-----------------\n  DELETE WOLF \n -----------------" << RESET << std::endl;	
+	delete mingau;
+ 	std:: cout << BOLDYELLOW << "-----------------\n  DELETE TATAZINHA \n -----------------" << RESET << std::endl;	
+	delete jujuba;
 	return (0);
 }

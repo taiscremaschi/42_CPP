@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 13:59:37 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:08:12 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,10 @@ void Character::unequip(int idx)
         _inventary[idx] = NULL;
         _ii++;
         _adress[_ii] = NULL; 
+        std::cout << _name << " unequiped " << std::endl;
     }
+    else 
+        std::cout << _name << " error in unequiped " << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target){

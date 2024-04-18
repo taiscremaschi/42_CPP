@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:52:36 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:23:49 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:57:55 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ AMateria &AMateria::operator=(const AMateria &other){
 
 
 AMateria::AMateria(std::string const &type){
+    std:: cout << GREEN << "this is constructed with param of AMateria" << RESET << std::endl;
     _type = type;
 }
 

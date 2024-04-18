@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 10:50:57 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 15:04:56 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:38:21 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ MateriaSource::MateriaSource(const MateriaSource &other)
         else
             _inventary[i] = NULL;
     }
-    
+ 
 }
 
 MateriaSource::~MateriaSource() {
@@ -59,15 +59,22 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other){
 
 void MateriaSource::learnMateria(AMateria* materia){
     int i = 0;
+    if(!materia)
+    {
+        std::cout << "no valid materia\n";
+        return;
+    }
     while(i < 4) {
         if (_inventary[i] == NULL) 
         {
+            std:: cout << BLUE << "learn materia done successfully" << RESET << std::endl;
             _inventary[i] = materia;
                 return;
         }
         else
             i++;
     }
+    std:: cout << BLUE << "error in learn Materia" << RESET << std::endl;
     delete materia;
 }
 
@@ -75,7 +82,11 @@ AMateria* MateriaSource::createMateria(std::string const &type){
     for (int i = 0; i < 4; i++)
     {
         if (_inventary[i]->getType() == type)
+        {
+            std:: cout << BLUE << "create materia!" << RESET << std::endl;
             return _inventary[i];
+        }
     }
+    std:: cout << BLUE << "error in create materia" << RESET << std::endl;
     return NULL;    
 }

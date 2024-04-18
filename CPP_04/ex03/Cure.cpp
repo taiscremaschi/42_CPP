@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:43:37 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/09 12:57:19 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:13:46 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ Cure &Cure::operator=(const Cure &other){
 /////////////////////////////////////////////////////////////////////////////////
 
 AMateria* Cure::clone() const {
+    std:: cout << MAGENTA << "clone cure called" << RESET << std::endl;
     return new Cure(*this); 
 }
 

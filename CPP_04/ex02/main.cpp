@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 10:53:58 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:53:30 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main()
         {
             std:: cout << BOLDYELLOW << "-----------------\nCREATE OBJECT DOG\n -----------------" << RESET << std::endl;
             animal[i] = new Dog();
-            
         }
         else
         {
