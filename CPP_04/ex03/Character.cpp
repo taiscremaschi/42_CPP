@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:59:46 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/18 10:08:12 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:20:03 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void Character::equip(AMateria* m)
 {
     if (m == 0)
 	{
-		std::cout << "Tried to equip empty materia" << std::endl;
+		std::cout << "Tried to equip invalid materia" << std::endl;
 		return;
 	}
     for (int i = 0; i < 4; i++) {
@@ -118,6 +118,10 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx) 
 {
+    if(_ii > 99){
+        std::cout << _name << " unequip full :(" << std::endl;
+        return;
+    }
     if (idx >= 0 && idx < 4) {
         _adress[_ii] = _inventary[idx];
         _inventary[idx] = NULL;
