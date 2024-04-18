@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 10:37:29 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:50:42 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int main()
     ideas = milk.getBrain()->getIdeas();
     for(int i=0; i<2; i++)
         std::cout << "ideas: " << ideas[i] << std::endl;
-    
+        
     std:: cout << BOLDYELLOW << "-----------------\nDESTRUCTORS\n -----------------" << RESET << std::endl;
     	
     return (0);
