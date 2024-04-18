@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 22:46:14 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:41:28 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Cat::~Cat(){
 
 Cat &Cat::operator=(const Cat &other){
     if(this != &other)
-        Animal::operator=(other);
+        _type = other._type;
     return *this;
 }
 

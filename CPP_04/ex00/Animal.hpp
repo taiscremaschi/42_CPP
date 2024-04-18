@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:33:47 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/16 12:43:20 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:36:00 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 #define ORANGE    "\033[38;5;208m"
 
 class Animal {
-private:
+protected:
     std::string    _type;
 public:
     Animal(); 

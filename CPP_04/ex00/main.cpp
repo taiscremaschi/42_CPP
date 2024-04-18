@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/17 11:00:46 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:47:29 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int main()
     const WrongAnimal* nocat = new WrongCat();
     std:: cout << ORANGE << "-----------------\nCREATE OBJECT MIAU \n -----------------" << RESET << std::endl;
     const WrongCat *miau = new WrongCat();
-
-
     
     
     std:: cout << ORANGE << "-----------------\nSOUND CALLED ANIMAL\n -----------------" << RESET << std::endl;
@@ -68,4 +66,23 @@ int main()
     delete nocat;
     std:: cout << ORANGE << "-----------------\nDELETED OBJECT MIAU\n -----------------" << RESET << std::endl;
     delete miau;
+    
+    std::cout  << ORANGE << "-----------------\nDEEPS COPIES TESTER\n -----------------" << RESET << std::endl;
+    const Animal* exampledog = new Dog();
+    const Animal* deepCopyDog = new Dog(*(Dog*)(exampledog));
+    std::cout << ORANGE << "Memory address of exampledog: " << exampledog << std::endl;
+    std::cout << ORANGE << "Memory address of deepCopyDog: " << deepCopyDog << std::endl;
+    Animal* exampleCat = new Cat();
+	Animal *deepCopyCat = new Cat();
+    *deepCopyCat = *exampleCat;
+
+    std::cout <<  ORANGE << "Memory address of exampleCat: " << exampleCat << std::endl;
+    std::cout << ORANGE << "Memory address of deepCopyCat: " << deepCopyCat << std::endl;
+    
+    delete exampleCat;
+    delete deepCopyCat;
+    delete deepCopyDog;
+    delete exampledog;
+
+
 }
