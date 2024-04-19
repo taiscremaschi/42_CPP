@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 15:04:32 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/18 19:58:40 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:53:22 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ Cat &Cat::operator=(const Cat &other){
     if(this == &other)
         return *this;
     Animal::operator=(other);
-    delete _brain;
+    if(_brain)
+        delete _brain;
     this->_brain = new Brain(*other._brain);
     return *this;
 }

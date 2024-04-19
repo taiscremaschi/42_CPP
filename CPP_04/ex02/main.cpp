@@ -6,7 +6,7 @@
 /*   By: tbolzan- <tbolzan-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:32:21 by tbolzan-          #+#    #+#             */
-/*   Updated: 2024/04/18 19:54:49 by tbolzan-         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:36:36 by tbolzan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int main()
         std::cout << "ideas: " << ideas[i] << std::endl;
     
     std:: cout << BOLDYELLOW << "-----------------\nDESTRUCTORS\n -----------------" << RESET << std::endl;
-    	
+    
     return (0);
 }
