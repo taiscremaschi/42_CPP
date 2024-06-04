@@ -6,20 +6,9 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-class  GradeTooHighException : public std::exception {
-
-
-
-};
-
-class GradeTooLowException : public std::exception {
-    
-};
-
-
 class Bureaucrat {
     private:
-        std::string const   _name;
+        std::string         _name;
         int                 _grade;
 
 
@@ -28,11 +17,23 @@ class Bureaucrat {
         ~Bureaucrat();
         Bureaucrat(const Bureaucrat &other);
         Bureaucrat &operator=(const Bureaucrat &other);
-        std::string getName();
-        int         getGrade();
-        bool        checkGrade(int grade);
+        std::string getName() const;
+        int         getGrade() const;
 
 
+        class  GradeTooHighException : public std::exception {
+                virtual const char* what() const throw(){
+                    return "Grade Too High Exception";
+                }
+        };
+
+        class GradeTooLowException : public std::exception {
+                virtual const char* what() const throw(){
+                    return "Grade Too Low Exception";
+                }
+        };
 };
+
+std::ostream	&operator<<(std::ostream &o, const Bureaucrat &bureaucrat);
 
 #endif
