@@ -21,17 +21,17 @@ class Bureaucrat {
         int         getGrade() const;
 
 
-        class  GradeTooHighException : public std::exception {
+    class  GradeTooHighException : public std::exception {
                 virtual const char* what() const throw(){
                     return "Grade Too High Exception";
                 }
-        };
+    };
 
-        class GradeTooLowException : public std::exception {
+    class GradeTooLowException : public std::exception {
                 virtual const char* what() const throw(){
                     return "Grade Too Low Exception";
                 }
-        };
+    };
 };
 
 std::ostream	&operator<<(std::ostream &o, const Bureaucrat &bureaucrat);
