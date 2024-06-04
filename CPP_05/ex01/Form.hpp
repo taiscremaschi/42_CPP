@@ -23,7 +23,6 @@ class Form {
         int         getGradeToSign() const;
         int         getGradeToExecute() const;
         bool        isValid() const;
-
     
     class  GradeTooHighException : public std::exception {
             virtual const char* what() const throw(){
