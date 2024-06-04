@@ -4,8 +4,10 @@
 Form::Form(std::string const name, const int gradeToSign, const int gradeToExecute)
 : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _signedCheck(false)
 {
- 
- 
+    if (gradeToExecute < 1 || gradeToSign < 1)
+        throw GradeTooHighException();
+    else if (gradeToExecute > 150 || gradeToSign > 150)
+        throw GradeTooLowException();
 }
 
 Form::Form(const Form &other)
@@ -42,6 +44,12 @@ bool    Form::isValid() const {
     return _signedCheck;
 }
 
+
+void        Form::beSigned(Bureaucrat &bureaucrat){
+    if(bureaucrat.getGrade() > _gradeToSign)
+        throw GradeTooLowException();
+    _signedCheck = true;
+} 
 
 std::ostream& operator<<(std::ostream& os, const Form &Form){
     os << "Form " << Form.getName() << " needs note " << Form.getGradeToSign() <<  " to be signed and note " << Form.getGradeToExecute() << " to be executed. Therefore, it is "  << Form.isValid() << "!" << std::endl;
