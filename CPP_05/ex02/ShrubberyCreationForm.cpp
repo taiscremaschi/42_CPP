@@ -1,10 +1,13 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 145, 137) {
+    _target = target;
+}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other): AForm(other)
-{}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other): AForm(other){
+    _target = other._target;
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
@@ -13,6 +16,35 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
     if(this == &other)
         return *this;
     AForm::operator=(other);
+    _target = other._target;
     return *this;
 }
 
+
+void ShrubberyCreationForm::executeForm(Bureaucrat &bureaucrat)
+{
+    std::string filename = _target + "_shrubbery";
+      std::ofstream outFile(filename);
+
+    if (outFile.is_open()) {
+        outFile << "      *♥         *♥               *♥              *♥        *♥  \n";
+        outFile << "     ***        ***              ***             ***       *** \n";
+        outFile << "    *****      *****            *****           *****     ***** \n";
+        outFile << "   *******    *******          *******         *******   ******* \n";
+        outFile << "  *********  *********        *********       ********* ********\n";
+        outFile << "    |||        |||               |||             |||       |||\n";
+        outFile << "    |||        |||               |||             |||       |||\n";
+        outFile << "                *                  *                 *             *        \n";
+        outFile << "               ***                ***               ***           ***      \n";
+        outFile << "              *****              *****             *****         *****    \n";
+        outFile << "             *******            *******           *******       *******  \n";
+        outFile << "            *********          *********         *********     *********\n";
+        outFile << "               |||                |||               |||           |||   \n";
+        outFile << "               |||                |||               |||           |||   \n";
+        outFile << "                 ♡                    ♡                 ♡             ♡        \n";
+        outFile.close();
+        std::cout << "File "  << filename << " create!" << std::endl;
+
+
+    }
+}  
