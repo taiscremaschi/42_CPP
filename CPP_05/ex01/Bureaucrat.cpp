@@ -38,7 +38,6 @@ int Bureaucrat::getGrade() const
 
 void        Bureaucrat::signForm(Form &form)
 {
-   
     try {
         form.beSigned(*this);
         std::cout << _name << " signed " << form.getName() << std::endl;
