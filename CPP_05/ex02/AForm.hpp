@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include "Bureaucrat.hpp"
 
-class Form {
+class AForm {
     private:
         const std::string _name;
         const int   _gradeToSign;
@@ -16,15 +16,15 @@ class Form {
         bool        _signedCheck;
 
     public:
-        Form(std::string const name, const int gradeToSign, const int gradeToExecute);
-        ~Form();
-        Form(const Form &other);
-        Form &operator=(const Form &other);
+        AForm(std::string const name, const int gradeToSign, const int gradeToExecute);
+        virtual ~AForm();
+        AForm(const AForm &other);
+        AForm &operator=(const AForm &other);
         std::string getName() const;
-        int         getGradeToSign() const;
-        int         getGradeToExecute() const;
-        bool        isValid() const;
-        void        beSigned(Bureaucrat &bureaucrat); 
+        virtual int         getGradeToSign() const;
+        virtual int         getGradeToExecute() const;
+        virtual bool        isValid() const;
+        virtual void        beSigned(Bureaucrat &bureaucrat); 
     
     class  GradeTooHighException : public std::exception {
             virtual const char* what() const throw(){
@@ -40,7 +40,7 @@ class Form {
 
 };
 
-std::ostream	&operator<<(std::ostream &o, const Form &Form);
+std::ostream	&operator<<(std::ostream &o, const AForm &Form);
 
 
 #endif

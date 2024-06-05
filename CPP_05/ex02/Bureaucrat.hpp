@@ -6,7 +6,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-class Form;
+class AForm;
 class Bureaucrat {
     private:
         const std::string         _name;
@@ -20,7 +20,7 @@ class Bureaucrat {
         Bureaucrat &operator=(const Bureaucrat &other);
         std::string getName() const;
         int         getGrade() const;
-        void        signForm(Form &form);
+        void        signForm(AForm &form);
 
 
 
@@ -39,6 +39,6 @@ class Bureaucrat {
 
 std::ostream	&operator<<(std::ostream &o, const Bureaucrat &bureaucrat);
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-#endif
+#endif 
