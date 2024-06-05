@@ -13,6 +13,8 @@ class RobotomyRequestForm : public AForm {
         ~RobotomyRequestForm();
         RobotomyRequestForm(const RobotomyRequestForm &other);
         RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+        void execute(const Bureaucrat &bureaucrat) const;
+
 
 
 

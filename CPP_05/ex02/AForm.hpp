@@ -37,6 +37,11 @@ class AForm {
                 return "Grade Too Low Exception";
             }
     };
+    class isNotSigned : public std::exception {
+            virtual const char* what() const throw(){
+                return "The Form is not signed";
+            }
+    };
 
 };
 

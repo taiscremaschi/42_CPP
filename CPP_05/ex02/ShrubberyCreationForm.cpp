@@ -21,10 +21,14 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 
-void ShrubberyCreationForm::executeForm(Bureaucrat &bureaucrat)
+void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
 {
+    if (bureaucrat.getGrade() >  getGradeToExecute())
+        throw GradeTooLowException();
+    else if(!isValid())
+        throw isNotSigned();
     std::string filename = _target + "_shrubbery";
-      std::ofstream outFile(filename);
+    std::ofstream outFile(filename);
 
     if (outFile.is_open()) {
         outFile << "      *♥         *♥               *♥              *♥        *♥  \n";
