@@ -31,10 +31,11 @@ void RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const{
 
     static int i;
 
-    std::cout << "dz dzdzzz dzzzzzzzz dzzzzzZZZZZZZZZZ...." << std::endl;
+    std::cout  << RED << "dz dzdzzz dzzzzzzzz dzzzzzZZZZZZZZZZ...."  << RESET << std::endl;
     if(i % 2 == 0)
-        std::cout << _target << " has been robotomized successfully!!" << std::endl;
+        std::cout << CYAN << _target << " has been robotomized successfully!!" << RESET << std::endl;
     else 
-        std::cout << _target << " robotomy failed." << std::endl;
+        std::cout << RED  << _target << " robotomy failed." << RESET << std::endl;
+    i++;
 }
 

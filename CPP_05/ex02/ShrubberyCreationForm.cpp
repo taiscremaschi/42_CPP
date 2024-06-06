@@ -28,7 +28,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
     else if(!isValid())
         throw isNotSigned();
     std::string filename = _target + "_shrubbery";
-    std::ofstream outFile(filename);
+    std::ofstream outFile(filename.c_str());
 
     if (outFile.is_open()) {
         outFile << "      *♥         *♥               *♥              *♥        *♥  \n";
@@ -47,7 +47,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
         outFile << "               |||                |||               |||           |||   \n";
         outFile << "                 ♡                    ♡                 ♡             ♡        \n";
         outFile.close();
-        std::cout << "File "  << filename << " create!" << std::endl;
+        std::cout << GREEN << "File "  << filename << " create!" << RESET << std::endl;
 
 
     }
