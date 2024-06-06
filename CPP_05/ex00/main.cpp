@@ -7,27 +7,28 @@ int main()
 {
     try{
 
-        Bureaucrat myBur("tata", 180);
+        Bureaucrat myBur("tata invalid", 180);
     } 
     catch (const std::exception &err) { 
-        std:: cerr << "ERROR: " << err.what() << std::endl;
+        std:: cerr << MAGENTA << "ERROR: " << RESET << err.what() << std::endl;
 
     }
 
     try{
 
-        Bureaucrat myBur("tatazinha", 0);
+        Bureaucrat myBur("tatazinha invalid", 0);
     } 
     catch (const std::exception &err) { 
-        std:: cerr << "ERROR: " << err.what() << std::endl;
+        std:: cerr << MAGENTA << "ERROR: " << RESET <<  err.what() << std::endl;
 
     }
     try{
 
-        Bureaucrat myBur("tatazizinha", 10);
+        Bureaucrat myBur("tata", 10);
+        std::cout <<  ORANGE << myBur.getName() << " create!!" <<  RESET << std::endl;
     } 
     catch (const std::exception &err) { 
-        std:: cerr << "ERROR: " << err.what() << std::endl;
+        std:: cerr << MAGENTA << "ERROR: " << RESET <<  err.what() << std::endl;
 
     }
 }
