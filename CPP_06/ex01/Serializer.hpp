@@ -2,8 +2,7 @@
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
-#include  <cstdint>
-
+#include <stdint.h>
 
 struct Data {
     int value;
@@ -12,9 +11,9 @@ struct Data {
 class Serializer {
     private:
         Serializer(); 
-        Serializer(const Serializer &other); 
 
     public:
+        Serializer(const Serializer &other); 
         ~Serializer(); 
         Serializer &operator=(const Serializer &other);
         static uintptr_t serialize(Data* ptr);
