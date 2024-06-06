@@ -52,6 +52,6 @@ void        AForm::beSigned(Bureaucrat &bureaucrat){
 } 
 
 std::ostream& operator<<(std::ostream& os, const AForm &AForm){
-    os << "AForm " << AForm.getName() << " needs note " << AForm.getGradeToSign() <<  " to be signed and note " << AForm.getGradeToExecute() << " to be executed. Therefore, it is "  << AForm.isValid() << "!" << std::endl;
+    os << GREEN << "AForm " << AForm.getName() << " needs note " << AForm.getGradeToSign() <<  " to be signed and note " << AForm.getGradeToExecute() << " to be executed. Therefore, it is "  << AForm.isValid() << "!" <<  RESET << std::endl;
     return os;
 }
