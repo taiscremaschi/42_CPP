@@ -12,8 +12,7 @@ Form::Form(std::string const name, const int gradeToSign, const int gradeToExecu
 
 Form::Form(const Form &other)
 : _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute), _signedCheck(other._signedCheck)
-{
-}
+{}
 
 Form::~Form() {}
 
@@ -52,6 +51,6 @@ void        Form::beSigned(Bureaucrat &bureaucrat){
 } 
 
 std::ostream& operator<<(std::ostream& os, const Form &Form){
-    os << "Form " << Form.getName() << " needs note " << Form.getGradeToSign() <<  " to be signed and note " << Form.getGradeToExecute() << " to be executed. Therefore, it is "  << Form.isValid() << "!" << std::endl;
+    os <<  GREEN << "Form " << Form.getName() << " needs note " << Form.getGradeToSign() <<  " to be signed and note " << Form.getGradeToExecute() << " to be executed. Therefore, it is "  << Form.isValid() << "!" << RESET << std::endl;
     return os;
 }

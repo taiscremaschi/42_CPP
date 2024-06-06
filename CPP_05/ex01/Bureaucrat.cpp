@@ -40,16 +40,16 @@ void        Bureaucrat::signForm(Form &form)
 {
     try {
         form.beSigned(*this);
-        std::cout << _name << " signed " << form.getName() << std::endl;
+        std::cout << CYAN << _name << " signed " << form.getName()  << RESET << std::endl;
     }
     catch (const std::exception &reason)
     {
-        std::cerr << _name << " couldn’t sign " << form.getName() << " because "  << reason.what() << std::endl;
+        std::cerr << RED << _name << " couldn’t sign " << form.getName() << " because "  << reason.what() << RESET << std::endl;
     }
 
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat &Bureaucrat){
-    os << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << std::endl;
+    os << ORANGE <<Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << RESET << std::endl;
     return os;
 }
