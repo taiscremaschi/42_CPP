@@ -8,7 +8,27 @@
 
 
 void identify(Base& p){
+   try {
+        A &result= dynamic_cast<A&>(p);
+        (void)result;
+        std::cout << "type is A" << std::endl;
+        return;
+   } catch (const std::exception&) {}
 
+    try {
+        B &result = dynamic_cast<B&>(p);
+        (void)result;
+        std::cout << "type is B" << std::endl;
+        return;
+    } catch (const std::exception&) {}
+    try {
+        C &result = dynamic_cast<C&>(p);
+        (void)result;
+        std::cout << "type is C" << std::endl;
+        return;
+    } catch (const std::exception&) {}
+
+    std::cout << "type is wrong" << std::endl;
 }
 
 void identify(Base* p){
@@ -51,6 +71,9 @@ Base *generate(void)
 int main()
 {
 
+    Base *result1 = generate();
+    identify(result1);
+    identify(*result1);
 
 
 
