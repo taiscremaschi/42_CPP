@@ -37,9 +37,8 @@ AForm *Intern::makeForm(std::string formName, std::string formTarget){
             std::cout << "Intern creates form Presidential Pardon" << std::endl;
             return (new PresidentialPardonForm(formTarget));
         default:
-            std::cerr << "Invalid Form" << std::endl;
+            throw InvalidForm();
     }
-    return NULL;
 }
 
 
