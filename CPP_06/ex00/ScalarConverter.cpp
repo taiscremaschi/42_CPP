@@ -63,20 +63,41 @@ bool ScalarConverter::isInt(std::string &param)
 }
 bool ScalarConverter::isDouble(std::string &param)
 {
-    (void)param;
-    return false;
-
-
+    std::cout << "chegou <\n";
+    bool flagP = false;
+    for(size_t i = 0; i < param.size(); i++)
+    {
+        if(param[0] == '-' || param[i] == '+')
+            continue;
+        if(isalpha(param[i]))
+           return false;
+        if(param[i] == '.')
+        {
+            if(!flagP){
+                flagP = true;
+                continue;
+            }
+            else
+                return false;
+        }
+        if(isalnum(param[i]))
+            continue;
+        else 
+            return false;
+    }
+    float result = std::stod(param);
+    std::cout << " chegou no true" << std::endl;
+    std::cout << " char:: " << static_cast<char>(result) << std::endl;
+    std::cout << " int " << static_cast<int>(result) << std::endl;
+    std::cout << " double "  << static_cast<double>(result)<< std::endl;
+    std::cout << " float " << result << "f" << std::endl;
+    return true;
 }
 bool ScalarConverter::isChar(std::string &param)
 {
-    (void)param;
-    return false;
 
 
 }
-
-
 
 void ScalarConverter::convert(std::string param){
 
