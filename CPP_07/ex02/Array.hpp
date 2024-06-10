@@ -81,4 +81,13 @@ T& Array<T>::operator[](std::size_t idx) {
     return _elements[idx];
 }
 
+template <typename T>
+const T& Array<T>::operator[](std::size_t idx) const {  
+    if (idx >= _n)
+    {
+        throw std::invalid_argument("Array index out of range");
+    }
+    return _elements[idx];
+}
+
 #endif
