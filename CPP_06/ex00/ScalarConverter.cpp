@@ -19,7 +19,6 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other){
 
 bool ScalarConverter::isFloat(std::string &param)
 {
-    std::cout << "chegou <\n";
     int flagF = 0;
     bool flagP = false;
     for(size_t i = 0; i < param.size(); i++)
@@ -46,24 +45,36 @@ bool ScalarConverter::isFloat(std::string &param)
         else 
             return false;
     }
-    float result = std::stof(param);
-    std::cout << " chegou no true" << std::endl;
-    std::cout << " char:: " << static_cast<char>(result) << std::endl;
-    std::cout << " int " << static_cast<int>(result) << std::endl;
-    std::cout << " double "  << static_cast<double>(result)<< std::endl;
-    std::cout << " float " << result << "f" << std::endl;
-
+    float result = std::strtof(param.c_str(), NULL);
+    std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
+    std::cout << "int: " << static_cast<int>(result) << std::endl;
+    std::cout << "double: "  << static_cast<double>(result) << std::endl;
+    std::cout << "float: " <<  result << "f" << std::endl;
     return true;
 }
 
 bool ScalarConverter::isInt(std::string &param)
 {
-    (void)param;
-    return false;
+    for(std::size_t i = 0; i < param.size(); ++i)
+    {
+        if(param[0] == '-' || param[i] == '+')
+            continue;
+        if(!isdigit(param[i]))
+            return false;
+    }
+    
+    long int result = atoi(param.c_str());
+    if(result  < INT_MIN || result > INT_MAX)
+        return false;
+    std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
+    std::cout << "int: " << result << std::endl;
+    std::cout << "double: "  << static_cast<double>(result) << std::endl;
+    std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
+    return true;
+
 }
 bool ScalarConverter::isDouble(std::string &param)
 {
-    std::cout << "chegou <\n";
     bool flagP = false;
     for(size_t i = 0; i < param.size(); i++)
     {
@@ -85,18 +96,26 @@ bool ScalarConverter::isDouble(std::string &param)
         else 
             return false;
     }
-    float result = std::stod(param);
-    std::cout << " chegou no true" << std::endl;
-    std::cout << " char:: " << static_cast<char>(result) << std::endl;
-    std::cout << " int " << static_cast<int>(result) << std::endl;
-    std::cout << " double "  << static_cast<double>(result)<< std::endl;
-    std::cout << " float " << result << "f" << std::endl;
+    double result = std::strtod(param.c_str(), NULL);
+    std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
+    std::cout << "int: " << static_cast<int>(result) << std::endl;
+    std::cout << "double: "  << result << std::endl;
+    std::cout << "float: " <<  static_cast<float>(result)<< "f" << std::endl;
     return true;
 }
 bool ScalarConverter::isChar(std::string &param)
 {
+    if(param.size() > 1 || param.empty() || !isprint(param[0]))
+        return false;
 
+    char result = param[0];
 
+    std::cout <<"char: " << "'" << result << "'" << std::endl;
+    std::cout << "int: " << static_cast<int>(result) << std::endl;
+    std::cout << "double: "  << static_cast<double>(result) << std::endl;
+    std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
+
+    return true;    
 }
 
 void ScalarConverter::convert(std::string param){
