@@ -25,8 +25,6 @@ void printChar(int c){
         std::cout << "char: " << "'" << static_cast <char>(c) <<  "'" <<std::endl; 
 }
 
-
-
 bool ScalarConverter::isFloat(std::string &param)
 {
     int flagF = 0;
@@ -57,7 +55,6 @@ bool ScalarConverter::isFloat(std::string &param)
     }
     float result = strtof(param.c_str(), NULL);
     printChar(static_cast<char>(result));
-    //std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << static_cast<double>(result) << std::endl;
     std::cout << "float: " <<  result << "f" << std::endl;
@@ -71,12 +68,16 @@ bool ScalarConverter::isInt(std::string &param)
         if(param[0] == '-' || param[i] == '+')
             continue;
         if(!isdigit(param[i]))
+        {
+            std::cerr << "ERROR: Invalid parameter " << std::endl;
+            return false;
+        }
+    }
+    long long int result = atoll(param.c_str());
+    if(result <  INT_MIN || result > INT_MAX) {
+        std::cerr << "ERROR: Invalid parameter " << std::endl;
             return false;
     }
-    
-    long int result = atoi(param.c_str());
-    if(result  < INT_MIN || result > INT_MAX)
-        return false;
     printChar(static_cast<char>(result));
     //std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
     std::cout << "int: " << result << std::endl;
@@ -134,8 +135,36 @@ bool ScalarConverter::isChar(std::string &param)
     return true;    
 }
 
+bool exception(std::string param){
+
+    if(param == "-inf" || param ==  "-inff") {
+        std::cout <<"char: " << "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "double: "  << "-inf"<< std::endl;
+        std::cout << "float: " <<  "-inf" << "f" << std::endl;
+        return true;
+    }
+    else if(param == "+inff" || param == "+inf"){
+         std::cout <<"char: " << "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "double: "  << "+inf"<< std::endl;
+        std::cout << "float: " <<  "+inf" << "f" << std::endl;
+        return true;
+    }
+    else if(param == "nan" || param == "nanf"){
+         std::cout <<"char: " << "impossible" << std::endl;
+        std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "double: "  << "nan"<< std::endl;
+        std::cout << "float: " <<  "nan" << "f" << std::endl;
+        return true;
+    }
+    return false;
+}
+
 void ScalarConverter::convert(std::string param){
 
+    if (exception(param)) 
+        return;
     if(isdigit(param[0]) || param[0] == '-' || param[0] == '+')
     {
         if(param[param.size()-1] == 'f')

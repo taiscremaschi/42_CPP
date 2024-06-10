@@ -18,6 +18,10 @@ int main()
 
     ScalarConverter::convert("1000.567f");
 
+    ScalarConverter::convert("nanf");
+
+
+
 
 
 }
