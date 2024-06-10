@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include <limits>
+#include <exception>
 
 class ScalarConverter {
     private:
@@ -13,8 +14,13 @@ class ScalarConverter {
         ScalarConverter(const ScalarConverter &other); 
         ~ScalarConverter(); 
         ScalarConverter &operator=(const ScalarConverter &other);
+       static bool isInt(std::string &param);
+       static bool isDouble(std::string &param);
+       static bool isChar(std::string &param);
+       static bool isFloat(std::string &param);
+
     public:
-        static void convert(std::string &literal);
+        static void convert(std::string literal);
 
 };
 
