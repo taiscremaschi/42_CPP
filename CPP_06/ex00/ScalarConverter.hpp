@@ -6,6 +6,7 @@
 #include <string>
 #include <sstream>
 #include <limits.h>
+#include <stdlib.h>
 #include <exception>
 
 class ScalarConverter {

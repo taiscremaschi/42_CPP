@@ -16,6 +16,16 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other){
     return *this;
 }
 
+void printChar(int c){
+    if(!isprint(c))
+        std::cout << "char: " << "is not displayable" <<std::endl;
+    else if(c >  127)
+        std::cout << "char: " << "is impossible" <<std::endl;
+    else 
+        std::cout << "char: " << "'" << static_cast <char>(c) <<  "'" <<std::endl; 
+}
+
+
 
 bool ScalarConverter::isFloat(std::string &param)
 {
@@ -45,8 +55,9 @@ bool ScalarConverter::isFloat(std::string &param)
         else 
             return false;
     }
-    float result = std::strtof(param.c_str(), NULL);
-    std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
+    float result = strtof(param.c_str(), NULL);
+    printChar(static_cast<char>(result));
+    //std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << static_cast<double>(result) << std::endl;
     std::cout << "float: " <<  result << "f" << std::endl;
@@ -66,7 +77,8 @@ bool ScalarConverter::isInt(std::string &param)
     long int result = atoi(param.c_str());
     if(result  < INT_MIN || result > INT_MAX)
         return false;
-    std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
+    printChar(static_cast<char>(result));
+    //std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
     std::cout << "int: " << result << std::endl;
     std::cout << "double: "  << static_cast<double>(result) << std::endl;
     std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
@@ -96,8 +108,9 @@ bool ScalarConverter::isDouble(std::string &param)
         else 
             return false;
     }
-    double result = std::strtod(param.c_str(), NULL);
-    std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
+    double result = strtod(param.c_str(), NULL);
+    printChar(static_cast<char>(result));
+    //std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << result << std::endl;
     std::cout << "float: " <<  static_cast<float>(result)<< "f" << std::endl;
@@ -105,12 +118,15 @@ bool ScalarConverter::isDouble(std::string &param)
 }
 bool ScalarConverter::isChar(std::string &param)
 {
-    if(param.size() > 1 || param.empty() || !isprint(param[0]))
+    if(param.size() > 1 || param.empty())
+    {
+        std::cerr << "ERROR: Invalid parameter " << std::endl;
         return false;
+    }
 
     char result = param[0];
-
-    std::cout <<"char: " << "'" << result << "'" << std::endl;
+    printChar(result);
+    //std::cout <<"char: " << "'" << result << "'" << std::endl;
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << static_cast<double>(result) << std::endl;
     std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
