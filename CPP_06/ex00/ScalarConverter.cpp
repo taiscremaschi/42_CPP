@@ -1,21 +1,42 @@
 
 #include "ScalarConverter.hpp"
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <iomanip>
-#include <limits>
 
+ScalarConverter::ScalarConverter() {}
 
-
-
-
-void ScalarConverter::convert(std::string param){
- is
-
-
-
-
+ScalarConverter::ScalarConverter(const ScalarConverter &other)
+{
+    (void)other;
 }
 
-/*char int double or float*/
+ScalarConverter::~ScalarConverter() {}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other){
+    if(this == &other)
+        return *this;
+    return *this;
+}
+
+
+
+
+
+void ScalarConverter::convert(std::string &param){
+
+    if(isdigit(param[0]) || param[0] == '-' || param[0] == '+')
+    {
+        if(param[param.size()-1] == 'f')
+        {
+            isFloat(param);
+            return;
+        }
+        for(int i = 0; i < param.size(); i++){
+            if (param[i] == '.'){
+                isDouble(param);
+                return;
+            }
+        }
+        isInt(param);
+        return;
+    }
+    isChar(param);
+}
