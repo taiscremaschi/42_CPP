@@ -13,10 +13,12 @@ int main()
     ScalarConverter::convert("10f");
 
     std::cout << "\n";
-    ScalarConverter::convert("100.0");
+    ScalarConverter::convert("10.0");
     std::cout << "\n";
 
     ScalarConverter::convert("1000.567f");
+    std::cout << "\n";
+    
 
     ScalarConverter::convert("nanf");
 

@@ -16,6 +16,16 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other){
     return *this;
 }
 
+int getPrecision(std::string nbr){
+    size_t posi =  nbr.find('.');
+    if(posi == std::string::npos)
+        return 1;
+    if(nbr[nbr.size()-1] == 'f')
+        return(nbr.length()- posi - 2);
+    return(nbr.length()-posi - 1);
+}
+
+
 void printChar(int c){
     if(!isprint(c))
         std::cout << "char: " << "is not displayable" <<std::endl;
@@ -54,6 +64,8 @@ bool ScalarConverter::isFloat(std::string &param)
             return false;
     }
     float result = strtof(param.c_str(), NULL);
+    int precision = getPrecision(param);
+    std::cout << std::fixed << std::setprecision(precision) << std::endl;
     printChar(static_cast<char>(result));
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << static_cast<double>(result) << std::endl;
@@ -79,13 +91,14 @@ bool ScalarConverter::isInt(std::string &param)
             return false;
     }
     printChar(static_cast<char>(result));
-    //std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
     std::cout << "int: " << result << std::endl;
-    std::cout << "double: "  << static_cast<double>(result) << std::endl;
-    std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
+    std::cout << "double: "  << static_cast<double>(result) << ".0" << std::endl;
+    std::cout << "float: " <<  static_cast<float>(result) << ".0f" << std::endl;
     return true;
 
 }
+
+
 bool ScalarConverter::isDouble(std::string &param)
 {
     bool flagP = false;
@@ -109,9 +122,10 @@ bool ScalarConverter::isDouble(std::string &param)
         else 
             return false;
     }
+    int precision = getPrecision(param);
     double result = strtod(param.c_str(), NULL);
+    std::cout << std::fixed << std::setprecision(precision) << std::endl;
     printChar(static_cast<char>(result));
-    //std::cout << "char: " << "'" << static_cast<char>(result) <<  "'" <<std::endl;
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << result << std::endl;
     std::cout << "float: " <<  static_cast<float>(result)<< "f" << std::endl;
@@ -127,10 +141,9 @@ bool ScalarConverter::isChar(std::string &param)
 
     char result = param[0];
     printChar(result);
-    //std::cout <<"char: " << "'" << result << "'" << std::endl;
     std::cout << "int: " << static_cast<int>(result) << std::endl;
-    std::cout << "double: "  << static_cast<double>(result) << std::endl;
-    std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
+    std::cout << "double: "  << static_cast<double>(result) << ".0" << std::endl;
+    std::cout << "float: " <<  static_cast<float>(result) << ".0f" << std::endl;
 
     return true;    
 }
