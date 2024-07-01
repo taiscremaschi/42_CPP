@@ -1,5 +1,10 @@
 
 #include "ScalarConverter.hpp"
+#include <limits>
+
+
+#define MAX_DOUBLE std::numeric_limits<double>::max()
+#define MAX_FLOAT std::numeric_limits<float>::max
 
 ScalarConverter::ScalarConverter() {}
 
@@ -20,6 +25,8 @@ int getPrecision(std::string nbr){
     size_t posi =  nbr.find('.');
     if(posi == std::string::npos)
         return 1;
+    if(posi == nbr.length() -1 || nbr[nbr.size()-2] == '.' )
+        return 1;
     if(nbr[nbr.size()-1] == 'f')
         return(nbr.length()- posi - 2);
     return(nbr.length()-posi - 1);
@@ -35,6 +42,14 @@ void printChar(int c){
         std::cout << "char: " << "'" << static_cast <char>(c) <<  "'" <<std::endl; 
 }
 
+template <typename T>
+std::string convertToString(T value, int precision)
+{
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(precision) << value;
+    return oss.str();
+}
+    
 bool ScalarConverter::isFloat(std::string &param)
 {
     int flagF = 0;
@@ -47,25 +62,32 @@ bool ScalarConverter::isFloat(std::string &param)
             flagF = 1;
             continue ;
         }
-        if(isalpha(param[i]))
+        if(isalpha(param[i])){
+            std::cerr << "ERROR: Invalid parameter " << std::endl;
            return false;
+        }
         if(param[i] == '.')
         {
             if(!flagP){
                 flagP = true;
                 continue;
             }
-            else
+            else{
+                std::cerr << "ERROR: Invalid parameter " << std::endl;
                 return false;
+            }
         }
         if(isalnum(param[i]))
             continue;
-        else 
-            return false;
+        else {
+            std::cerr << "ERROR: Invalid parameter " << std::endl;
+           return false;
+        }
     }
     float result = strtof(param.c_str(), NULL);
     int precision = getPrecision(param);
-    std::cout << std::fixed << std::setprecision(precision) << std::endl;
+    std::cout << std::fixed << std::setprecision(precision);
+    std::string resultAfter = convertToString(result, precision) + "f";
     printChar(static_cast<char>(result));
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << static_cast<double>(result) << std::endl;
@@ -106,25 +128,38 @@ bool ScalarConverter::isDouble(std::string &param)
     {
         if(param[0] == '-' || param[i] == '+')
             continue;
-        if(isalpha(param[i]))
+        if(isalpha(param[i])){
+            std::cerr << "ERROR: Invalid parameter " << std::endl;
            return false;
+        }
         if(param[i] == '.')
         {
             if(!flagP){
                 flagP = true;
                 continue;
             }
-            else
-                return false;
+            else{
+            std::cerr << "ERROR: Invalid parameter " << std::endl;
+           return false;
+        }
         }
         if(isalnum(param[i]))
             continue;
-        else 
+        else {
+            std::cerr << "ERROR: Invalid parameter " << std::endl;
+            return false;
+        }
+    }
+    
+    double result = strtod(param.c_str(), NULL);
+    int precision = getPrecision(param);
+    std::cout << std::fixed << std::setprecision(precision);
+    std::string resultAfter = convertToString(result, precision);
+    if (resultAfter != param)
+    {
+        std::cerr << "ERROR: Invalid parameter " << std::endl;
             return false;
     }
-    int precision = getPrecision(param);
-    double result = strtod(param.c_str(), NULL);
-    std::cout << std::fixed << std::setprecision(precision) << std::endl;
     printChar(static_cast<char>(result));
     std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << result << std::endl;

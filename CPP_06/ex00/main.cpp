@@ -1,29 +1,11 @@
 #include "ScalarConverter.hpp"
 
-int main()
+int main(int ac, char **argv)
 {
-    ScalarConverter::convert("c");
-    std::cout << "\n";
-    ScalarConverter::convert("19");
-    std::cout << "\n";
-
-    ScalarConverter::convert("as");
-    std::cout << "\n";
-
-    ScalarConverter::convert("10f");
-
-    std::cout << "\n";
-    ScalarConverter::convert("10.0");
-    std::cout << "\n";
-
-    ScalarConverter::convert("1000.567f");
-    std::cout << "\n";
-    
-
-    ScalarConverter::convert("nanf");
-
-
-
-
-
+    if(ac != 2){
+         std::cerr << "Invalid arguments\n";
+        return 1;
+    }
+    ScalarConverter::convert(argv[1]);
+    return 0;
 }
