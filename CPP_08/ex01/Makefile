@@ -2,7 +2,7 @@ NAME	=  ex01
 CXX	= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 RM		= rm -f
-SRCS	= main.cpp
+SRCS	= main.cpp Span.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
