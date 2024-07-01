@@ -75,13 +75,11 @@ void Span::randomSpan(unsigned int n){
     unsigned int tmp = n;
     srand(time(0));
     while(tmp > 0){
-        _vecNbr.push_back(rand() % 100);
+        _vecNbr.push_back(rand() % 10000);
         tmp--;
     }
     for(size_t i = 0; i < _vecNbr.size(); i++)
     {
         std::cout << _vecNbr[i] << std::endl;
     }
-
-
 }
