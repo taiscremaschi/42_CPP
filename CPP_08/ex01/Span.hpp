@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <time.h>
+#include <stdlib.h>
 
 class Span {
     private:
@@ -19,6 +21,7 @@ class Span {
         void addNumber(int n);
         int shortestSpan();
         int longestSpan();
+        void randomSpan(unsigned int n);
         
         class fullVec : public std::exception {
             virtual const char* what() const throw(){

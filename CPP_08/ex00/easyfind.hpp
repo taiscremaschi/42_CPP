@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 class errorParam : public std::exception {
     virtual const char* what() const throw(){
