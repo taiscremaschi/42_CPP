@@ -1,5 +1,6 @@
 
 #include "Span.hpp"
+#include <limits.h>
 
 Span::Span(unsigned int nbr): _nbr(nbr) {
     
@@ -34,8 +35,23 @@ void    Span::addNumber(int n){
 }
 
 int Span::shortestSpan(){
-    return 1;
 
+    if(!_vecNbr[0] || _vecNbr.size() < 2)
+        throw (errorVec());
+    int tmp = INT_MAX;
+    for(size_t i=0; i <_vecNbr.size(); ++i){
+        int nbr = _vecNbr[i];
+        for(size_t x= i + 1; x <_vecNbr.size(); ++x){
+             int result;
+            if(_vecNbr[x] > nbr)
+               result = _vecNbr[x] - nbr;
+            else
+             result = nbr - _vecNbr[x];
+            if(result < tmp)
+                tmp = result;
+        }   
+    }
+    return tmp;
 }
 
 int Span::longestSpan(){
