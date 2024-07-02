@@ -39,7 +39,7 @@ int main(int ac, char **av)
         {
             std::vector<std::string> result = splitInput(buff);
         }
-        
+        //procurar vec 0 na data base. se tiver, vou pegar o numero
 
 
         buff.clear();
