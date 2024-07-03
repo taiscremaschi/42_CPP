@@ -1,11 +1,52 @@
 #include "BitcoinExchange.hpp"
 #include <vector>
 
+bool isInt(std::string &tmp)
+{
+    for(std::size_t i = 0; i < tmp.size(); ++i)
+    {
+        if(tmp[0] == '-' || tmp[i] == '+')
+            continue;
+        if(!isdigit(tmp[i]))
+        {
+            std::cerr << "Error: number invalid => " << tmp << std::endl;
+            return false;
+        }
+    }
+    return true;
+}
+
 bool checkLine(std::string buff)
 {
-
-
-
+    std::string tmp;
+    int i = 0;
+    
+    while(buff[i] != ' ')
+        i++;
+    while(buff[i] == ' ')
+        i++;
+    if(buff[i] && buff[i + 1])
+        i++;
+    if(buff[i] != '|'){
+        std::cout << "Error: bad input => " << buff << std::endl;
+        return false;
+    }
+    if(buff[i] && buff[i + 1])
+        i++;
+    while (buff[i] && buff[i] != ' ')
+    {
+        tmp += buff[i];
+        i++;  
+    }
+    if(!isInt(tmp))
+        return false;
+    while(buff[i]){
+        if(buff[i] && buff[i] != ' '){
+            std::cout << "Error: bad input => " << buff << std::endl;
+            return false;
+        }
+        i++;
+    }
     return true;
 }
 
@@ -39,6 +80,7 @@ int main(int ac, char **av)
         {
             std::vector<std::string> result = splitInput(buff);
         }
+        
         //procurar vec 0 na data base. se tiver, vou pegar o numero
 
 
