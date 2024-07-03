@@ -94,7 +94,8 @@ int main(int ac, char **av)
         {
             std::vector<std::string> result = splitInput(buff, '|');
             checkDataAndValues();
-            result[0]
+           Data data;
+           data =  exchange.findData(result[0]);
         }
         
         //procurar vec 0 na data base. se tiver, vou pegar o numero

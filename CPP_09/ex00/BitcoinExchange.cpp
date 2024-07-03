@@ -23,3 +23,16 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other){
     return *this;
 }
 
+
+Data BitcoinExchange::findData(std::string date){
+    for(size_t i = 0; i < _dataBase.size() ; i++){
+        if(_dataBase[i]._data == date)
+            return _dataBase[i];
+    }
+
+    for(size_t i = 0; i < _dataBase.size() ; i++){
+        if(_dataBase[i]._data > date)
+            return _dataBase[i - 1];
+    }
+}
+

@@ -22,8 +22,8 @@ class BitcoinExchange {
         BitcoinExchange(const BitcoinExchange &other);
         BitcoinExchange &operator=(const BitcoinExchange &other); 
         ~BitcoinExchange();
-        std::string findData();
-        
+        Data findData(std::string date);
+
 
 
 
