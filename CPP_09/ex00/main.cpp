@@ -2,10 +2,15 @@
 
 bool isInt(std::string &tmp)
 {
+    bool  point = true;
     for(std::size_t i = 0; i < tmp.size(); ++i)
     {
-        if(tmp[0] == '-' || tmp[0] == '+' || tmp[i] == '.')
+        if(tmp[0] == '-' || tmp[0] == '+')
             continue;
+        if(tmp[i] == '.' && point){
+            point = false;
+            continue;
+        }
         if(!isdigit(tmp[i]))
         {
             std::cerr << "Error: number invalid => " << tmp << std::endl;
@@ -20,11 +25,11 @@ bool checkLine(std::string buff)
     std::string tmp;
     int i = 0;
     
-    while(buff[i] != ' ')
+    while(buff[i] && buff[i] != ' ')
         i++;
     while(buff[i] == ' ')
         i++;
-    if(buff[i] != '|'){
+    if(buff[i] && buff[i] != '|'){
         std::cout << "Error: bad input => " << buff << std::endl;
         return false;
     }
