@@ -9,7 +9,7 @@
 
 struct Data {
         std::string _data;
-        int _value;
+        float _value;
 };
 
 class BitcoinExchange {

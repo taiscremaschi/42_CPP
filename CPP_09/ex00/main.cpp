@@ -4,7 +4,7 @@ bool isInt(std::string &tmp)
 {
     for(std::size_t i = 0; i < tmp.size(); ++i)
     {
-        if(tmp[0] == '-' || tmp[i] == '+')
+        if(tmp[0] == '-' || tmp[0] == '+' || tmp[i] == '.')
             continue;
         if(!isdigit(tmp[i]))
         {
@@ -95,7 +95,7 @@ int main(int ac, char **av)
           //  checkDataAndValues(); //numero maior que mil, negativo, 
            Data data;
            data =  exchange.findData(result[0]);
-           std::cout << result[0] << " => " << result[1] << " = " << data._value * atoi(result[1].c_str()) << std::endl;
+           std::cout << result[0] << " => " << result[1] << " = " << data._value * atof(result[1].c_str()) << std::endl;
 
         }
         //procurar vec 0 na data base. se tiver, vou pegar o numero

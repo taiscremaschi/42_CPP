@@ -10,7 +10,7 @@ BitcoinExchange::BitcoinExchange() {
         Data data;
         std::vector<std::string> result = splitInput(buff, ',');
         data._data = result[0];
-        data._value = atoi(result[1].c_str());
+        data._value = atof(result[1].c_str());
         _dataBase.push_back(data);
     }
 }
