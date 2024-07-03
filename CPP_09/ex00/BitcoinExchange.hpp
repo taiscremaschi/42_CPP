@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-
+#include <stdlib.h>
 
 struct Data {
         std::string _data;

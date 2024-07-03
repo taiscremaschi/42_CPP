@@ -15,11 +15,14 @@ BitcoinExchange::BitcoinExchange() {
     }
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) {}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) {
+    (void)other;
+}
 
 BitcoinExchange::~BitcoinExchange() {}
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other){
+    (void)  other;
     return *this;
 }
 
@@ -31,8 +34,9 @@ Data BitcoinExchange::findData(std::string date){
     }
 
     for(size_t i = 0; i < _dataBase.size() ; i++){
-        if(_dataBase[i]._data > date)
+        if(_dataBase[i]._data > date && i > 0)
             return _dataBase[i - 1];
     }
+    throw std::invalid_argument("data not found");
 }
 

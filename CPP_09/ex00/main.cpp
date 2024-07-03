@@ -1,5 +1,4 @@
 #include "BitcoinExchange.hpp"
-#include <vector>
 
 bool isInt(std::string &tmp)
 {
@@ -25,13 +24,13 @@ bool checkLine(std::string buff)
         i++;
     while(buff[i] == ' ')
         i++;
-    if(buff[i] && buff[i + 1])
-        i++;
     if(buff[i] != '|'){
-        std::cout << "Error: bad input => " << buff << std::endl;
+        std::cout << " check line pipe Error: bad input => " << buff << std::endl;
         return false;
     }
     if(buff[i] && buff[i + 1])
+        i++;
+    while(buff[i] == ' ')
         i++;
     while (buff[i] && buff[i] != ' ')
     {
@@ -42,7 +41,7 @@ bool checkLine(std::string buff)
         return false;
     while(buff[i]){
         if(buff[i] && buff[i] != ' '){
-            std::cout << "Error: bad input => " << buff << std::endl;
+            std::cout << "check espaço Error: bad input => " << buff << std::endl;
             return false;
         }
         i++;
@@ -93,11 +92,12 @@ int main(int ac, char **av)
         if(checkLine(buff))
         {
             std::vector<std::string> result = splitInput(buff, '|');
-            checkDataAndValues();
+          //  checkDataAndValues(); //numero maior que mil, negativo, 
            Data data;
            data =  exchange.findData(result[0]);
+           std::cout << result[0] << " => " << result[1] << " = " << data._value * atoi(result[1].c_str()) << std::endl;
+
         }
-        
         //procurar vec 0 na data base. se tiver, vou pegar o numero
 
 
