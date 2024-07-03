@@ -65,9 +65,6 @@ std::vector<std::string> splitInput(std::string buff, char c)
         i++;
     part = buff.substr(start, i - start);
     result.push_back(part);
-    // for(size_t j = 0; j < result.size(); j++){
-    //     std::cout <<  "esse puto aqui " << result[j]  << "    " << j << std::endl;
-    // }
     return result;
 }
 
@@ -97,7 +94,7 @@ bool checkDataAndValues(std::vector<std::string> &result)
     std::string data = result[0];
     float bit =  atof(result[1].c_str());
     if (bit < 0){
-        std::cout << "Error: not a positive number" << std::endl;
+        std::cout << "Error: not a positive number." << std::endl;
         return false;
     }
     if (bit > 1000){
@@ -108,14 +105,14 @@ bool checkDataAndValues(std::vector<std::string> &result)
         if(data[i] != '-' && (data[i] < '0' || data[i] > '9'))
         {
     
-            std::cout << " sera que Error: invalid format date."  << data[i] << std::endl;
+            std::cout << "Error: invalid format date."  << data[i] << std::endl;
             return false;
         }
     }
     std::vector<std::string> splitDate = split(data, '-');
     if(splitDate.size() != 3)
     {
-        std::cout << "que cu " <<  splitDate.size() << " " << std::endl;
+        std::cout << "Error: invalid format date." << std::endl;
         return false;
     }
 
@@ -147,18 +144,19 @@ int main(int ac, char **av)
     }
     std::string buff;
     BitcoinExchange exchange;
+    bool first = true;
     while(std::getline(file, buff))
     {
+        if(first){
+            first = false;
+            continue ;
+        }
         if(checkLine(buff))
         {
             std::vector<std::string> result = splitInput(buff, '|');
-            // if(result[0][result[0].size()-1] == ' ' || '\t')
-            //     result[0].erase(result[0].end() - 1);
-            // if(result[1][0] == ' ' || '\t')
-            //     result[1].erase(result[1].begin());
             if(checkDataAndValues(result))
             {
-                Data data; //arrumar o primeiro argumento 
+                Data data;
                 try {
                     data =  exchange.findData(result[0]);
                     std::cout << result[0] << " => " << result[1] << " = " << data._value * atof(result[1].c_str()) << std::endl;
@@ -168,8 +166,6 @@ int main(int ac, char **av)
                }
             }
         }
-        std::cerr << "aqui: " << std::endl;
-
         buff.clear();
     }
 }
