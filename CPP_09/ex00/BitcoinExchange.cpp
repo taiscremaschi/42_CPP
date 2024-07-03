@@ -34,9 +34,13 @@ Data BitcoinExchange::findData(std::string date){
     }
 
     for(size_t i = 0; i < _dataBase.size() ; i++){
-        if(_dataBase[i]._data > date && i > 0)
-            return _dataBase[i - 1];
+        if(_dataBase[i]._data > date)
+        {
+            if(i > 0)
+                return _dataBase[i - 1];
+            throw std::invalid_argument("date before creation of bitcoin");
+        }
     }
-    throw std::invalid_argument("data not found");
+    return _dataBase[_dataBase.size() - 1];
 }
 

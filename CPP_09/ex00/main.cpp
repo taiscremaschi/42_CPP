@@ -25,7 +25,7 @@ bool checkLine(std::string buff)
     while(buff[i] == ' ')
         i++;
     if(buff[i] != '|'){
-        std::cout << " check line pipe Error: bad input => " << buff << std::endl;
+        std::cout << "Error: bad input => " << buff << std::endl;
         return false;
     }
     if(buff[i] && buff[i + 1])
@@ -41,7 +41,7 @@ bool checkLine(std::string buff)
         return false;
     while(buff[i]){
         if(buff[i] && buff[i] != ' '){
-            std::cout << "check espaço Error: bad input => " << buff << std::endl;
+            std::cout << "Error: bad input => " << buff << std::endl;
             return false;
         }
         i++;
@@ -58,15 +58,52 @@ std::vector<std::string> splitInput(std::string buff, char c)
 
     while(buff[i] != c)
         i++;
-    part = buff.substr(start, i - start);
+    part = buff.substr(start, i - start - 1);
     result.push_back(part);
-    start = i + 1;
+    start = i + 2;
     while(buff[i] != '\0')
         i++;
     part = buff.substr(start, i - start);
     result.push_back(part);
 
     return result;
+}
+
+bool checkDataAndValues(std::vector<std::string> &result)
+{
+    std::string data = result[0];
+    float bit =  atof(result[1].c_str());
+    if (bit < 0){
+        std::cout << "Error: not a positive number" << std::endl;
+        return false;
+    }
+    if (bit > 1000){
+        std::cout << "Error: too large a number." << std::endl;
+        return false;
+    }
+    for(int i = 0; i < data.size(); i++){
+        if(data[i] != 45 && (data[i] < '0' || data[i] > '9'))
+        {
+            std::cout << "Error: invalid format date." << std::endl;
+            return false;
+        }
+    }
+    std::vector<std::string> split = splitInput(data, '-');
+    if(split.size() > 3 || split.size() < 3)
+        return false;
+
+    if(atoi(split[1].c_str()) > 12 || atoi(split[1].c_str()) < 1)
+    {
+        std::cout << "Error: error in parameter mouth." << std::endl;
+        return false;
+    }
+    if(atoi(split[2].c_str()) > 31 || atoi(split[2].c_str()) < 1)
+    {
+        std::cout << "Error: error in parameter days." << std::endl;
+        return false;
+    }
+
+
 }
 
 int main(int ac, char **av)
@@ -76,9 +113,6 @@ int main(int ac, char **av)
         return 1;
     }
     std::string filename = av[1];
-
-    //abrir o arq,
-    // ler e guardar a key (data ) e o value (preço)
     std::ifstream file(filename.c_str());
     if(!file)
     {
@@ -92,21 +126,18 @@ int main(int ac, char **av)
         if(checkLine(buff))
         {
             std::vector<std::string> result = splitInput(buff, '|');
-          //  checkDataAndValues(); //numero maior que mil, negativo, 
-           Data data;
-           data =  exchange.findData(result[0]);
-           std::cout << result[0] << " => " << result[1] << " = " << data._value * atof(result[1].c_str()) << std::endl;
-
+            if(checkDataAndValues(result))
+            {
+                Data data;
+                try {
+                data =  exchange.findData(result[0]);
+                std::cout << result[0] << " => " << result[1] << " = " << data._value * atof(result[1].c_str()) << std::endl;
+                }
+               catch (const std::exception &err) {
+                std::cerr << "ERROR: " << err.what() << std::endl;
+               }
+            }
         }
-        //procurar vec 0 na data base. se tiver, vou pegar o numero
-
-
         buff.clear();
-    
     }
-    
-    
-
-
-
 }
