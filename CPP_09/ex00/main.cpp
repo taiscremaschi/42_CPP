@@ -1,11 +1,11 @@
 #include "BitcoinExchange.hpp"
 
-bool isInt(std::string &tmp)
+bool isNumber(std::string &tmp)
 {
     bool  point = true;
     for(std::size_t i = 0; i < tmp.size(); ++i)
     {
-        if(tmp[0] == '-' || tmp[0] == '+')
+        if(tmp[0] == '+')
             continue;
         if(tmp[i] == '.' && point){
             point = false;
@@ -29,7 +29,7 @@ bool checkLine(std::string buff)
         i++;
     while(buff[i] == ' ')
         i++;
-    if(buff[i] && buff[i] != '|'){
+    if(buff[i] != '|'){
         std::cout << "Error: bad input => " << buff << std::endl;
         return false;
     }
@@ -42,7 +42,7 @@ bool checkLine(std::string buff)
         tmp += buff[i];
         i++;  
     }
-    if(!isInt(tmp))
+    if(!isNumber(tmp))
         return false;
     while(buff[i]){
         if(buff[i] && buff[i] != ' '){
