@@ -50,14 +50,14 @@ bool checkLine(std::string buff)
     return true;
 }
 
-std::vector<std::string> splitInput(std::string buff)
+std::vector<std::string> splitInput(std::string buff, char c)
 {
     size_t i = 0;
     std::string part;
     std::vector<std::string> result;
     int start = 0;
 
-    while(buff[i] != '|')
+    while(buff[i] != c)
         i++;
     part = buff.substr(start, i - start);
     result.push_back(part);
@@ -87,11 +87,14 @@ int main(int ac, char **av)
         return 1;
     }
     std::string buff;
+    BitcoinExchange exchange;
     while(std::getline(file, buff))
     {
         if(checkLine(buff))
         {
-            std::vector<std::string> result = splitInput(buff);
+            std::vector<std::string> result = splitInput(buff, '|');
+            checkDataAndValues();
+            result[0]
         }
         
         //procurar vec 0 na data base. se tiver, vou pegar o numero

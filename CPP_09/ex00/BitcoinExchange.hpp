@@ -22,11 +22,13 @@ class BitcoinExchange {
         BitcoinExchange(const BitcoinExchange &other);
         BitcoinExchange &operator=(const BitcoinExchange &other); 
         ~BitcoinExchange();
+        std::string findData();
+        
 
 
 
 };
 
-
+std::vector<std::string> splitInput(std::string buff, char c);
 
 #endif
