@@ -52,10 +52,23 @@ bool checkLine(std::string buff)
 
 std::vector<std::string> splitInput(std::string buff)
 {
+    size_t i = 0;
+    std::string part;
+    std::vector<std::string> result;
+    int start = 0;
 
+    while(buff[i] != '|')
+        i++;
+    part = buff.substr(start, i - start);
+    result.push_back(part);
+    start = i + 1;
+    while(buff[i] != '\0')
+        i++;
+    part = buff.substr(start, i - start);
+    result.push_back(part);
 
+    return result;
 }
-
 
 int main(int ac, char **av)
 {
