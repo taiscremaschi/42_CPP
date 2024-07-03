@@ -30,5 +30,5 @@ class BitcoinExchange {
 };
 
 std::vector<std::string> splitInput(std::string buff, char c);
-
+std::vector<std::string> split(std::string buff, char c);
 #endif

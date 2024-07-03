@@ -58,9 +58,9 @@ std::vector<std::string> splitInput(std::string buff, char c)
 
     while(buff[i] != c)
         i++;
-    part = buff.substr(start, i - start);
+    part = buff.substr(start, i - start - 1);
     result.push_back(part);
-    start = i + 1;
+    start = i + 2;
     while(buff[i] != '\0')
         i++;
     part = buff.substr(start, i - start);
@@ -68,6 +68,27 @@ std::vector<std::string> splitInput(std::string buff, char c)
     // for(size_t j = 0; j < result.size(); j++){
     //     std::cout <<  "esse puto aqui " << result[j]  << "    " << j << std::endl;
     // }
+    return result;
+}
+
+std::vector<std::string> split(std::string buff, char c){
+
+    size_t i = 0;
+    std::string msg;
+    std::vector<std::string> result;
+    int start = 0;
+
+    while(i < buff.size())
+    {
+        while(buff[i] == c)
+            i++;
+        start = i;
+        while(buff[i] != '\0' &&  buff[i] != c)
+            i++;
+        msg = buff.substr(start, i - start);
+        result.push_back(msg);
+        i++;
+    }
     return result;
 }
 
@@ -91,22 +112,19 @@ bool checkDataAndValues(std::vector<std::string> &result)
             return false;
         }
     }
-    std::vector<std::string> split = splitInput(data, '-');
-    for (size_t i = 0; i < split.size(); i ++){
-        std::cout << " esse eh meu print " << split[i] << "   " << i << std::endl;
-    }
-    if(split.size() != 3)
+    std::vector<std::string> splitDate = split(data, '-');
+    if(splitDate.size() != 3)
     {
-        std::cout << "que cu " <<  split.size() << " " << std::endl;
+        std::cout << "que cu " <<  splitDate.size() << " " << std::endl;
         return false;
     }
 
-    if(atoi(split[1].c_str()) > 12 || atoi(split[1].c_str()) < 1)
+    if(atoi(splitDate[1].c_str()) > 12 || atoi(splitDate[1].c_str()) < 1)
     {
         std::cout << "Error: error in parameter mouth." << std::endl;
         return false;
     }
-    if(atoi(split[2].c_str()) > 31 || atoi(split[2].c_str()) < 1)
+    if(atoi(splitDate[2].c_str()) > 31 || atoi(splitDate[2].c_str()) < 1)
     {
         std::cout << "Error: error in parameter days." << std::endl;
         return false;
@@ -134,10 +152,10 @@ int main(int ac, char **av)
         if(checkLine(buff))
         {
             std::vector<std::string> result = splitInput(buff, '|');
-            if(result[0][result[0].size()-1] == ' ' || '\t')
-                result[0].erase(result[0].end() - 1);
-            if(result[1][0] == ' ' || '\t')
-                result[1].erase(result[1].begin());
+            // if(result[0][result[0].size()-1] == ' ' || '\t')
+            //     result[0].erase(result[0].end() - 1);
+            // if(result[1][0] == ' ' || '\t')
+            //     result[1].erase(result[1].begin());
             if(checkDataAndValues(result))
             {
                 Data data; //arrumar o primeiro argumento 

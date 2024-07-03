@@ -5,10 +5,10 @@ BitcoinExchange::BitcoinExchange() {
     std::ifstream filename("data.csv");
     while(std::getline(filename, buff))
     {
-        if(buff[0] < '0' && buff[0] > '9')
+        if(buff[0] < '0' || buff[0] > '9')
             continue ;
         Data data;
-        std::vector<std::string> result = splitInput(buff, ',');
+        std::vector<std::string> result = split(buff, ',');
         data._data = result[0];
         data._value = atof(result[1].c_str());
         _dataBase.push_back(data);
@@ -38,6 +38,7 @@ Data BitcoinExchange::findData(std::string date){
         {
             if(i > 0)
                 return _dataBase[i - 1];
+            std::cout << "Date: " << _dataBase[i]._data << " my date "<< date << std::endl;
             throw std::invalid_argument("date before creation of bitcoin");
         }
     }
