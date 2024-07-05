@@ -5,7 +5,7 @@ bool parse(char *str)
 {
     int j;
     int i = 0;
-    char *validChars = "0123456789+-*/";
+    char *validChars = "0123456789+-*/ \t";
 
     while(str[i])
     {
@@ -16,7 +16,7 @@ bool parse(char *str)
                 break;
             j++;
         }
-        if(j = 14)
+        if(j == 16)
             return false;
         i++;
     }
