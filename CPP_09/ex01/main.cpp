@@ -1,6 +1,7 @@
 
 #include "RPN.hpp"
 
+
 bool parse(char *str)
 {
     int j;
@@ -34,4 +35,5 @@ int main(int ac, char **av){
         std::cerr << "Error" << std::endl;
         return 1;
     }
+    
 }
