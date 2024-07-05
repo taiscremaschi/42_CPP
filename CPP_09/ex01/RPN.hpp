@@ -17,6 +17,7 @@ class  RPN {
         RPN &operator=(const RPN &other); 
         ~RPN();
         std::stack<char> splitStack(char *str);
+        long int run();
 };
 
 

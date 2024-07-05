@@ -1,7 +1,6 @@
 
 #include "RPN.hpp"
 
-
 bool parse(char *str)
 {
     int j;
@@ -35,5 +34,14 @@ int main(int ac, char **av){
         std::cerr << "Error" << std::endl;
         return 1;
     }
-    
+    RPN rpn(av[1]);
+
+    try{
+        rpn.run();
+    }
+    catch(std::exception &e){
+        std::cerr << e.what() << std::endl;
+    };
+
+    return 0;
 }

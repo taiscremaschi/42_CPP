@@ -32,3 +32,14 @@ std::stack<char>  RPN::splitStack(char *str){
     return result;
 }
 
+long int RPN::run(){
+    
+    for(size_t i = 0; i < _myStack.size(); i++){
+        
+
+        
+
+    }
+
+
+}
