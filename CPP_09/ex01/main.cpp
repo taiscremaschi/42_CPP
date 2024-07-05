@@ -1,7 +1,6 @@
 
 #include "RPN.hpp"
 
-
 bool parse(char *str)
 {
     int j;
