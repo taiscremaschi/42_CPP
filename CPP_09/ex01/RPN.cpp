@@ -16,28 +16,65 @@ RPN &RPN::operator=(const RPN &other){
     return *this;
 }
 
-std::stack<char>  RPN::splitStack(char *str){
-    std::string myStr = str;
-
+void  RPN::splitStack(char *str){
     size_t i = 0;
-    std::stack<char>  result;
     int start = 0;
+    int result = 0;
 
-    while(myStr[i])
+    while(str[i])
     {
-        while(myStr[i] == ' ' || myStr[i] == '\t')
+        while(str[i] == ' ' || str[i] == '\t')
             i++;
-        result.push(myStr[i]);   
+        if(str[i] > '0' && str[i] < '9')
+            _myStack.push(str[i] - '0');
+        else
+        {
+            if(str[i] == '+'){
+                result = _myStack.top();
+                _myStack.pop();
+                result +=  _myStack.top();
+                _myStack.pop();
+                _myStack.push(result);
+                i++;
+                continue ;
+            }
+            if(str[i] == '-'){
+                result = _myStack.top();
+                _myStack.pop();
+                result -=  _myStack.top();
+                _myStack.pop();
+                _myStack.push(result);
+                i++;
+                continue ;
+            }
+            if(str[i] == '*'){
+                result = _myStack.top();
+                _myStack.pop();
+                result *=  _myStack.top();
+                _myStack.pop();
+                _myStack.push(result);
+                i++;
+                continue ;
+            }
+            if(str[i] == '/'){
+                result = _myStack.top();
+                _myStack.pop();
+                result /=  _myStack.top();
+                _myStack.pop();
+                _myStack.push(result);
+                i++;
+                continue ;
+            }
+        }
     }
-    return result;
 }
 
 long int RPN::run(){
     
     for(size_t i = 0; i < _myStack.size(); i++){
         
-
         
+
 
     }
 

@@ -9,14 +9,14 @@
 
 class  RPN {
     private:
-        std::stack<char> _myStack;
+        std::stack<int> _myStack;
 
     public:
         RPN(char *str);
         RPN(const RPN &other);
         RPN &operator=(const RPN &other); 
         ~RPN();
-        std::stack<char> splitStack(char *str);
+        void splitStack(char *str);
         long int run();
 };
 
