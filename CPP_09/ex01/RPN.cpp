@@ -16,6 +16,8 @@ RPN &RPN::operator=(const RPN &other){
     return *this;
 }
 
+
+
 void  RPN::splitStack(char *str){
     size_t i = 0;
     int start = 0;
@@ -29,42 +31,19 @@ void  RPN::splitStack(char *str){
             _myStack.push(str[i] - '0');
         else
         {
-            if(str[i] == '+'){
-                result = _myStack.top();
-                _myStack.pop();
+            result = _myStack.top();
+            _myStack.pop();
+            if(str[i] == '+')
                 result +=  _myStack.top();
-                _myStack.pop();
-                _myStack.push(result);
-                i++;
-                continue ;
-            }
-            if(str[i] == '-'){
-                result = _myStack.top();
-                _myStack.pop();
+            else if(str[i] == '-')
                 result -=  _myStack.top();
-                _myStack.pop();
-                _myStack.push(result);
-                i++;
-                continue ;
-            }
-            if(str[i] == '*'){
-                result = _myStack.top();
-                _myStack.pop();
+            else if(str[i] == '*')
                 result *=  _myStack.top();
-                _myStack.pop();
-                _myStack.push(result);
-                i++;
-                continue ;
-            }
-            if(str[i] == '/'){
-                result = _myStack.top();
-                _myStack.pop();
+            else if(str[i] == '/')
                 result /=  _myStack.top();
-                _myStack.pop();
-                _myStack.push(result);
-                i++;
-                continue ;
-            }
+            _myStack.pop();
+            _myStack.push(result);
+            i++;
         }
     }
 }
