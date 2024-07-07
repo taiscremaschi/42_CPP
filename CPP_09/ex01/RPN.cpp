@@ -1,8 +1,7 @@
 
 #include "RPN.hpp"
 
-RPN::RPN(char *str) {
-     _myStack = splitStack(str);
+RPN::RPN() {
 }
 
 RPN::RPN(const RPN &other) {
@@ -16,11 +15,8 @@ RPN &RPN::operator=(const RPN &other){
     return *this;
 }
 
-
-
-void  RPN::splitStack(char *str){
+void  RPN::run(char *str){
     size_t i = 0;
-    int start = 0;
     int result = 0;
 
     while(str[i])
@@ -28,9 +24,15 @@ void  RPN::splitStack(char *str){
         while(str[i] == ' ' || str[i] == '\t')
             i++;
         if(str[i] > '0' && str[i] < '9')
-            _myStack.push(str[i] - '0');
-        else
         {
+            if((str[i + 1]) && (str[i + 1] != ' ' && str[i + 1] != '\t'))
+                throw std::invalid_argument("cuzin Error.");
+            _myStack.push(str[i] - '0');
+        }
+        else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')
+        {
+            if(_myStack.size() < 2)
+                throw std::invalid_argument("size Error.");
             result = _myStack.top();
             _myStack.pop();
             if(str[i] == '+')
@@ -43,19 +45,10 @@ void  RPN::splitStack(char *str){
                 result /=  _myStack.top();
             _myStack.pop();
             _myStack.push(result);
-            i++;
         }
-    }
-}
-
-long int RPN::run(){
-    
-    for(size_t i = 0; i < _myStack.size(); i++){
-        
-        
-
-
+        i++;
     }
 
-
+    std::cout << _myStack.top() << std::endl;
 }
+

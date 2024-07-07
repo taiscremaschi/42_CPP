@@ -5,8 +5,9 @@ bool parse(char *str)
 {
     int j;
     int i = 0;
-    char *validChars = "0123456789+-*/ \t";
-
+    std::string validChars = "0123456789+-*/ \t";
+    if(!str || !str[0]) 
+        return false;
     while(str[i])
     {
         j = 0;
@@ -34,10 +35,10 @@ int main(int ac, char **av){
         std::cerr << "Error" << std::endl;
         return 1;
     }
-    RPN rpn(av[1]);
+    RPN rpn;
 
     try{
-        rpn.run();
+        rpn.run(av[1]);
     }
     catch(std::exception &e){
         std::cerr << e.what() << std::endl;

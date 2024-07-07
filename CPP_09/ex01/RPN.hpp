@@ -12,12 +12,11 @@ class  RPN {
         std::stack<int> _myStack;
 
     public:
-        RPN(char *str);
+        RPN();
         RPN(const RPN &other);
         RPN &operator=(const RPN &other); 
         ~RPN();
-        void splitStack(char *str);
-        long int run();
+        void run(char *s);
 };
 
 
