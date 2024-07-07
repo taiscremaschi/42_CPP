@@ -21,7 +21,7 @@ void  RPN::run(char *str){
     {
         while(str[i] == ' ' || str[i] == '\t')
             i++;
-        if(str[i] > '0' && str[i] < '9')
+        if(str[i] >= '0' && str[i] <= '9')
         {
             if((str[i + 1]) && (str[i + 1] != ' ' && str[i + 1] != '\t'))
                 throw std::invalid_argument("Error.");
@@ -30,20 +30,25 @@ void  RPN::run(char *str){
         else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')
         {
             if(_myStack.size() < 2)
+            {
+                std::cout << "my top is " << _myStack.size() << "     " << i  << "     " << _myStack.top() << std::endl;
                 throw std::invalid_argument("Error.");
+            }
             result = _myStack.top();
             _myStack.pop();
             if(str[i] == '+')
                 result +=  _myStack.top();
             else if(str[i] == '-')
-                result -=  _myStack.top();
+                result =  _myStack.top() - result;
             else if(str[i] == '*')
                 result *=  _myStack.top();
             else if(str[i] == '/')
-                result /=  _myStack.top();
+                result =  _myStack.top() / result;
             _myStack.pop();
             _myStack.push(result);
         }
+        //std::cout << "my stack size  is " << _myStack.size() << "  my top is " << _myStack.top() << std::endl;
+
     }
 
     std::cout << _myStack.top() << std::endl;
