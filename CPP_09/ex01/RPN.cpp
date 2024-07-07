@@ -30,10 +30,7 @@ void  RPN::run(char *str){
         else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')
         {
             if(_myStack.size() < 2)
-            {
-                std::cout << "my top is " << _myStack.size() << "     " << i  << "     " << _myStack.top() << std::endl;
                 throw std::invalid_argument("Error.");
-            }
             result = _myStack.top();
             _myStack.pop();
             if(str[i] == '+')
@@ -47,10 +44,7 @@ void  RPN::run(char *str){
             _myStack.pop();
             _myStack.push(result);
         }
-        //std::cout << "my stack size  is " << _myStack.size() << "  my top is " << _myStack.top() << std::endl;
-
     }
-
     std::cout << _myStack.top() << std::endl;
 }
 
