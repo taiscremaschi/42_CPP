@@ -40,14 +40,16 @@ int main(int ac, char **av)
          result[j]= atoi(av[i]);
          j++;
     }
-    j = 0 ;
     for(size_t i = 0; i < ac; i++){
+        j = i + 1;
         while(j < ac){
-            if(result[i] == result[j + 1])
-            //organizar aqui essa caraia pra ver se tem numero repetido
-
+            if(result[i] == result[j]){
+                std:: cerr << "Error: repeated number" << std::endl;
+                return 1;
+            }
+            j++;
         }
-            
     }
 
+    return 0;
 }
