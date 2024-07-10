@@ -24,36 +24,17 @@ bool checkNbr(std::string nbr)
         return true;
 }
 
-
-std::array<int, 5000> split(std::string input){
-
-    size_t i = 0;
-    size_t j = 0;
-    std::string nbr;
-    std::array<int, 5000>  result;
-    int start = 0;
-
-    while(i < input.size())
-    {
-        while(input[i] == ' ')
-            i++;
-        start = i;
-        while(input[i] != '\0' &&  input[i] != ' ')
-            i++;
-        nbr = input.substr(start, i - start);
-        if(!checkNbr(nbr))
-            throw std::invalid_argument("Invalid number");
-        result[j]= atoi(nbr.c_str());
-        i++;
-        j++;
-    }
-    return result;
-}
-
-
 int main(int ac, char **av)
 {
-    //split de espaço,  verificar se algum desses é maior que o int max ou negatvo 
-
+    std::array<int,5000> result;
+    int j = 0;
+    for(size_t i = 1; i < ac; i++){
+         if(!checkNbr(av[i])){
+            std:: cerr << "invalid number: " << av[i] << std::endl;
+            return 1;
+         }
+         result[j]= atoi(av[i]);
+         j++;
+    }
 
 }
