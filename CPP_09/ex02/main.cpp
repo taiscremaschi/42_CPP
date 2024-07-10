@@ -1,7 +1,6 @@
 
 #include "PmergeMe.hpp"
 
-
 bool checkNbr(std::string nbr)
 {
     if(nbr.empty())
@@ -26,8 +25,13 @@ bool checkNbr(std::string nbr)
 
 int main(int ac, char **av)
 {
-    std::array<int,5000> result;
+    std::array<int,10000> result;
     int j = 0;
+    if(ac > 10000){
+        std::cerr << "Error: too many parameters: Maximum is 10.000" << std::endl;
+        return 1;
+    }
+
     for(size_t i = 1; i < ac; i++){
          if(!checkNbr(av[i])){
             std:: cerr << "invalid number: " << av[i] << std::endl;
@@ -35,6 +39,15 @@ int main(int ac, char **av)
          }
          result[j]= atoi(av[i]);
          j++;
+    }
+    j = 0 ;
+    for(size_t i = 0; i < ac; i++){
+        while(j < ac){
+            if(result[i] == result[j + 1])
+            //organizar aqui essa caraia pra ver se tem numero repetido
+
+        }
+            
     }
 
 }
