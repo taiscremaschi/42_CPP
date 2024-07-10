@@ -3,24 +3,15 @@
 
 bool checkNbr(std::string nbr)
 {
-    if(nbr.empty())
+    if(nbr.empty() || nbr.find('-') || nbr.size() > 10)
         return false;
-    if(nbr.find('-'))
+    if(nbr.size() == 10 && nbr > "2147483647")
         return false;
-    if(nbr.size() > 10)
-        return false;
-    if(nbr > "2147483647")
-        return false;
-
-    for(int i = 0; i < nbr.size(); i++)
-    {
-        if(nbr[i] >= '0' && nbr[i] <= '9')
-            i++;
-        else
+    for(int i = 0; i < nbr.size(); i++){
+        if(nbr[i] < '0' || nbr[i] > '9')
             return false;
     }
-    if(atoi(nbr.c_str()))
-        return true;
+    return true;
 }
 
 int main(int ac, char **av)
