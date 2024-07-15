@@ -5,31 +5,22 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
-#include <array>
 #include <list>
+#include <deque>
 
 class PmergeMe {
     private:
         std::list<int> _myList;
-        std::array<int, 10000> _myArray;
-        int _size;
+        std::deque<int> _myDeque;
     public:
-        PmergeMe(std::array<int, 10000> input, int size);
+        PmergeMe(std::list<int> input);
         PmergeMe(const PmergeMe &other);
         PmergeMe &operator=(const PmergeMe &other); 
         ~PmergeMe();
-        std::array<int, 10000> algArray(std::array<int, 10000> arr);
+        std::deque<int> algDeque(std::deque<int> deque);
         std::list<int> algList(std::list<int> list);
-        std::array<int, 10000> organizeArray();
         std::list<int> handleMerge(std::list<int> list, std::list<int> list2);
 
-
-
 };
-
-
-
-
-
 
 #endif

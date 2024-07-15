@@ -1,17 +1,17 @@
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe(std::array<int, 10000> input, int size){
-    for(int i = 0; i < size; i++){
-        _myArray[i] = input[i];
-        _myList.push_back(input[i]);
+PmergeMe::PmergeMe(std::list<int> input){
+    for(std::list<int>::iterator it = input.begin(); it != input.end(); ++it){
+        _myDeque.push_back(*it);
+        _myList.push_back(*it);
     }
-    _size = size;
     _myList = algList(_myList);
+    _myDeque = algDeque(_myDeque);
 
-    for(std::list<int>::iterator i = _myList.begin(); i != _myList.end(); i++){
-        std::cout << " " << *i;
-    }
+    // for(std::list<int>::iterator i = _myList.begin(); i != _myList.end(); i++){
+    //     std::cout << " " << *i;
+    // }
 }
 
 PmergeMe::PmergeMe(const PmergeMe &other) {
@@ -25,20 +25,69 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &other){
     return *this;
 }
 
-// std::array<int, 10000> PmergeMe::organizeArray(){
+
+std::list<int> PmergeMe::handleMergeDeque(std::list<int> list, std::list<int> list2){
+    std::list<int> result;
+    std::list<int>::iterator first = list.begin();
+    std::list<int>::iterator first2 = list2.begin();
+
+
+    while(first != list.end() && first2 != list2.end()){
+        if(*first < *first2){
+            result.push_back(*first);
+            first++;
+        }
+        else{
+            result.push_back(*first2);
+            first2++;
+        }
+    }
+    while (first != list.end()){
+        result.push_back(*first);
+        first++;
+
+    }
+    while( first2 != list2.end()){
+        result.push_back(*first2);
+        first2++;
+    }
+    ret
+
+std::deque<int> PmergeMe::algDeque(std::deque<int> deque){
     
+    int swap = 0;
 
-
-// }
-
-// std::array<int, 10000> PmergeMe::algArray(std::array<int, 10000> arr){
+    if(deque.size() < 3){
+        if (deque.size() < 2)
+        {
+            return deque;
+        }
+        
+        std::deque<int>::iterator firstNbr = deque.begin();
+        std::deque<int>::iterator secondNbr = firstNbr;
+        std::advance(secondNbr, 1);
+        if(*firstNbr > *secondNbr){
+            swap = *firstNbr;
+            *firstNbr = *secondNbr;
+            *secondNbr = swap;
+        }
+        return deque;
+    }
+    std::deque<int>::iterator it = deque.begin();
+    std::advance (it, deque.size() / 2);
+    std::deque<int> left(deque.begin(), it);
+    std::deque<int> right(it, deque.end());
     
+    std::deque<int>  result = algDeque(left);
+    std::deque<int>  result2 = algDeque(right);
+    std::deque<int>  result3 = handleMergeDeque(result, result2); 
+
+    return result3;
+
+}
 
 
-// }
-
-
-std::list<int> PmergeMe::handleMerge(std::list<int> list, std::list<int> list2){
+std::list<int> PmergeMe::handleMergeList(std::list<int> list, std::list<int> list2){
     std::list<int> result;
     std::list<int>::iterator first = list.begin();
     std::list<int>::iterator first2 = list2.begin();

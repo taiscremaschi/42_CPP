@@ -16,36 +16,29 @@ bool checkNbr(std::string nbr)
 
 int main(int ac, char **av)
 {
-    std::array<int,10000> result;
-
-    int j = 0;
-    if(ac > 10000){
-        std::cerr << "Error: too many parameters: Maximum is 10.000" << std::endl;
-        return 1;
-    }
+    std::list<int> result;
 
     for(int i = 1; i < ac; i++){
          if(!checkNbr(av[i])){
             std:: cerr << "invalid number: " << av[i] << std::endl;
             return 1;
          }
-         result[j]= atoi(av[i]);
-
-
-         j++;
+         result.push_back(atoi(av[i]));
     }
-    for(int i = 0; i < ac - 2; i++){
-        j = i + 1;
-        while(j < ac - 1){
-            if(result[i] == result[j]){
-                std::cout << result[j] << "   " << result[i]  <<std::endl;
-                std:: cerr << "Error: repeated number" << std::endl;
+    for(std::list<int>::iterator it = result.begin(); it != result.end(); it++){
+
+        std::list<int>::iterator it2 = it;
+        std::advance(it2, 1);
+        while(it2 != result.end()){
+            if(*it == *it2){
+                std:: cerr << "Error: repeated number: " << *it << std::endl;
                 return 1;
             }
-            j++;
+            it2++;
         }
     }
-    PmergeMe run(result, ac -1);
+
+    PmergeMe run(result);
 
     return 0;
 }
