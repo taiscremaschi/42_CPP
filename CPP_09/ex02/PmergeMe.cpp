@@ -2,11 +2,16 @@
 #include "PmergeMe.hpp"
 
 PmergeMe::PmergeMe(std::array<int, 10000> input, int size){
-    for(size_t i = 0; i < size; i++){
+    for(int i = 0; i < size; i++){
         _myArray[i] = input[i];
         _myList.push_back(input[i]);
     }
     _size = size;
+    _myList = algList(_myList);
+
+    for(std::list<int>::iterator i = _myList.begin(); i != _myList.end(); i++){
+        std::cout << " " << *i;
+    }
 }
 
 PmergeMe::PmergeMe(const PmergeMe &other) {
@@ -20,22 +25,21 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &other){
     return *this;
 }
 
-std::array<int, 10000> PmergeMe::organizeArray(){
+// std::array<int, 10000> PmergeMe::organizeArray(){
     
 
 
-}
+// }
 
-std::array<int, 10000> PmergeMe::algArray(std::array<int, 10000> arr){
+// std::array<int, 10000> PmergeMe::algArray(std::array<int, 10000> arr){
     
 
 
-}
+// }
 
 
 std::list<int> PmergeMe::handleMerge(std::list<int> list, std::list<int> list2){
     std::list<int> result;
-    size_t i = 0;
     std::list<int>::iterator first = list.begin();
     std::list<int>::iterator first2 = list2.begin();
 
@@ -59,6 +63,7 @@ std::list<int> PmergeMe::handleMerge(std::list<int> list, std::list<int> list2){
         result.push_back(*first2);
         first2++;
     }
+    return result;
 }
 
 std::list<int> PmergeMe::algList(std::list<int> list){
@@ -90,7 +95,6 @@ std::list<int> PmergeMe::algList(std::list<int> list){
     std::list<int>  result2 = algList(right);
     std::list<int>  result3 = handleMerge(result, result2); 
 
-
-
+    return result3;
 
 }

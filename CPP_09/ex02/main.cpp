@@ -3,11 +3,11 @@
 
 bool checkNbr(std::string nbr)
 {
-    if(nbr.empty() || nbr.find('-') || nbr.size() > 10)
+    if(nbr.empty() || nbr.find('-') != std::string::npos || nbr.size() > 10)
         return false;
     if(nbr.size() == 10 && nbr > "2147483647")
         return false;
-    for(int i = 0; i < nbr.size(); i++){
+    for(size_t i = 0; i < nbr.size(); i++){
         if(nbr[i] < '0' || nbr[i] > '9')
             return false;
     }
@@ -23,7 +23,7 @@ int main(int ac, char **av)
         return 1;
     }
 
-    for(size_t i = 1; i < ac; i++){
+    for(int i = 1; i < ac - 1; i++){
          if(!checkNbr(av[i])){
             std:: cerr << "invalid number: " << av[i] << std::endl;
             return 1;
@@ -31,17 +31,18 @@ int main(int ac, char **av)
          result[j]= atoi(av[i]);
          j++;
     }
-    for(size_t i = 0; i < ac; i++){
+    for(int i = 0; i < ac - 2; i++){
         j = i + 1;
-        while(j < ac){
+        while(j < ac - 1){
             if(result[i] == result[j]){
+                std::cout << result[j] << "   " << result[i]  <<std::endl;
                 std:: cerr << "Error: repeated number" << std::endl;
                 return 1;
             }
             j++;
         }
     }
-    
+    PmergeMe run(result, ac -1);
 
     return 0;
 }
