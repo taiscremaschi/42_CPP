@@ -148,11 +148,18 @@ std::list<int> PmergeMe::algList(std::list<int> list){
 }
 
 void PmergeMe::printSorted(){
-    for(std::deque<int>::iterator i = _myDeque.begin(); i != _myDeque.end(); i++){
-        std::cout << " " << *i;
+
+    std::cout << "Before:";
+    for(std::list<int>::iterator it = _myInput.begin(); it != _myInput.end(); it++){
+        std::cout << " " << *it;
     }
+    std::cout << "\n" << "After:";
 
-
-
+    for(std::deque<int>::iterator it = _myDeque.begin(); it != _myDeque.end(); it++){
+        std::cout << " " << *it;
+    }
+    std::cout << "\n";
+    std::cout << "Time to process a range of " << _myInput.size() << " elements with std::deque : " << cu  << "us\n";
+    std::cout << "Time to process a range of " << _myInput.size()  << " elements with std::list : " << cu  << "us\n";
 
 }
