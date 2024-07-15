@@ -33,12 +33,44 @@ std::array<int, 10000> PmergeMe::algArray(std::array<int, 10000> arr){
 }
 
 
+std::list<int> PmergeMe::handleMerge(std::list<int> list, std::list<int> list2){
+    std::list<int> result;
+    size_t i = 0;
+    std::list<int>::iterator first = list.begin();
+    std::list<int>::iterator first2 = list2.begin();
+
+
+    while(first != list.end() && first2 != list2.end()){
+        if(*first < *first2){
+            result.push_back(*first);
+            first++;
+        }
+        else{
+            result.push_back(*first2);
+            first2++;
+        }
+    }
+    while (first != list.end()){
+        result.push_back(*first);
+        first++;
+
+    }
+    while( first2 != list2.end()){
+        result.push_back(*first2);
+        first2++;
+    }
+}
 
 std::list<int> PmergeMe::algList(std::list<int> list){
 
     int swap = 0;
 
     if(list.size() < 3){
+        if (list.size() < 2)
+        {
+            return list;
+        }
+        
         std::list<int>::iterator firstNbr = list.begin();
         std::list<int>::iterator secondNbr = firstNbr;
         std::advance(secondNbr, 1);
@@ -52,10 +84,11 @@ std::list<int> PmergeMe::algList(std::list<int> list){
     std::list<int>::iterator it = list.begin();
     std::advance (it, list.size() / 2);
     std::list<int> left(list.begin(), it);
-     std::list<int> right(it, list.end());
+    std::list<int> right(it, list.end());
     
     std::list<int>  result = algList(left);
-    algList(right);
+    std::list<int>  result2 = algList(right);
+    std::list<int>  result3 = handleMerge(result, result2); 
 
 
 

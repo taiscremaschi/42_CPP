@@ -21,6 +21,7 @@ class PmergeMe {
         std::array<int, 10000> algArray(std::array<int, 10000> arr);
         std::list<int> algList(std::list<int> list);
         std::array<int, 10000> organizeArray();
+        std::list<int> handleMerge(std::list<int> list, std::list<int> list2);
 
 
 
