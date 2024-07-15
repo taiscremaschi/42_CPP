@@ -5,13 +5,11 @@ PmergeMe::PmergeMe(std::list<int> input){
     for(std::list<int>::iterator it = input.begin(); it != input.end(); ++it){
         _myDeque.push_back(*it);
         _myList.push_back(*it);
+        _myInput.push_back(*it);
     }
     _myList = algList(_myList);
     _myDeque = algDeque(_myDeque);
 
-    // for(std::list<int>::iterator i = _myList.begin(); i != _myList.end(); i++){
-    //     std::cout << " " << *i;
-    // }
 }
 
 PmergeMe::PmergeMe(const PmergeMe &other) {
@@ -146,5 +144,15 @@ std::list<int> PmergeMe::algList(std::list<int> list){
     std::list<int>  result3 = handleMergeList(result, result2); 
 
     return result3;
+
+}
+
+void PmergeMe::printSorted(){
+    for(std::deque<int>::iterator i = _myDeque.begin(); i != _myDeque.end(); i++){
+        std::cout << " " << *i;
+    }
+
+
+
 
 }

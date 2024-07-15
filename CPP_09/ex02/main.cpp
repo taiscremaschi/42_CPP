@@ -39,6 +39,8 @@ int main(int ac, char **av)
     }
 
     PmergeMe run(result);
+    run.printSorted();
+    
 
     return 0;
 }
