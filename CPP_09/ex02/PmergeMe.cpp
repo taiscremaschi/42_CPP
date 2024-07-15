@@ -26,13 +26,13 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &other){
 }
 
 
-std::list<int> PmergeMe::handleMergeDeque(std::list<int> list, std::list<int> list2){
-    std::list<int> result;
-    std::list<int>::iterator first = list.begin();
-    std::list<int>::iterator first2 = list2.begin();
+std::deque<int> PmergeMe::handleMergeDeque(std::deque<int> deque, std::deque<int> deque2){
+    std::deque<int> result;
+    std::deque<int>::iterator first = deque.begin();
+    std::deque<int>::iterator first2 = deque2.begin();
 
 
-    while(first != list.end() && first2 != list2.end()){
+    while(first != deque.end() && first2 != deque2.end()){
         if(*first < *first2){
             result.push_back(*first);
             first++;
@@ -42,16 +42,17 @@ std::list<int> PmergeMe::handleMergeDeque(std::list<int> list, std::list<int> li
             first2++;
         }
     }
-    while (first != list.end()){
+    while (first != deque.end()){
         result.push_back(*first);
         first++;
 
     }
-    while( first2 != list2.end()){
+    while( first2 != deque2.end()){
         result.push_back(*first2);
         first2++;
     }
-    ret
+    return result;
+}
 
 std::deque<int> PmergeMe::algDeque(std::deque<int> deque){
     
@@ -142,7 +143,7 @@ std::list<int> PmergeMe::algList(std::list<int> list){
     
     std::list<int>  result = algList(left);
     std::list<int>  result2 = algList(right);
-    std::list<int>  result3 = handleMerge(result, result2); 
+    std::list<int>  result3 = handleMergeList(result, result2); 
 
     return result3;
 

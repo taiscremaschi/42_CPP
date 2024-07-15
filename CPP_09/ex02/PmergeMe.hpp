@@ -19,7 +19,8 @@ class PmergeMe {
         ~PmergeMe();
         std::deque<int> algDeque(std::deque<int> deque);
         std::list<int> algList(std::list<int> list);
-        std::list<int> handleMerge(std::list<int> list, std::list<int> list2);
+        std::list<int> handleMergeList(std::list<int> list, std::list<int> list2);
+        std::deque<int> handleMergeDeque(std::deque<int> deque, std::deque<int> deque2);
 
 };
 
