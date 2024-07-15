@@ -17,18 +17,21 @@ bool checkNbr(std::string nbr)
 int main(int ac, char **av)
 {
     std::array<int,10000> result;
+
     int j = 0;
     if(ac > 10000){
         std::cerr << "Error: too many parameters: Maximum is 10.000" << std::endl;
         return 1;
     }
 
-    for(int i = 1; i < ac - 1; i++){
+    for(int i = 1; i < ac; i++){
          if(!checkNbr(av[i])){
             std:: cerr << "invalid number: " << av[i] << std::endl;
             return 1;
          }
          result[j]= atoi(av[i]);
+
+
          j++;
     }
     for(int i = 0; i < ac - 2; i++){
