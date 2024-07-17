@@ -9,7 +9,6 @@ int main()
 
         Bureaucrat myBur("tata invalid", 180);
         std::cout << myBur;
-
     } 
     catch (const std::exception &err) { 
         std:: cerr << MAGENTA << "ERROR: " << RESET << err.what() << std::endl;
@@ -32,6 +31,5 @@ int main()
     } 
     catch (const std::exception &err) { 
         std:: cerr << MAGENTA << "ERROR: " << RESET <<  err.what() << std::endl;
-
     }
 }
