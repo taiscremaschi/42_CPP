@@ -44,7 +44,7 @@ bool    Form::isValid() const {
 }
 
 
-void        Form::beSigned(Bureaucrat &bureaucrat){
+void    Form::beSigned(Bureaucrat &bureaucrat){
     if(bureaucrat.getGrade() > _gradeToSign)
         throw GradeTooLowException();
     _signedCheck = true;

@@ -30,20 +30,19 @@ class Bureaucrat {
         int         getGrade() const;
         void        incrementGrade();
         void        decrementGrade();
-
         void        signForm(Form &form);
 
 
 
     class  GradeTooHighException : public std::exception {
                 virtual const char* what() const throw(){
-                    return "Grade Too High Exception";
+                    return "Grade Too High Exception B";
                 }
     };
 
     class GradeTooLowException : public std::exception {
                 virtual const char* what() const throw(){
-                    return "Grade Too Low Exception";
+                    return "Grade Too Low Exception B";
                 }
     };
 };

@@ -28,13 +28,13 @@ class Form {
     
     class  GradeTooHighException : public std::exception {
             virtual const char* what() const throw(){
-                return "Grade Too High Exception";
+                return "Grade Too High Exception F";
             }
     };
 
     class GradeTooLowException : public std::exception {
             virtual const char* what() const throw(){
-                return "Grade Too Low Exception";
+                return "Grade Too Low Exception F";
             }
     };
 
