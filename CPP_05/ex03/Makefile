@@ -13,7 +13,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) rm my_first_garden_shrubbery
 
 fclean: clean
 	$(RM) $(NAME)
