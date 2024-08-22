@@ -36,6 +36,18 @@ int Bureaucrat::getGrade() const
     return _grade;
 }
 
+void Bureaucrat::incrementGrade(){
+    if(_grade < 2)
+        throw GradeTooHighException();   
+    _grade--;
+}
+
+void Bureaucrat::decrementGrade(){
+    if (_grade > 149)
+        throw GradeTooLowException();
+    _grade++;
+}
+
 void        Bureaucrat::signForm(Form &form)
 {
     try {

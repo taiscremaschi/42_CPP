@@ -28,6 +28,9 @@ class Bureaucrat {
         Bureaucrat &operator=(const Bureaucrat &other);
         std::string getName() const;
         int         getGrade() const;
+        void        incrementGrade();
+        void        decrementGrade();
+
         void        signForm(Form &form);
 
 
