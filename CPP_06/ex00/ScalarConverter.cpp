@@ -3,8 +3,8 @@
 #include <limits>
 
 
-#define MAX_DOUBLE std::numeric_limits<double>::max()
 #define MAX_FLOAT std::numeric_limits<float>::max()
+#define MIN_FLOAT -std::numeric_limits<float>::max()
 
 ScalarConverter::ScalarConverter() {}
 
@@ -59,20 +59,12 @@ int getPrecision(std::string nbr){
 }
 
 void printChar(double c){
-    if(c >  127)
+    if(c >  127 || c < 0)
         std::cout << "char: " << "is impossible" <<std::endl;
     else if(!isprint(c))
         std::cout << "char: " << "is not displayable" <<std::endl;
     else 
         std::cout << "char: " << "'" << static_cast <char>(c) <<  "'" <<std::endl; 
-}
-
-template <typename T>
-std::string convertToString(T value, int precision)
-{
-    std::ostringstream oss;
-    oss << std::fixed << std::setprecision(precision) << value;
-    return oss.str();
 }
     
 bool ScalarConverter::isFloat(std::string &param)
@@ -113,7 +105,6 @@ bool ScalarConverter::isFloat(std::string &param)
             return false;
         }
     }
-    
     double result = strtod(param.c_str(), NULL);
     int precision = getPrecision(param);
     std::cout << std::fixed << std::setprecision(precision);
@@ -123,7 +114,7 @@ bool ScalarConverter::isFloat(std::string &param)
     else 
         std::cout << "int: " << static_cast<int>(result) << std::endl;
     std::cout << "double: "  << static_cast<double>(result) << std::endl;
-    if (result > MAX_FLOAT)
+    if (result > MAX_FLOAT || result < MIN_FLOAT)
         std::cout << "float: impossible " << std::endl;
     else
         std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
@@ -192,7 +183,7 @@ bool ScalarConverter::isDouble(std::string &param)
         std::cout << "int: " << static_cast<int>(result) << std::endl;
     }
     std::cout << "double: "  << result << std::endl;
-    if (result > MAX_FLOAT)
+    if (result > MAX_FLOAT || result < MIN_FLOAT)
         std::cout << "float: impossible " << std::endl;   
     else
         std::cout << "float: " <<  static_cast<float>(result) << "f" << std::endl;
