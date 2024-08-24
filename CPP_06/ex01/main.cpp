@@ -6,8 +6,7 @@
 
 int main()
 {
-    Data myData = {42};
-
+    Data myData = {50};
 
     uintptr_t raw = Serializer::serialize(&myData);
     Data* deserializedDataPtr = Serializer::deserialize(raw);

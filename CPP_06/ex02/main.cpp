@@ -74,7 +74,4 @@ int main()
     Base *result1 = generate();
     identify(result1);
     identify(*result1);
-
-
-
 }

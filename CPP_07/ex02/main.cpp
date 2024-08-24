@@ -20,4 +20,10 @@ int main()
     std::cout <<  "\n" << b[0] << std::endl;
     std::cout <<  b[1] << std::endl;
 
+    Array<std::string> c = b;
+    for (size_t i = 0; i < c.size(); i++)
+    {
+        std::cout << c[i] << std::endl;
+    }
+
 }

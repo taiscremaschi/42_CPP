@@ -30,6 +30,9 @@ int main()
 
     ::iter(i, 6, &printResult);
 
+    ::iter(s, 4, &printResult);
+
+
 
 
 

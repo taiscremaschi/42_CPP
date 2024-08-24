@@ -101,5 +101,4 @@ int main()
             delete form;
         std:: cerr << MAGENTA << "ERROR: " << err.what() << RESET <<std::endl;
     }
-
 }
