@@ -8,10 +8,15 @@ bool isNumber(std::string &tmp)
         if(tmp[0] == '+')
             continue;
         if(tmp[i] == '.' && point){
+            if(tmp.size() < i + 2 || i == 0 || tmp[i - 1] == ' ' || tmp[i - 1] == '\t')
+            {
+                std::cerr << "Error: number invalid =>  " << tmp << std::endl;
+                return false;
+            }
             point = false;
             continue;
         }
-        if(!isdigit(tmp[i]))
+        else if(!isdigit(tmp[i]))
         {
             std::cerr << "Error: number invalid => " << tmp << std::endl;
             return false;
