@@ -94,6 +94,37 @@ std::vector<std::string> split(std::string buff, char c){
     return result;
 }
 
+
+bool validateDays(std::vector<std::string> splitDate){
+    int small[4] = {4, 6, 9, 11};
+    int day = atoi(splitDate[2].c_str());
+    int month = atoi(splitDate[1].c_str());
+    int year = atoi(splitDate[0].c_str());
+    if(day > 31  || day < 1)
+        return false;
+    for(int i = 0; i < 4; i++){
+        if(month == small[i]){
+            if(day >= 31)
+                return false;
+            else
+                return true;
+        }
+    }
+    if(month == 2)
+    {
+        if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
+            if(day <= 29)
+                return true;
+        }
+        else{
+            if(day <= 28)
+                return true;
+        }
+        return false;
+    }
+    return true;
+}
+
 bool checkDataAndValues(std::vector<std::string> &result)
 {
     std::string data = result[0];
@@ -126,7 +157,8 @@ bool checkDataAndValues(std::vector<std::string> &result)
         std::cout << "Error: error in parameter mouth." << std::endl;
         return false;
     }
-    if(atoi(splitDate[2].c_str()) > 31 || atoi(splitDate[2].c_str()) < 1)
+
+    if(!validateDays(splitDate))
     {
         std::cout << "Error: error in parameter days." << std::endl;
         return false;
